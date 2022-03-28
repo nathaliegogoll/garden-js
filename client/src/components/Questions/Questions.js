@@ -15,16 +15,23 @@ const Questions = () => {
     
     useEffect(() => {
         console.log('useeffect')
-        dispatch(fetchQuestions("https://penguinproject-server.herokuapp.com"))
+        dispatch(fetchQuestions("https://gardenproject-server.herokuapp.com/api/questions"))
     }, [])
 
-    return (
+    /* return (
         <>
-            <p>{storeQuestions.message}</p>
+        {storeQuestions.map((question) => {
+            return (
+                <>
+                <p>{question.id}</p>
+                <p>{question.translations[0].question}</p>
+                </>
+            )
+        } )}
         </>
-    )
+    ) */
 
-/*  const question = storeQuestions.translations[0].question;
+ const question = storeQuestions.translations[0].question;
     const options = storeQuestions.translations[0].options;
     const answer = storeQuestions.translations[0].answer;
     const code = storeQuestions.code;
@@ -47,7 +54,7 @@ const Questions = () => {
         )}
 
         </section>
-    ) */
+    )
 }
 
 export default Questions;
