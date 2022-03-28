@@ -7,13 +7,15 @@ export const fetchQuestions = createAsyncThunk(
     } 
   ) 
 
-const initialState = { questions: [], error: false };
+const initialState = { questions: [a, b, c, d, e], carrots: 5, error: false };
 
 export const questions = createSlice( { 
       name:'questions', 
       initialState,
       reducers: {
-          
+        answerQuestion: (state) => { state.questions.shift() },
+        getQuestion: (state) => { return state.questions[1] },
+
       }, 
       extraReducers: (builder) => {
         builder.addCase(fetchQuestions.fulfilled, (state, action) => {
@@ -25,5 +27,5 @@ export const questions = createSlice( {
       }
   }); 
   
-  export const { clearQuestions } = questions.actions;
+  export const { answerQuestion, getQuestion } = questions.actions;
   export default questions.reducer;
