@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect} from 'react'
 import { answerQuestion, fetchQuestions } from '../../redux/slices/questionSlice';
 import { useSelector, useDispatch } from 'react-redux';
 
 const Questions = () => {
-
     const storeQuestions = useSelector((state) => state.questions.questions);
-    const { loading, carrots } = useSelector((state) => state.questions);
+    const { loading } = useSelector((state) => state.questions);
 
     const dispatch = useDispatch();
     
@@ -14,14 +13,15 @@ const Questions = () => {
         setTimeout(() => {
 
         }, 2000)
-    }, [])
+    }, [dispatch])
 
     const handleAnswer = (answer) => {
         const correctAnswer = storeQuestions[0].translations[0].answer;
-        //update xp if correct answer
         if (answer.label === correctAnswer) console.log("good answer");
         //move to the next question
-        dispatch(answerQuestion());
+        setTimeout(() => {
+            dispatch(answerQuestion());
+        }, 1000)
         //give feedback to the user: correct or wrong answer? should we give an explaination?
     }
 
