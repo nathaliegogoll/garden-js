@@ -1,42 +1,41 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { fetchQuestions } from '../../redux/slices/questionSlice';
+import { useSelector, useDispatch } from 'react-redux';
 
 const Questions = () => {
-    const mockQuestion = {
-        "id": 43,
-        "translations": [
-        {
-        "options": [
-        {
-        "label": "A",
-        "option": "`[\"L\", \"y\", \"d\", \"i\", \"a\"]`"
-        },
-        {
-        "label": "B",
-        "option": "`[\"Lydia\"]`"
-        },
-        {
-        "label": "C",
-        "option": "`[[], \"Lydia\"]`"
-        },
-        {
-        "label": "D",
-        "option": "`[[\"L\", \"y\", \"d\", \"i\", \"a\"]]`"
-        }
-        ],
-        "question": "What does this return?",
-        "answer": "A",
-        "explanation": "A string is an iterable. The spread operator maps every character of an iterable to one element."
-        }
-        ],
-        "code": "[...'Lydia'];"
-    }
 
-    const question = mockQuestion.translations[0].question;
-    const options = mockQuestion.translations[0].options;
-    const answer = mockQuestion.translations[0].answer;
-    const code = mockQuestion.code;
+    const storeQuestions = useSelector((state) => state.questions.questions);
+    const { loading, carrots } = useSelector((state) => state.questions);
+
+    console.log(loading);
+    console.log(storeQuestions);
+    console.log(carrots);
+
+    const dispatch = useDispatch();
+    
+    useEffect(() => {
+        console.log('useeffect')
+        dispatch(fetchQuestions("https://penguinproject-server.herokuapp.com"))
+    }, [])
+
+    return (
+        <>
+            <p>{storeQuestions.message}</p>
+        </>
+    )
+
+/*  const question = storeQuestions.translations[0].question;
+    const options = storeQuestions.translations[0].options;
+    const answer = storeQuestions.translations[0].answer;
+    const code = storeQuestions.code;
     return (
         <section className="questionnaire">
+        { loading ? (
+            <>
+                <p>loading questions...</p>
+            </>
+        ):(
+            <>
             <h2 className="questionnaire__question">Question: {question}</h2>
             <code className="questionnaire__code">{code}</code>
             {
@@ -44,10 +43,11 @@ const Questions = () => {
                     return <button key={answer.label}>{answer.label}. {answer.option}</button>
                 })
             }
-            
+            </>
+        )}
 
         </section>
-    )
+    ) */
 }
 
 export default Questions;

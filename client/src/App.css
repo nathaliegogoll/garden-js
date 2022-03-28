@@ -22,6 +22,8 @@
 }
 
 .questionnaire * {
+  text-align: center;
   margin: 1rem;
+  padding: 0.5rem;
 }
 /*# sourceMappingURL=App.css.map */
