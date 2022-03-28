@@ -1,5 +1,9 @@
 const axios = require('axios');
 
+const uniqeQuestionChecker = (list, question) => {
+
+}
+
 const getRandomQuestions = async () => {
     const questionList = [];
     const numberOfQuestions = 5;
