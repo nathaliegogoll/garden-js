@@ -26,7 +26,7 @@ export const questions = createSlice( {
             state.loading = false;
         })
         builder.addCase(fetchQuestions.pending, (state) => {
-            state.carrots = 15;
+            state.carrots = 5;
         })
         builder.addCase(fetchQuestions.rejected, (state) => {
         state.error = true;
