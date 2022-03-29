@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+// import sprite0happy from '../resources/level_000/happybunny.png';
 import sprite0 from '../resources/level_000/bunny.png';
 import sprite1 from '../resources/level_001/background.gif';
 import sprite2 from '../resources/level_002/pumpkin.png';
