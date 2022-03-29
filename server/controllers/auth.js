@@ -6,7 +6,7 @@ const register = async (req, res, next) => {
 
     try {
       const user = await User.create({ username, email, password})
-
+1
     } catch (error) {
       next(error)
     }
