@@ -1,7 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 import { useEffect } from 'react';
-import { Questions, Progression, SolveKatas, Garden } from './components/index';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import { Questions, Progression, SolveKatas, Garden, CreateAccount, Login} from './components/index';
 import { useSelector, useDispatch } from 'react-redux';
 
 function App() {
@@ -9,22 +10,27 @@ function App() {
   const { gamestarted } = useSelector((state) => state.questions);
 
   return (
-    <div className="App">
-      {!gamestarted ? (
-        <>
-        <Progression />
-        <Garden />
-        <SolveKatas />  
-        </>
-      ) : (
-        <>
-        <Progression />
-        <Questions />
-        </>
-      )
+    <Router>
+      <div className="App">
+        {!gamestarted ? (
+          <>
+          <Progression />
+          <Garden />
+          <SolveKatas />  
+          </>
+        ) : (
+          <>
+          <Progression />
+          <Questions />
+          </>
+        )
       }
-
-    </div>
+        <Routes>
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<CreateAccount />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

@@ -61,3 +61,19 @@
   padding: 0.5rem;
 }
 /*# sourceMappingURL=App.css.map */
+
+
+
+/* UsersAuth components */
+
+.register__form, .login__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
