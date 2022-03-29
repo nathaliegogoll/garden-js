@@ -12,7 +12,7 @@ const Garden = () => {
     }
 
     const currentLevel = (xp) => {
-        const nb = [];
+        const nb = [0];
         for (let i = 0; i < lvlDisplay(xp); i++) {
             nb.push(i);
         }
@@ -27,11 +27,11 @@ const Garden = () => {
             <section className='garden__container'>
                 <p className="garden__username" >Pingu</p>
                 {
-                    currentLevel(12).map(nb => {
+                    currentLevel(0).map(nb => {
                         const sprite = sprites[nb]
                         if (sprite === sprite1) {
                             return(
-                                <div className={`garden--level${nb}`} style={{"background": `url(${sprite}) `, "background-size": "100%"}}></div>
+                                <div className={`garden--level${nb}`} style={{"background": `url(${sprite}) `, "backgroundSize": "100%"}}></div>
                             )
                         }
                         return (<div className={`garden--level${nb}`} style={{"background": `url(${sprite})`}}></div>)
