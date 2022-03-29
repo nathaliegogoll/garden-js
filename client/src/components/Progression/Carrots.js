@@ -9,11 +9,11 @@ const Carrots = () => {
     return (
     <>
         <section className="progression__container">
-        {[...Array(carrots)].map((e) => {
+        {[...Array(carrots)].map((e, index) => {
             return (
-                <>
+                <div key={index}>
                     <img className="progression__carrot" src={carrotPng} alt="carrot"/>
-                </>
+                </div>
             )
         })}
         </section>
