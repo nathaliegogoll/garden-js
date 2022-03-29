@@ -5,6 +5,21 @@
           box-sizing: border-box;
 }
 
+.garden__container {
+  margin: 0 auto;
+  width: 90%;
+  height: 400px;
+  border: 1px solid black;
+  position: relative;
+  background-color: #C7E2ED;
+  z-index: -99;
+}
+
+.garden__username {
+  text-align: center;
+  margin-top: 1rem;
+}
+
 .progression__container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -28,24 +43,31 @@
   width: 2rem;
 }
 
-.solvekatas__btn {
+.questionnaire {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 1rem;
+  max-width: 600px;
+}
+
+.questionnaire * {
   text-align: center;
+  margin: 1rem;
   padding: 0.5rem;
 }
 
-.garden__container {
-  margin: 0 auto;
-  width: 90%;
-  height: 400px;
-  border: 1px solid black;
-  position: relative;
-  background-color: #C7E2ED;
-  z-index: -99;
-}
-
-.garden__username {
+.solvekatas__btn {
   text-align: center;
-  margin-top: 1rem;
+  padding: 0.5rem;
 }
 
 .garden--level0 {
@@ -128,27 +150,5 @@
   to {
     background-position-x: -998px;
   }
-}
-
-.questionnaire {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 0 auto;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 1rem;
-  max-width: 600px;
-}
-
-.questionnaire * {
-  text-align: center;
-  margin: 1rem;
-  padding: 0.5rem;
 }
 /*# sourceMappingURL=App.css.map */

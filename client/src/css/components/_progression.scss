@@ -1,0 +1,12 @@
+.progression__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    max-width: 300px;
+    min-height: 50px;
+    .progression__carrot {
+      height: 2rem;
+      width: 2rem;
+    }
+}

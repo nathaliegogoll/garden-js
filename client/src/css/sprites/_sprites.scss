@@ -1,0 +1,43 @@
+.garden--level0 {
+    z-index: 1;
+    position: relative;
+    top: 190px;
+    width: 55px;
+    height: 74px;  
+    margin: 2em auto;
+    //background: transparent url('./resources/level_000/bunny.png') 0 0 no-repeat; 
+    animation: rabbitmovesX 1.5s steps(4) infinite,
+               rabbitmovesY 9s steps(6) infinite; 
+  }
+  
+  @keyframes rabbitmovesX {
+    from {background-position-x: 0px;}
+    to {background-position-x: -220px;}
+  }
+  
+  @keyframes rabbitmovesY {
+    from {background-position-y: 0px;}
+    to {background-position-y: -444px;}
+  }
+  
+  .garden--level1 {
+    position: relative;
+    top: -110px;
+    width: 100%;
+    height: 84.5%;
+  }
+  
+  .garden--level2  {
+    position: absolute;
+    top: 290px;
+    left: 110px;
+    width: 32px;
+    height: 32px; 
+    animation: pumpkinmoves 5s steps(19) forwards;
+  }
+  
+  @keyframes pumpkinmoves {
+    from {background-position-x: -10px;}
+    to {background-position-x: -998px;}
+  }
+  
