@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
 import sprite0 from '../resources/level_000/bunny.png';
 import sprite1 from '../resources/level_001/background.gif';
-import sprite3 from '../resources/level_002/pumpkin.png';
-import sprite2 from '../resources/level_003/carrot.png';
+import sprite2 from '../resources/level_002/pumpkin.png';
+import sprite3 from '../resources/level_003/carrot.png';
 import sprite4 from '../resources/level_004/corn.png';
 import sprite5 from '../resources/level_005/cabbage.png';
 import sprite6 from '../resources/level_006/tomat.png';
@@ -23,7 +23,7 @@ const Garden = () => {
             if (i===0) continue;
             nb.push(i);
         }
-        console.log(lvlDisplay(20))
+        console.log(lvlDisplay(xp))
         return nb
     }
     // ------------------------------ //
@@ -33,7 +33,7 @@ const Garden = () => {
             <section className='garden__container'>
                 <p className="garden__username" >Pingu</p>
                 {
-                    currentLevel(12).map(nb => {
+                    currentLevel(60).map(nb => {
                         const sprite = sprites[nb]
                         if (typeof sprite === "object") {
                             if (carrots === 5) {
