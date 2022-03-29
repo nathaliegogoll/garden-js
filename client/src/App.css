@@ -173,10 +173,10 @@
 
 .garden--level2 {
   position: absolute;
-  top: 290px;
+  top: 280px;
   left: 110px;
   width: 32px;
-  height: 32px;
+  height: 50px;
   -webkit-animation: pumpkinmoves 5s steps(19) forwards;
           animation: pumpkinmoves 5s steps(19) forwards;
 }
