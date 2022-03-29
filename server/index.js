@@ -16,7 +16,6 @@ app.use('/api/auth', authRoutes)
 app.use('/api/questions', questionsRoutes)
 
 
-
 const server = app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}`);
 });
