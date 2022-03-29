@@ -31,10 +31,10 @@ const Garden = () => {
                         const sprite = sprites[nb]
                         if (sprite === sprite1) {
                             return(
-                                <div className={`garden--level${nb}`} style={{"background": `url(${sprite}) `, "backgroundSize": "100%"}}></div>
+                                <div key={nb} className={`garden--level${nb}`} style={{"background": `url(${sprite}) `, "backgroundSize": "100%"}}></div>
                             )
                         }
-                        return (<div className={`garden--level${nb}`} style={{"background": `url(${sprite})`}}></div>)
+                        return (<div key={nb} className={`garden--level${nb}`} style={{"background": `url(${sprite})`}}></div>)
                     })
                 }
                 
