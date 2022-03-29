@@ -1,8 +1,8 @@
 const User = require('../models/User')
-const errorResponse = require('../utils/errorResponse')
+const ErrorResponse = require('../utils/errorResponse')
 
 const register = async (req, res, next) => {
-    const { username, email, password, } = req.body
+  const { username, email, password, } = req.body
 
     try {
       const user = await User.create({ username, email, password})
@@ -14,4 +14,5 @@ const register = async (req, res, next) => {
 
 module.exports = {
     register,
+    login,
 }
