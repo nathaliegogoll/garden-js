@@ -63,9 +63,7 @@
   position: relative;
   top: -110px;
   width: 100%;
-  height: 100%;
-  background: url('./resources/level_001/background.gif') no-repeat;
-  background-size: 100%;
+  height: 84.5%;
 }
 
 .garden--level2  {
@@ -73,8 +71,7 @@
   top: 290px;
   left: 110px;
   width: 32px;
-  height: 32px;
-  background: transparent url('./resources/level_002/pumpkin.png') -10px -10px no-repeat; 
+  height: 32px; 
   animation: pumpkinmoves 5s steps(19) forwards;
 }
 

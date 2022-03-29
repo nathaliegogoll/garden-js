@@ -29,6 +29,11 @@ const Garden = () => {
                 {
                     currentLevel(12).map(nb => {
                         const sprite = sprites[nb]
+                        if (sprite === sprite1) {
+                            return(
+                                <div className={`garden--level${nb}`} style={{"background": `url(${sprite}) `, "background-size": "100%"}}></div>
+                            )
+                        }
                         return (<div className={`garden--level${nb}`} style={{"background": `url(${sprite})`}}></div>)
                     })
                 }
