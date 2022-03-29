@@ -1,8 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
-import { useEffect } from 'react';
 import { Questions, Progression, SolveKatas, Garden } from './components/index';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 function App() {
 
