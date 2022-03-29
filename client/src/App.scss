@@ -4,6 +4,30 @@
   box-sizing: border-box;
 }
 
+.progression__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  max-width: 300px;
+  min-height: 50px;
+  .progression__carrot {
+    height: 2rem;
+    width: 2rem;
+  }
+}
+
+.solvekatas__btn {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.garden__container {
+  width: 600px;
+  height: 600px;
+  border: 1px solid black;
+}
+
 .questionnaire {
   display: flex;
   margin: 0 auto;

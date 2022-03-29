@@ -5,6 +5,40 @@
           box-sizing: border-box;
 }
 
+.progression__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 300px;
+  min-height: 50px;
+}
+
+.progression__container .progression__carrot {
+  height: 2rem;
+  width: 2rem;
+}
+
+.solvekatas__btn {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.garden__container {
+  width: 600px;
+  height: 600px;
+  border: 1px solid black;
+}
+
 .questionnaire {
   display: -webkit-box;
   display: -ms-flexbox;

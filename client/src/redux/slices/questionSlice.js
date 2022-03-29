@@ -9,7 +9,7 @@ export const fetchQuestions = createAsyncThunk(
     } 
   ) 
 
-const initialState = { questions: [], carrots: 5, error: false, loading: true };
+const initialState = { questions: [], carrots: 5, error: false, loading: true, gamestarted: false };
 
 export const questions = createSlice( { 
       name:'questions', 
@@ -19,14 +19,17 @@ export const questions = createSlice( {
             state.questions.shift() 
             state.carrots -= 1;
         },
+        startGame: (state) => {
+          state.gamestarted = true;
+        },
+        endGame: (state) => {
+          state.gamestarted = false;
+        }
       }, 
       extraReducers: (builder) => {
         builder.addCase(fetchQuestions.fulfilled, (state, action) => {
             state.questions = action.payload;
             state.loading = false;
-        })
-        builder.addCase(fetchQuestions.pending, (state) => {
-            state.carrots = 5;
         })
         builder.addCase(fetchQuestions.rejected, (state) => {
         state.error = true;
@@ -34,5 +37,5 @@ export const questions = createSlice( {
       }
   }); 
   
-  export const { answerQuestion, getQuestion } = questions.actions;
+  export const { answerQuestion, getQuestion, startGame, endGame } = questions.actions;
   export default questions.reducer;

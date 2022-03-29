@@ -1,19 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
 import { useEffect } from 'react';
-import { Questions } from './components/index';
+import { Questions, Progression, SolveKatas, Garden } from './components/index';
+import { useSelector, useDispatch } from 'react-redux';
 
 function App() {
 
-useEffect(() => {
-  fetch('https://penguinproject-server.herokuapp.com/')
-    .then(response => response.json())
-    .then(response => console.log(response));
-}, [])
+  const { gamestarted } = useSelector((state) => state.questions);
 
   return (
     <div className="App">
-     <Questions />
+      {!gamestarted ? (
+        <>
+        <Progression />
+        <Garden />
+        <SolveKatas />  
+        </>
+      ) : (
+        <>
+        <Progression />
+        <Questions />
+        </>
+      )
+      }
+
     </div>
   );
 }

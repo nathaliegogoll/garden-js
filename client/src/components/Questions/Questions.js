@@ -1,5 +1,5 @@
 import React, { useEffect} from 'react'
-import { answerQuestion, fetchQuestions } from '../../redux/slices/questionSlice';
+import { answerQuestion, fetchQuestions, endGame } from '../../redux/slices/questionSlice';
 import { useSelector, useDispatch } from 'react-redux';
 
 const Questions = () => {
@@ -25,6 +25,10 @@ const Questions = () => {
         //give feedback to the user: correct or wrong answer? should we give an explaination?
     }
 
+    const handleGoBack = () => {
+        dispatch(endGame())
+    }
+
     
     return (
         <section className="questionnaire">
@@ -34,18 +38,22 @@ const Questions = () => {
             </>
         ):(
             <>
+                <button onClick={handleGoBack}>x</button>
                 { storeQuestions.length !== 0 ? (
                     <>
                         <h2 className="questionnaire__question">Question: {storeQuestions[0].translations[0].question}</h2>
                         <code className="questionnaire__code">{storeQuestions[0].code}</code>
                         {
                         storeQuestions[0].translations[0].options.map(answer => {
-                        return <button className="questionnaire__button" key={answer.label} onClick={() => {handleAnswer(answer)}}>{answer.label}. {answer.option}</button>
+                        return <button className="questionnaire__button" key={answer.label} onClick={() => {handleAnswer(answer)}}>{answer.label}. {answer.option.replaceAll('`','')}</button>
                         })
                         }
                     </>
                 ) : (
-                    <p>no more questions</p>
+                    <>
+                    <p>No more questions for today!</p>
+                    <button onClick={handleGoBack}>Go back</button>
+                    </>
                 )
                 }
             </>
