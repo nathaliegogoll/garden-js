@@ -1,40 +1,31 @@
-import React, { useEffect } from 'react'
-import { fetchQuestions } from '../../redux/slices/questionSlice';
+import React, { useEffect} from 'react'
+import { answerQuestion, fetchQuestions } from '../../redux/slices/questionSlice';
 import { useSelector, useDispatch } from 'react-redux';
 
 const Questions = () => {
-
     const storeQuestions = useSelector((state) => state.questions.questions);
-    const { loading, carrots } = useSelector((state) => state.questions);
-
-    console.log(loading);
-    console.log(storeQuestions);
-    console.log(carrots);
+    const { loading } = useSelector((state) => state.questions);
 
     const dispatch = useDispatch();
     
     useEffect(() => {
-        console.log('useeffect')
         dispatch(fetchQuestions("https://gardenproject-server.herokuapp.com/api/questions"))
-    }, [])
+        setTimeout(() => {
 
-    /* return (
-        <>
-        {storeQuestions.map((question) => {
-            return (
-                <>
-                <p>{question.id}</p>
-                <p>{question.translations[0].question}</p>
-                </>
-            )
-        } )}
-        </>
-    ) */
+        }, 2000)
+    }, [dispatch])
 
- const question = storeQuestions.translations[0].question;
-    const options = storeQuestions.translations[0].options;
-    const answer = storeQuestions.translations[0].answer;
-    const code = storeQuestions.code;
+    const handleAnswer = (answer) => {
+        const correctAnswer = storeQuestions[0].translations[0].answer;
+        if (answer.label === correctAnswer) console.log("good answer");
+        //move to the next question
+        setTimeout(() => {
+            dispatch(answerQuestion());
+        }, 1000)
+        //give feedback to the user: correct or wrong answer? should we give an explaination?
+    }
+
+    
     return (
         <section className="questionnaire">
         { loading ? (
@@ -43,16 +34,22 @@ const Questions = () => {
             </>
         ):(
             <>
-            <h2 className="questionnaire__question">Question: {question}</h2>
-            <code className="questionnaire__code">{code}</code>
-            {
-                options.map(answer => {
-                    return <button key={answer.label}>{answer.label}. {answer.option}</button>
-                })
-            }
+                { storeQuestions.length !== 0 ? (
+                    <>
+                        <h2 className="questionnaire__question">Question: {storeQuestions[0].translations[0].question}</h2>
+                        <code className="questionnaire__code">{storeQuestions[0].code}</code>
+                        {
+                        storeQuestions[0].translations[0].options.map(answer => {
+                        return <button className="questionnaire__button" key={answer.label} onClick={() => {handleAnswer(answer)}}>{answer.label}. {answer.option}</button>
+                        })
+                        }
+                    </>
+                ) : (
+                    <p>no more questions</p>
+                )
+                }
             </>
         )}
-
         </section>
     )
 }
