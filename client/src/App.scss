@@ -37,14 +37,14 @@
   margin-top: 1rem;
 }
 
-.garden--level000 {
+.garden--level0 {
   z-index: 1;
   position: relative;
   top: 190px;
   width: 55px;
   height: 74px;  
   margin: 2em auto;
-  background: transparent url('./resources/level_000/bunny.png') 0 0 no-repeat; 
+  //background: transparent url('./resources/level_000/bunny.png') 0 0 no-repeat; 
   animation: rabbitmovesX 1.5s steps(4) infinite,
              rabbitmovesY 9s steps(6) infinite; 
 }
@@ -59,7 +59,7 @@
   to {background-position-y: -444px;}
 }
 
-.garden--level001 {
+.garden--level1 {
   position: relative;
   top: -110px;
   width: 100%;
@@ -68,7 +68,7 @@
   background-size: 100%;
 }
 
-.garden--level002  {
+.garden--level2  {
   position: absolute;
   top: 290px;
   left: 110px;
