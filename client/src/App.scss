@@ -1,48 +1,22 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@charset "UTF-8";
 
-.progression__container {
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
-  align-items: center;
-  max-width: 300px;
-  min-height: 50px;
-  .progression__carrot {
-    height: 2rem;
-    width: 2rem;
-  }
-}
+// 1. Configuration and helpers
+@import
+  'css/abstracts/mixins',
+  'css/abstracts/variables';
 
-.solvekatas__btn {
-  text-align: center;
-  padding: 0.5rem;
-}
+// 2. Base stuff
+@import
+  'css/base/base',
+  'css/base/typography';
 
-.garden__container {
-  width: 600px;
-  height: 600px;
-  border: 1px solid black;
-}
+// 3. Components
+@import
+  'css/components/garden',
+  'css/components/progression',
+  'css/components/questionnaire',
+  'css/components/solvekatas';
 
-.questionnaire {
-  display: flex;
-  margin: 0 auto;
-  flex-direction: column;
-  justify-content: center;
-  margin: 1rem;
-  max-width: 600px;
-  * {
-    text-align: center;
-    margin: 1rem; 
-    padding: 0.5rem;
-  }
-}
-
-// .correct:active {
-//   border: 2px solid rgb(83, 255, 83);
-// }
-
+// 4. Sprites
+@import
+  'css/sprites/sprites';

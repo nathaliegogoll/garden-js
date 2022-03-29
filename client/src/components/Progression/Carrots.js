@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import carrotPng from "../../resources/carrot.png";
 
 
@@ -8,12 +8,12 @@ const Carrots = () => {
 
     return (
     <>
-        <section className="progression__container">
-        {[...Array(carrots)].map((e) => {
+        <section className="carrot__container">
+        {[...Array(carrots)].map((e, index) => {
             return (
-                <>
-                    <img className="progression__carrot" src={carrotPng} alt="carrot"/>
-                </>
+                <div key={index}>
+                    <img className="carrot" src={carrotPng} alt="carrot"/>
+                </div>
             )
         })}
         </section>
