@@ -1,6 +1,4 @@
-import React from 'react'
-import { useSelector, useDispatch } from 'react-redux';
-
+import React from 'react';
 
 
 const Level = () => {
