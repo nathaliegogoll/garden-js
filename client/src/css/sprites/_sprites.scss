@@ -1,6 +1,11 @@
+// SPRITE HELPERS
+@keyframes classicvegetableanimation {
+  from {background-position-x: -10px;}
+  to {background-position-x: -998px;}
+}
+
 // bunny
 .garden--level0 {
-  z-index: 0;
   position: fixed;
   top: 405px;
   left: 175px;
@@ -33,12 +38,7 @@
   margin-left: 125px;
   width: 32px;
   height: 50px; 
-  animation: pumpkinmoves 3s steps(19) forwards;
-}
-
-@keyframes pumpkinmoves {
-  from {background-position-x: -10px;}
-  to {background-position-x: -998px;}
+  animation: classicvegetableanimation 3s steps(19) forwards;
 }
 
 //carrot
@@ -61,12 +61,7 @@
   margin-left: 70px;
   width: 32px;
   height: 50px; 
-  animation: cornmoves 3s steps(19) forwards;
-}
-
-@keyframes cornmoves {
-  from {background-position-x: -10px;}
-  to {background-position-x: -998px;}
+  animation: classicvegetableanimation 3s steps(19) forwards;
 }
 
 //corn
@@ -75,12 +70,7 @@
   margin-left: 50px;
   width: 32px;
   height: 50px; 
-  animation: cabbagemoves 3s steps(19) forwards;
-}
-
-@keyframes cabbagemoves {
-  from {background-position-x: -10px;}
-  to {background-position-x: -998px;}
+  animation: classicvegetableanimation 3s steps(19) forwards;
 }
 
 //tomato
@@ -89,12 +79,7 @@
   margin-left: 30px;
   width: 32px;
   height: 50px; 
-  animation: tomatomoves 3s steps(19) forwards;
-}
-
-@keyframes tomatomoves {
-  from {background-position-x: -10px;}
-  to {background-position-x: -998px;}
+  animation: classicvegetableanimation 3s steps(19) forwards;
 }
 
 //watermelon

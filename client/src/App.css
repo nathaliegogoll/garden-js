@@ -117,8 +117,25 @@
   padding: 0.5rem;
 }
 
+@-webkit-keyframes classicvegetableanimation {
+  from {
+    background-position-x: -10px;
+  }
+  to {
+    background-position-x: -998px;
+  }
+}
+
+@keyframes classicvegetableanimation {
+  from {
+    background-position-x: -10px;
+  }
+  to {
+    background-position-x: -998px;
+  }
+}
+
 .garden--level0 {
-  z-index: 0;
   position: fixed;
   top: 405px;
   left: 175px;
@@ -175,26 +192,8 @@
   margin-left: 125px;
   width: 32px;
   height: 50px;
-  -webkit-animation: pumpkinmoves 3s steps(19) forwards;
-          animation: pumpkinmoves 3s steps(19) forwards;
-}
-
-@-webkit-keyframes pumpkinmoves {
-  from {
-    background-position-x: -10px;
-  }
-  to {
-    background-position-x: -998px;
-  }
-}
-
-@keyframes pumpkinmoves {
-  from {
-    background-position-x: -10px;
-  }
-  to {
-    background-position-x: -998px;
-  }
+  -webkit-animation: classicvegetableanimation 3s steps(19) forwards;
+          animation: classicvegetableanimation 3s steps(19) forwards;
 }
 
 .garden--level3 {
@@ -229,26 +228,8 @@
   margin-left: 70px;
   width: 32px;
   height: 50px;
-  -webkit-animation: cornmoves 3s steps(19) forwards;
-          animation: cornmoves 3s steps(19) forwards;
-}
-
-@-webkit-keyframes cornmoves {
-  from {
-    background-position-x: -10px;
-  }
-  to {
-    background-position-x: -998px;
-  }
-}
-
-@keyframes cornmoves {
-  from {
-    background-position-x: -10px;
-  }
-  to {
-    background-position-x: -998px;
-  }
+  -webkit-animation: classicvegetableanimation 3s steps(19) forwards;
+          animation: classicvegetableanimation 3s steps(19) forwards;
 }
 
 .garden--level5 {
@@ -256,26 +237,8 @@
   margin-left: 50px;
   width: 32px;
   height: 50px;
-  -webkit-animation: cabbagemoves 3s steps(19) forwards;
-          animation: cabbagemoves 3s steps(19) forwards;
-}
-
-@-webkit-keyframes cabbagemoves {
-  from {
-    background-position-x: -10px;
-  }
-  to {
-    background-position-x: -998px;
-  }
-}
-
-@keyframes cabbagemoves {
-  from {
-    background-position-x: -10px;
-  }
-  to {
-    background-position-x: -998px;
-  }
+  -webkit-animation: classicvegetableanimation 3s steps(19) forwards;
+          animation: classicvegetableanimation 3s steps(19) forwards;
 }
 
 .garden--level6 {
@@ -283,26 +246,8 @@
   margin-left: 30px;
   width: 32px;
   height: 50px;
-  -webkit-animation: tomatomoves 3s steps(19) forwards;
-          animation: tomatomoves 3s steps(19) forwards;
-}
-
-@-webkit-keyframes tomatomoves {
-  from {
-    background-position-x: -10px;
-  }
-  to {
-    background-position-x: -998px;
-  }
-}
-
-@keyframes tomatomoves {
-  from {
-    background-position-x: -10px;
-  }
-  to {
-    background-position-x: -998px;
-  }
+  -webkit-animation: classicvegetableanimation 3s steps(19) forwards;
+          animation: classicvegetableanimation 3s steps(19) forwards;
 }
 
 .garden--level7 {
