@@ -1,3 +1,4 @@
+// bunny
 .garden--level0 {
     z-index: 1;
     position: relative;
@@ -5,7 +6,6 @@
     width: 55px;
     height: 74px;  
     margin: 2em auto;
-    //background: transparent url('./resources/level_000/bunny.png') 0 0 no-repeat; 
     animation: rabbitmovesX 1.5s steps(4) infinite,
                rabbitmovesY 9s steps(6) infinite; 
   }
@@ -19,7 +19,8 @@
     from {background-position-y: 0px;}
     to {background-position-y: -444px;}
   }
-  
+
+  //backdrop
   .garden--level1 {
     position: relative;
     top: -110px;
@@ -27,6 +28,7 @@
     height: 84.5%;
   }
   
+  //pumpkin
   .garden--level2  {
     position: absolute;
     top: 290px;

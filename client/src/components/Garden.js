@@ -21,8 +21,6 @@ const Garden = () => {
         return nb
     }
     // ------------------------------ //
-    //TODO if carrot === 5, sad emote
-    //TODO if carrot === 0, happy emote
     const sprites = [{"happy": sprite0, "sad": sprite0}, sprite1, sprite2];
     return (
         <>
