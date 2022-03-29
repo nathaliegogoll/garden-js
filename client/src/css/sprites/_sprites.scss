@@ -42,4 +42,19 @@
     from {background-position-x: -10px;}
     to {background-position-x: -998px;}
   }
+
+    //carrot
+    .garden--level3  {
+      position: relative;
+      top: 280px;
+      left: 110px;
+      width: 32px;
+      height: 50px; 
+      animation: carrotmoves 2s steps(15) forwards;
+    }
+    
+    @keyframes carrotmoves {
+      from {background-position-x: -10px;}
+      to {background-position-x: -700px;}
+    }
   

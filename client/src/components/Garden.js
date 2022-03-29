@@ -1,7 +1,12 @@
 import { useSelector } from 'react-redux';
 import sprite0 from '../resources/level_000/bunny.png';
 import sprite1 from '../resources/level_001/background.gif';
-import sprite2 from '../resources/level_002/pumpkin.png';
+import sprite3 from '../resources/level_002/pumpkin.png';
+import sprite2 from '../resources/level_003/carrot.png';
+import sprite4 from '../resources/level_004/corn.png';
+import sprite5 from '../resources/level_005/cabbage.png';
+import sprite6 from '../resources/level_006/tomat.png';
+import sprite7 from '../resources/level_007/watermelon.png';
 
 const Garden = () => {
     const { carrots } = useSelector((state) => state.questions);
@@ -18,10 +23,11 @@ const Garden = () => {
             if (i===0) continue;
             nb.push(i);
         }
+        console.log(lvlDisplay(20))
         return nb
     }
     // ------------------------------ //
-    const sprites = [{"happy": sprite0, "sad": sprite0}, sprite1, sprite2];
+    const sprites = [{"happy": sprite0, "sad": sprite0}, sprite1, sprite2, sprite3, sprite4, sprite5, sprite6, sprite7];
     return (
         <>
             <section className='garden__container'>
