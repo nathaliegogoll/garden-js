@@ -1,4 +1,4 @@
-import { Level000, Level001 } from './index';
+import { Level000, Level001, Level002 } from './index';
 
 const Garden = () => {
 
@@ -13,6 +13,7 @@ const Garden = () => {
                 <p className="garden__username">Pingu</p>
                 <Level000 />
                 <Level001 />
+                <Level002 />
             </section>
         </>
     )

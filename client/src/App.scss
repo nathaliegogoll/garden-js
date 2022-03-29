@@ -28,6 +28,8 @@
   height: 400px;
   border: 1px solid black;
   position: relative;
+  background-color: #89C5F5;
+  z-index: -99;
 }
 
 .garden__username {
@@ -36,11 +38,12 @@
 }
 
 .garden--level000 {
+  z-index: 1;
   position: relative;
-  top: 180px;
+  top: 190px;
   width: 55px;
   height: 74px;  
-  margin: 2em auto; 
+  margin: 2em auto;
   background: transparent url('./resources/level_000/bunny.png') 0 0 no-repeat; 
   animation: rabbitmovesX 1.5s steps(4) infinite,
              rabbitmovesY 9s steps(6) infinite; 
@@ -56,13 +59,22 @@
   to {background-position-y: -444px;}
 }
 
-.garden--level001  {
+.garden--level001 {
   position: relative;
-  top: 110px;
+  top: -110px;
+  width: 100%;
+  height: 100%;
+  background: url('./resources/level_001/background.gif') no-repeat;
+  background-size: 100%;
+}
+
+.garden--level002  {
+  position: absolute;
+  top: 290px;
   left: 110px;
   width: 32px;
   height: 32px;
-  background: transparent url('./resources/level_001/pumpkin.png') -10px -10px no-repeat; 
+  background: transparent url('./resources/level_002/pumpkin.png') -10px -10px no-repeat; 
   animation: pumpkinmoves 5s steps(19) forwards;
 }
 
