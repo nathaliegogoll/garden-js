@@ -6,16 +6,39 @@
 
 .progression__container {
   display: flex;
-  flex-direction: row;
-  justify-content: left;
-  align-items: center;
-  max-width: 300px;
-  min-height: 50px;
-  .progression__carrot {
-    height: 2rem;
-    width: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+  margin: 1rem auto;
+  .top__container {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .carrot__container {
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    width: 90%;
+    .carrot {
+      height: 2rem;
+      width: 2rem;
+    }
+  }
+  .level__container {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.5rem;
+    * {
+      border: 1px solid black;
+      padding: 0.2rem 1rem;
+    }
   }
 }
+
 
 .solvekatas__btn {
   text-align: center;
