@@ -16,7 +16,7 @@ const Garden = () => {
     //code that will be in slices
 
     const lvlDisplay = ( xp, lvl=0 ) => {
-        const leftOverXp = xp - (3 + lvl);
+        let leftOverXp = ( xp > 3) ? xp -= 5 : xp -= 3;
         return ( leftOverXp < 0) ? lvl : lvlDisplay (leftOverXp, (lvl + 1));
     }
 
@@ -45,7 +45,7 @@ const Garden = () => {
             <section className='garden__container'>
                 <p className="garden__username" >Pingu</p>
                 {
-                    currentLevel(20).map(nb => {
+                    currentLevel(18).map(nb => {
                         const sprite = sprites[nb]
                         if (typeof sprite === "object") {
                             if (carrots === 5) {
