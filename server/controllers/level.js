@@ -16,7 +16,7 @@ const createLevel = async (req, res, next) => {
 
 const getLevel = async (req, res, next) => {
     try {
-        const levelInfo = await Level.findById(req.body);
+        const levelInfo = await Level.findById(req.params.id);
         res.send(levelInfo);
     } catch (error) {
         console.log(error.message);
