@@ -15,6 +15,14 @@ const Test = () => {
         const leftOverXp = xp - (3 + lvl);
         return ( leftOverXp < 0) ? lvl : lvlDisplay (leftOverXp, (lvl + 1));
     }
+    const lvlDisplay3 = ( xp, lvl=0 ) => {
+        let leftOverXp;
+        if ( xp > 3) {
+            leftOverXp = xp - 1;        
+        }
+        leftOverXp = leftOverXp - 3;
+        return ( leftOverXp < 0) ? lvl : lvlDisplay3 (leftOverXp, (lvl + 1));
+    }
        return (
        <div>
            <div>xp {xp}</div>

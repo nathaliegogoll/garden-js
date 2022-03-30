@@ -17,7 +17,7 @@ const Login = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         dispatch(login(user))
-        navigate('/register') // test route
+        navigate('/') // test route
     }
 
   return (
