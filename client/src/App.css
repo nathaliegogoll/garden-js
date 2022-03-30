@@ -143,12 +143,7 @@
     background-position-x: -998px;
   }
 }
-.garden__reward {
-  display: none;
-}
-.garden--reward-tester {
-  display: block;
-}
+
 .garden--level0 {
   position: absolute;
   top: 260px;
@@ -158,8 +153,6 @@
   -webkit-animation: rabbitmovesX 1.5s steps(4) infinite, rabbitmovesY 9s steps(6) infinite;
           animation: rabbitmovesX 1.5s steps(4) infinite, rabbitmovesY 9s steps(6) infinite;
 }
-
-
 
 @-webkit-keyframes rabbitmovesX {
   from {

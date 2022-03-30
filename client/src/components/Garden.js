@@ -1,5 +1,8 @@
 import { useSelector } from 'react-redux';
-import React, { useState} from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchUser, modifyUser } from '../redux/slices/userSlice';
+
 // import sprite0happy from '../resources/level_000/happybunny.png';
 import sprite0 from '../resources/level_000/bunny.png';
 import sprite1 from '../resources/level_001/background.gif';
@@ -11,12 +14,17 @@ import sprite6 from '../resources/level_006/tomat.png';
 import sprite7 from '../resources/level_007/watermelon.png';
 
 const Garden = () => {
-    const { carrots } = useSelector((state) => state.questions);
-    const { uuid } = useSelector((state) => state.user)
+    const { uuid } = useSelector((state) => state.user);
+    const user = useSelector((state) => state.user);
     //code that will be in slices
+    const dispatch = useDispatch(); 
+
+    useEffect(() => {
+        dispatch(fetchUser(uuid))
+    }, [])
 
     const lvlDisplay = ( xp, lvl=0 ) => {
-        const leftOverXp = xp - (3 + lvl);
+        let leftOverXp = ( xp > 3) ? xp -= 5 : xp -= 3;
         return ( leftOverXp < 0) ? lvl : lvlDisplay (leftOverXp, (lvl + 1));
     }
 
@@ -43,12 +51,12 @@ const Garden = () => {
     return (
         <>
             <section className='garden__container'>
-                <p className="garden__username" >Pingu</p>
+                <p className="garden__username" >{user.user.username}</p>
                 {
-                    currentLevel(20).map(nb => {
+                    currentLevel(50).map(nb => {
                         const sprite = sprites[nb]
                         if (typeof sprite === "object") {
-                            if (carrots === 5) {
+                            if (user.user.carrotNumber === 5) {
                                 return (<div key={nb} className={`garden--level${nb}`} style={{"background": `url(${sprite.sad})`}}></div>)
                             } else {
                                 return (<div key={nb} className={`garden--level${nb}`} style={{"background": `url(${sprite.happy})`}}></div>)

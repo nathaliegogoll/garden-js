@@ -6,6 +6,8 @@ const createLevel = async (req, res, next) => {
     try {
         const level = await Level.create(
             { xp: 0 ,
+            level: 0,
+            username: req.body.username,
             carrotNumber: 5,
             perks : [],
             lastConnected: Date.now(),
@@ -19,8 +21,8 @@ const createLevel = async (req, res, next) => {
 
 const getLevel = async (req, res, next) => {
     try {
-        const levelInfo = await Level.findById(req.params.id);
-        res.send(levelInfo);
+        const levelInfo = await Level.findOne({ uuid: req.params.id});
+        res.json(levelInfo);
     } catch (error) {
         console.log(error.message);
     }
@@ -39,7 +41,7 @@ const updateLevel = async (req, res, next) => {
         lastConnected: Date.now(),
         _id: id
     }
-    await Level.findByIdAndUpdate(id, updateLevel, { new: true });
+    await Level.findOneAndUpdate({ uuid: id}, updateLevel, { new: true });
     res.json(updateLevel);
 }
 

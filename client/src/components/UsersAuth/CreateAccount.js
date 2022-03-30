@@ -35,7 +35,7 @@ const CreateAccount = () => {
         console.log(user.uuid)
         dispatch(addUuid(user.uuid))
         dispatch(createAccount(user))
-        dispatch(postUser(user.uuid))
+        dispatch(postUser({uuid: user.uuid, username: user.username}))
         navigate('/');
     }
 
