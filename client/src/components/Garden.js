@@ -12,6 +12,7 @@ import sprite7 from '../resources/level_007/watermelon.png';
 
 const Garden = () => {
     const { carrots } = useSelector((state) => state.questions);
+    const { uuid } = useSelector((state) => state.user)
     //code that will be in slices
 
     const lvlDisplay = ( xp, lvl=0 ) => {
@@ -34,7 +35,7 @@ const Garden = () => {
         setXp(xp +1);
     };
     
-    const decreaseXp = () => {
+    const decreaseXp = () => { 
         setXp(xp -1);
     };
     // ------------------------------ //

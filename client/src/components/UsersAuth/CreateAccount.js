@@ -1,24 +1,29 @@
-import React, { useState} from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect} from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { createAccount } from '../../redux/slices/authSlice'
+import { createAccount } from '../../redux/slices/authSlice';
+import { addUuid } from '../../redux/slices/userSlice';
+
 import { v4 as uuidv4 } from 'uuid'
 
 const CreateAccount = () => {
-    const [user, setUser] = useState({ username: '', email: '', password: '', confirmPassword: ''})
+    const [user, setUser] = useState({ username: '', email: '', password: '', confirmPassword: '', uuid: ''})
     const [error, setError] = useState('')
     const dispatch = useDispatch()
-
-    const generateId = () => uuidv4();
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         const { name, value} = e.target
         setUser({...user, [name]: value})
     }
 
+    useEffect(() => {
+        const newId = uuidv4();
+        setUser({...user, uuid: newId });
+    }, []);
+    
     const handleSubmit = (e) => {
         e.preventDefault()
-
         if (user.password !== user.confirmPassword) {
             setUser({ password: '', confirmPassword: ''})
             setTimeout(() => {
@@ -26,7 +31,11 @@ const CreateAccount = () => {
             }, 5000)
             return setError('Passwords do not match')
         }
+        console.log(user)
+        console.log(user.uuid)
+        dispatch(addUuid(user.uuid))
         dispatch(createAccount(user))
+        navigate('/');
     }
 
   return (

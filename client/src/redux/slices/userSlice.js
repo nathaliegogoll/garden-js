@@ -18,12 +18,15 @@ export const fetchUser = createAsyncThunk(
     } 
   ) 
 
-const initialState = { user: {}, error: false, loading: true };
+const initialState = { user: {}, error: false, loading: true , uuid: ''};
 
 export const user = createSlice( { 
       name:'user', 
       initialState,
       reducers: {
+          addUuid: (state, action) => {
+              state.uuid = action.payload;
+          }, 
       }, 
       extraReducers: (builder) => {
         builder.addCase(fetchUser.fulfilled, (state, action) => {
@@ -43,5 +46,5 @@ export const user = createSlice( {
       }
   }); 
   
-  export const {  } = user.actions;
+  export const { addUuid } = user.actions;
   export default user.reducer;
