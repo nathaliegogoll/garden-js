@@ -37,8 +37,8 @@ const login = async (req, res, next) => {
      }
 
      const token = user.getSignedToken()
-
-     res.status(200).json({ success: true, token })
+     const uuid = user.uuid;
+     res.status(200).json({ success: true, token, uuid })
   } catch (error) {
      next(error)
   }

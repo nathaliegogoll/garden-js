@@ -2,7 +2,7 @@ import React, { useState, useEffect} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { createAccount } from '../../redux/slices/authSlice';
-import { addUuid } from '../../redux/slices/userSlice';
+import { addUuid, postUser } from '../../redux/slices/userSlice';
 
 import { v4 as uuidv4 } from 'uuid'
 
@@ -35,6 +35,7 @@ const CreateAccount = () => {
         console.log(user.uuid)
         dispatch(addUuid(user.uuid))
         dispatch(createAccount(user))
+        dispatch(postUser(user.uuid))
         navigate('/');
     }
 
