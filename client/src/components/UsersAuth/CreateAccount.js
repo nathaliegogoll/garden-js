@@ -2,11 +2,14 @@ import React, { useState} from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux';
 import { createAccount } from '../../redux/slices/authSlice'
+import { v4 as uuidv4 } from 'uuid'
 
 const CreateAccount = () => {
     const [user, setUser] = useState({ username: '', email: '', password: '', confirmPassword: ''})
     const [error, setError] = useState('')
     const dispatch = useDispatch()
+
+    const generateId = () => uuidv4();
 
     const handleChange = (e) => {
         const { name, value} = e.target
