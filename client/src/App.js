@@ -3,6 +3,7 @@ import './App.css';
 import { useEffect } from 'react';
 import { Questions, Progression, SolveKatas, Garden } from './components/index';
 import { useSelector, useDispatch } from 'react-redux';
+import Test from './components/Test';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
         <>
         <Progression />
         <Garden />
+        <Test />
         <SolveKatas />  
         </>
       ) : (
