@@ -1,0 +1,98 @@
+// SPRITE HELPERS
+@keyframes classicvegetableanimation {
+  from {background-position-x: -10px;}
+  to {background-position-x: -998px;}
+}
+
+// bunny
+.garden--level0 {
+  position: absolute;
+  top: 260px;
+  left: 150px;
+  width: 55px;
+  height: 74px;  
+  animation: rabbitmovesX 1.5s steps(4) infinite,
+              rabbitmovesY 9s steps(6) infinite; 
+}
+
+@keyframes rabbitmovesX {
+  from {background-position-x: 0px;}
+  to {background-position-x: -220px;}
+}
+
+@keyframes rabbitmovesY {
+  from {background-position-y: 0px;}
+  to {background-position-y: -444px;}
+}
+
+//backdrop
+.garden--level1 {
+  margin-top: 25px;
+  width: 100%;
+  height: 84.5%;
+}
+
+//pumpkin
+.garden--level2  {
+  margin-top: -115px;
+  margin-left: 125px;
+  width: 32px;
+  height: 50px; 
+  animation: classicvegetableanimation 3s steps(19) forwards;
+}
+
+//carrot
+.garden--level3 {
+  margin-top: -50px;
+  margin-left: 95px;
+  width: 32px;
+  height: 50px; 
+  animation: carrotmoves 3s steps(15) forwards;
+}
+
+@keyframes carrotmoves {
+  from {background-position-x: -10px;}
+  to {background-position-x: -790px;}
+}
+
+//corn
+.garden--level4 {
+  margin-top: -50px;
+  margin-left: 70px;
+  width: 32px;
+  height: 50px; 
+  animation: classicvegetableanimation 3s steps(19) forwards;
+}
+
+//corn
+.garden--level5 {
+  margin-top: -50px;
+  margin-left: 50px;
+  width: 32px;
+  height: 50px; 
+  animation: classicvegetableanimation 3s steps(19) forwards;
+}
+
+//tomato
+.garden--level6 {
+  margin-top: -50px;
+  margin-left: 30px;
+  width: 32px;
+  height: 50px; 
+  animation: classicvegetableanimation 3s steps(19) forwards;
+}
+
+//watermelon
+.garden--level7 {
+  margin-top: -50px;
+  margin-left: 10px;
+  width: 32px;
+  height: 50px; 
+  animation: watermelonmoves 3s steps(18) forwards;
+}
+
+@keyframes watermelonmoves {
+  from {background-position-x: -10px;}
+  to {background-position-x: -946px;}
+}
+

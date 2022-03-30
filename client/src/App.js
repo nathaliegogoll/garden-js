@@ -3,7 +3,8 @@ import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import { Questions, Progression, SolveKatas, Garden, CreateAccount, Login} from './components/index';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import Test from './components/Test';
 
 function App() {
 
@@ -11,19 +12,20 @@ function App() {
 
   return (
     <Router>
-      <div className="App">
-        {!gamestarted ? (
-          <>
-          <Progression />
-          <Garden />
-          <SolveKatas />  
-          </>
-        ) : (
-          <>
-          <Progression />
-          <Questions />
-          </>
-        )
+    <div className="App">
+      {!gamestarted ? (
+        <>
+        <Progression />
+        <Garden />
+        <Test />
+        <SolveKatas />  
+        </>
+      ) : (
+        <>
+        <Progression />
+        <Questions />
+        </>
+      )
       }
         <Routes>
           <Route path='/login' element={<Login />} />
