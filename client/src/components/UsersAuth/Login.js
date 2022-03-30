@@ -1,9 +1,13 @@
 import React, { useState} from 'react'
-import { Link } from 'react-router-dom'
+import { Link , useNavigate } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux';
+import { login } from '../../redux/slices/authSlice'
 
 const Login = () => {
     const [user, setUser] = useState({ email: '', password: ''})
     const [error, setError] = useState('')
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const handleChange = (e) => {
         const { name, value} = e.target
@@ -12,7 +16,8 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(user)
+        dispatch(login(user))
+        navigate('/register') // test route
     }
 
   return (

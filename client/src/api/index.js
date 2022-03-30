@@ -9,4 +9,5 @@ const config = {
  }
 
 export const createAccount = (user) => axios.post(`${url}/register`, user, config)
+export const login = (user) => axios.post(`${url}/login`, user, config)
 
