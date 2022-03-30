@@ -104,6 +104,10 @@
   border-radius: 50px;
 }
 
+.xpbar-label {
+  padding: 0.3rem 1rem;
+}
+
 .questionnaire {
   display: -webkit-box;
   display: -ms-flexbox;
