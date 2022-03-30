@@ -3,10 +3,10 @@ const User = require('../models/User')
 const ErrorResponse = require('../utils/errorResponse')
 
 const register = async (req, res, next) => {
-  const { username, email, password, } = req.body
+  const { username, email, password, uuid } = req.body
 
   try {
-    const user = await User.create({ username, email, password})
+    const user = await User.create({ username, email, password, uuid})
 
     const token = user.getSignedToken()
 

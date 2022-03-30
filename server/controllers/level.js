@@ -8,7 +8,8 @@ const createLevel = async (req, res, next) => {
             { xp: 0 ,
             carrotNumber: 5,
             perks : [],
-            lastConnected: Date.now()
+            lastConnected: Date.now(),
+            uuid: req.params.id
         });
         res.json({level});
     } catch (error) {

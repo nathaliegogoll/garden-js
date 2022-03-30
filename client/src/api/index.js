@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const url = 'http://localhost:3001/api/auth';
+const levelUrl = 'http://localhost:3001/api/level';
 
 const config = {
     header: {
@@ -10,4 +11,5 @@ const config = {
 
 export const createAccount = (user) => axios.post(`${url}/register`, user, config)
 export const login = (user) => axios.post(`${url}/login`, user, config)
+export const createLevel = (uuid) => axios.post(`${levelUrl}/${uuid}`, uuid, config)
 

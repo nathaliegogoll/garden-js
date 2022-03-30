@@ -22,9 +22,11 @@ const UserSchema = new mongoose.Schema({
     minlength: 6,
     select: false,
   },
+  uuid: {
+    type: String
+  },
   resetPasswordToken: String,
   resetPasswordExpire: Date,
-    
 });
 
 // hash the password before register endpoint register
