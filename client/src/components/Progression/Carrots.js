@@ -4,7 +4,8 @@ import carrotPng from "../../resources/carrot.png";
 
 
 const Carrots = () => {
-    const { carrots } = useSelector((state) => state.questions);
+    const carrots = useSelector((state) => state.user.user.carrotNumber);
+
 
     return (
     <>

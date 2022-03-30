@@ -1,11 +1,11 @@
 import React from 'react';
-
+import { useSelector } from 'react-redux';
 
 const Level = () => {
-
+    const currentLevel = useSelector((state) => state.user.user.level);
     return (
     <>
-        <p>LV: 5</p>
+        <p>LV: {currentLevel}</p>
     </>)
 }
 
