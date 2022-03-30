@@ -24,7 +24,7 @@ const UserSchema = new mongoose.Schema({
   },
   resetPasswordToken: String,
   resetPasswordExpire: Date,
-  
+    
 });
 
 // hash the password before register endpoint register
