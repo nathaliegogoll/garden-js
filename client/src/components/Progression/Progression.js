@@ -8,7 +8,7 @@ const Progression = () => {
     <section className='progression__container'>
       <section className='top__container'>
         <Carrots />
-        <p>Hamburger-menu</p>
+        <p>Log out</p>
       </section>
       <section className='level__container'>
         <Level />
