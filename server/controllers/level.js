@@ -6,6 +6,8 @@ const createLevel = async (req, res, next) => {
     try {
         const level = await Level.create(
             { xp: 0 ,
+            level: 0,
+            username: req.body.username,
             carrotNumber: 5,
             perks : [],
             lastConnected: Date.now(),
