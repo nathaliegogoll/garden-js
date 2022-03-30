@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { fetchUser, modifyUser } from '../redux/slices/userSlice';
+import { addUuid, fetchUser, modifyUser } from '../redux/slices/userSlice';
 
 // import sprite0happy from '../resources/level_000/happybunny.png';
 import sprite0 from '../resources/level_000/bunny.png';
@@ -15,14 +15,14 @@ import sprite7 from '../resources/level_007/watermelon.png';
 
 const Garden = () => {
     const { carrots } = useSelector((state) => state.questions);
-    const { uuid } = useSelector((state) => state.user);
     const user = useSelector((state) => state.user);
     //code that will be in slices
     const dispatch = useDispatch(); 
 
     useEffect(() => {
-        dispatch(fetchUser(uuid))
-    }, [])
+        const uuid = localStorage.getItem('uuid');
+        dispatch(fetchUser(JSON.parse(uuid)))
+    }, [dispatch])
 
     const lvlDisplay = ( xp, lvl=0 ) => {
         let leftOverXp = ( xp > 3) ? xp -= 5 : xp -= 3;

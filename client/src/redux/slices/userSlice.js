@@ -12,8 +12,9 @@ export const postUser = createAsyncThunk(
 export const fetchUser = createAsyncThunk( 
     'fetchUser', 
     async (id, thunkAPI) => { 
-        const data = await API.fetchLevel(id); 
-        return data.data;
+        const { data } = await API.fetchLevel(id); 
+        console.log(data);
+        return data;
     } 
   ) 
 
@@ -25,7 +26,7 @@ export const modifyUser = createAsyncThunk(
     } 
   ) 
 
-const initialState = { user: {}, error: false, loading: true , uuid: ''};
+const initialState = { user: { id: '', carrotNumber: 0, xp: 0, perks: []}, error: false, loading: true , uuid: ''};
 
 export const user = createSlice( { 
       name:'user', 
