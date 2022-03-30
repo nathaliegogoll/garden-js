@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import React, { useState} from 'react';
 // import sprite0happy from '../resources/level_000/happybunny.png';
 import sprite0 from '../resources/level_000/bunny.png';
 import sprite1 from '../resources/level_001/background.gif';
@@ -27,6 +28,15 @@ const Garden = () => {
         console.log(lvlDisplay(xp))
         return nb
     }
+    const [xp, setXp] = useState(0);
+
+    const increaseXp = () => {
+        setXp(xp +1);
+    };
+    
+    const decreaseXp = () => {
+        setXp(xp -1);
+    };
     // ------------------------------ //
     const sprites = [{"happy": sprite0, "sad": sprite0}, sprite1, sprite2, sprite3, sprite4, sprite5, sprite6, sprite7];
     return (
@@ -34,7 +44,7 @@ const Garden = () => {
             <section className='garden__container'>
                 <p className="garden__username" >Pingu</p>
                 {
-                    currentLevel(60).map(nb => {
+                    currentLevel(20).map(nb => {
                         const sprite = sprites[nb]
                         if (typeof sprite === "object") {
                             if (carrots === 5) {
@@ -51,7 +61,10 @@ const Garden = () => {
                         return (<div key={nb} className={`garden--level${nb}`} style={{"background": `url(${sprite})`}}></div>)
                     })
                 }
-                
+            <div>
+       <button id="btnBonusXp" onClick={increaseXp}>Increase XP</button>
+       <button id="btnXpPenalty" onClick={decreaseXp}>Decrease XP</button>
+       </div>
               
             </section>
         </>
