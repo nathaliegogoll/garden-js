@@ -308,6 +308,7 @@
 .solvekatas__btn {
   text-align: center;
   padding: 0.5rem;
+  border: 1px solid black;
 }
 
 @-webkit-keyframes classicvegetableanimation {

@@ -38,7 +38,9 @@ const Questions = () => {
 
     const handleGoBack = () => {
         dispatch(modifyUser(user))
-        dispatch(endGame())
+        setTimeout(() => {
+            dispatch(endGame())
+        }, 1000);
     }
 
     

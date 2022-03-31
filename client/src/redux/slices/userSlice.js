@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import * as API from '../../api/index'
 
 export const postUser = createAsyncThunk( 
@@ -47,6 +47,9 @@ export const user = createSlice( {
           },
           addLevel: (state, action)  => {
             state.user.level = action.payload;
+        },
+          resetCarrots: (state, action) => {
+            state.user.carrotNumber = 5
         }
       }, 
       extraReducers: (builder) => {
@@ -77,5 +80,5 @@ export const user = createSlice( {
       }
   }); 
   
-  export const { addUuid, addXp, handleCorrectAnswer, handleWrongAnswer, addLevel } = user.actions;
+  export const { addUuid, addXp, handleCorrectAnswer, handleWrongAnswer, addLevel, resetCarrots } = user.actions;
   export default user.reducer;

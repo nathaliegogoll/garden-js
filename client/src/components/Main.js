@@ -1,6 +1,6 @@
 import { Questions, Progression, SolveKatas, Garden } from './index';
 import { useSelector, useDispatch } from 'react-redux';
-import { addXp, addLevel } from '../redux/slices/userSlice';
+import { addXp, addLevel, resetCarrots } from '../redux/slices/userSlice';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { lvlDisplay } from './helpers';
@@ -26,6 +26,10 @@ const  Main = () => {
     dispatch(addLevel(lvlDisplay(user.xp)-1))
 };
 
+  const resetCarrotsNumber = () => {
+    dispatch(resetCarrots())
+  }
+
   return (
     <div className="Main">
       {!gamestarted ? (
@@ -33,12 +37,14 @@ const  Main = () => {
         <Progression />
         <Garden />
         <button onClick={increaseXp}> INCREASE XP!</button>
+        <button onClick={resetCarrotsNumber}> RESET CARROT! </button>
         <SolveKatas />  
         </>
       ) : (
         <>
         <Progression />
         <button onClick={increaseXp}> INCREASE XP!</button>
+        <button onClick={resetCarrotsNumber}> RESET CARROT! </button>
         <Questions />
         </>
       )
