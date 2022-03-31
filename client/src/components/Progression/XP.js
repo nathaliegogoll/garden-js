@@ -7,22 +7,21 @@ const XP = () => {
 
     const fillerStyles = {
       height: '100%',
-      marginTop: '-1.2rem',
       width: `${percentageCompleted}%`,
       backgroundColor: "lightgreen",
       transition: 'width 1s ease-in-out',
       borderRadius: 'inherit',
     }
-    const labelStyles = {
-      paddingLeft: "1rem",
-      color: 'black'
-    }
+
     return (
+      <>
       <div className="level__xpbar">
-        {`${fullBar} / ${xpCap} XP`}
+   
         <div style={fillerStyles}>
+        <p className="xpbar-label">{`${fullBar} / ${xpCap} XP`}</p>
         </div>
       </div>
+      </>
     );
   };
 
