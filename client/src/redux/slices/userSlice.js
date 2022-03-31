@@ -35,7 +35,7 @@ export const user = createSlice( {
           addUuid: (state, action) => {
               state.uuid = action.payload;
           }, 
-          addXp: (state, action) => {
+          addXp: (state) => {
               state.user.xp += 1;
           }
       }, 
@@ -50,6 +50,9 @@ export const user = createSlice( {
         builder.addCase(fetchUser.fulfilled, (state, action) => {
             state.user = action.payload;
             state.loading = false;
+        })
+        builder.addCase(fetchUser.pending, (state, action) => {
+            state.loading = true;
         })
         builder.addCase(fetchUser.rejected, (state) => {
             state.error = true;

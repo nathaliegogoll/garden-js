@@ -17,14 +17,13 @@ const Garden = () => {
     const { carrots } = useSelector((state) => state.questions);
     const { user, loading } = useSelector((state) => state.user);
     console.log(user);
+    console.log(loading);
     //code that will be in slices
     const dispatch = useDispatch(); 
 
     useEffect(() => {
-
         const uuid = localStorage.getItem('uuid');
-        dispatch(fetchUser(JSON.parse(uuid)))
-        
+        dispatch(fetchUser(JSON.parse(uuid)))        
     }, [dispatch])
 
     const lvlDisplay = ( xp, lvl=0 ) => {
@@ -41,7 +40,7 @@ const Garden = () => {
         console.log(lvlDisplay(xp))
         return nb
     }
-    
+
     // ------------------------------ //
     const sprites = [{"happy": sprite0, "sad": sprite0}, sprite1, sprite2, sprite3, sprite4, sprite5, sprite6, sprite7];
     if (loading) {

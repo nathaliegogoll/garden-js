@@ -25,6 +25,7 @@ const  Main = () => {
       ) : (
         <>
         <Progression />
+        <button onClick={increaseXp}> INCREASE XP!</button>
         <Questions />
         </>
       )
