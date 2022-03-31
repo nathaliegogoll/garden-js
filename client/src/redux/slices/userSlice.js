@@ -13,7 +13,6 @@ export const fetchUser = createAsyncThunk(
     'fetchUser', 
     async (id, thunkAPI) => { 
         const { data } = await API.fetchLevel(id); 
-        console.log(data);
         return data;
     } 
   ) 

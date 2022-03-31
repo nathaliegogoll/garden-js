@@ -1,4 +1,7 @@
 const lvlDisplay = ( xp, lvl=1 ) => {
+    if (isNaN(xp)) {
+        return 0;
+    }
     let leftOverXp = xp -= 3;
     /*if(xp === 3){
         console.log("here")
