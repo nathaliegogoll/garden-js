@@ -19,7 +19,6 @@ const Questions = () => {
         Prism.highlightAll();
         dispatch(fetchQuestions("https://gardenproject-server.herokuapp.com/api/questions"))
         setTimeout(() => {
-
         }, 2000)
     }, [dispatch])
 

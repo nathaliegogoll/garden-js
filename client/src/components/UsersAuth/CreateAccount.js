@@ -107,6 +107,9 @@ const CreateAccount = () => {
              <Link Link to="/login">log in</Link>
              </div>
         </div>
+        <div>
+            <p>{error}</p>
+        </div>
     </form>
 </section>
   )
