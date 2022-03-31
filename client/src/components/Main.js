@@ -1,10 +1,17 @@
 import { Questions, Progression, SolveKatas, Garden } from './index';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { addXp } from '../redux/slices/userSlice';
 import Test from './Test';
 
 const  Main = () => {
 
   const { gamestarted } = useSelector((state) => state.questions);
+
+  const dispatch = useDispatch();
+
+  const increaseXp = () => {
+    dispatch(addXp());
+};
 
   return (
     <div className="Main">
@@ -12,7 +19,7 @@ const  Main = () => {
         <>
         <Progression />
         <Garden />
-        <Test />
+        <button onClick={increaseXp}> INCREASE XP!</button>
         <SolveKatas />  
         </>
       ) : (

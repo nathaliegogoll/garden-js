@@ -20,8 +20,8 @@ export const fetchUser = createAsyncThunk(
 
 export const modifyUser = createAsyncThunk( 
     'modifyUser', 
-    async (user, thunkAPI) => { 
-        const data = await API.modifyLevel(user); 
+    async (updatedUser, thunkAPI) => { 
+        const data = await API.modifyLevel(updatedUser); 
         return data.data;
     } 
   ) 
@@ -35,6 +35,9 @@ export const user = createSlice( {
           addUuid: (state, action) => {
               state.uuid = action.payload;
           }, 
+          addXp: (state, action) => {
+              state.user.xp += 1;
+          }
       }, 
       extraReducers: (builder) => {
         builder.addCase(postUser.fulfilled, (state, action) => {
@@ -61,5 +64,5 @@ export const user = createSlice( {
       }
   }); 
   
-  export const { addUuid } = user.actions;
+  export const { addUuid, addXp } = user.actions;
   export default user.reducer;

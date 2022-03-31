@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { addUuid, fetchUser, modifyUser } from '../redux/slices/userSlice';
+import { addUuid, fetchUser, modifyUser, addXp } from '../redux/slices/userSlice';
 
 // import sprite0happy from '../resources/level_000/happybunny.png';
 import sprite0 from '../resources/level_000/bunny.png';
@@ -15,13 +15,16 @@ import sprite7 from '../resources/level_007/watermelon.png';
 
 const Garden = () => {
     const { carrots } = useSelector((state) => state.questions);
-    const user = useSelector((state) => state.user);
+    const { user, loading } = useSelector((state) => state.user);
+    console.log(user);
     //code that will be in slices
     const dispatch = useDispatch(); 
 
     useEffect(() => {
+
         const uuid = localStorage.getItem('uuid');
         dispatch(fetchUser(JSON.parse(uuid)))
+        
     }, [dispatch])
 
     const lvlDisplay = ( xp, lvl=0 ) => {
@@ -38,26 +41,21 @@ const Garden = () => {
         console.log(lvlDisplay(xp))
         return nb
     }
-    const [xp, setXp] = useState(0);
-
-    const increaseXp = () => {
-        setXp(xp +1);
-    };
     
-    const decreaseXp = () => { 
-        setXp(xp -1);
-    };
     // ------------------------------ //
     const sprites = [{"happy": sprite0, "sad": sprite0}, sprite1, sprite2, sprite3, sprite4, sprite5, sprite6, sprite7];
+    if (loading) {
+        return <p>Loading...</p>
+    }
     return (
         <>
             <section className='garden__container'>
-                <p className="garden__username" >{user.user.username}</p>
+                <p className="garden__username" >{user.username}</p>
                 {
                     currentLevel(50).map(nb => {
                         const sprite = sprites[nb]
                         if (typeof sprite === "object") {
-                            if (user.user.carrotNumber === 5) {
+                            if (user.carrotNumber === 5) {
                                 return (<div key={nb} className={`garden--level${nb}`} style={{"background": `url(${sprite.sad})`}}></div>)
                             } else {
                                 return (<div key={nb} className={`garden--level${nb}`} style={{"background": `url(${sprite.happy})`}}></div>)
@@ -72,8 +70,6 @@ const Garden = () => {
                     })
                 }
             <div>
-       <button id="btnBonusXp" onClick={increaseXp}>Increase XP</button>
-       <button id="btnXpPenalty" onClick={decreaseXp}>Decrease XP</button>
        </div>
               
             </section>
