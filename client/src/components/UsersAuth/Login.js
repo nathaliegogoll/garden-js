@@ -2,6 +2,7 @@ import React, { useState} from 'react'
 import { Link , useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux';
 import { login } from '../../redux/slices/authSlice';
+import Title from './Title';
 
 const Login = () => {
     const [user, setUser] = useState({ email: '', password: ''})
@@ -23,36 +24,44 @@ const Login = () => {
 
   return (
     <section>
-    <form className='login__form' onSubmit={handleSubmit}>
-        <h3 className='login__form-title'>Garden JS</h3>
-        <p className='login__form-text'>Adopt a bunny, solve Javascript katas to feed it and grow a beautiful pixel garden</p>
+        <Title />
+        <p className='title__description'>Adopt a bunny, solve Javascript katas to feed it and grow a beautiful pixel garden</p>
+        <form className='login__form' onSubmit={handleSubmit}>
         <div className='form-group'>
             <label htmlFor='email'>Email</label>
             <input 
             type='email'
             name='email'
             id='email'
-            placeholder='Enter your email'
+            placeholder='enter your email'
             value={user.email}
             onChange={handleChange}
             required
             />
         </div>
         <div className='form-group'>
-            <label htmlFor='password'>Password</label>
+            <label htmlFor='password'>password</label>
             <input 
             type='password'
             name='password'
             id='password'
-            placeholder='Enter your password'
+            placeholder='enter your password'
             value={user.password}
             onChange={handleChange}
             required
             />
         </div>
-        <Link to='/forgot'>Forgot password ?</Link>
-        <button type='submit' className='form__submit-btn'>Login</button>
-        <span>Or <Link to="/register">Create a Account</Link></span>
+        <div className="password-forgotten">
+        <Link to='/forgot'>forgot your password ?</Link>
+        </div>
+        <button type='submit' className='form__submit-btn'>log in</button>
+        <div className="login__form-createaccount">
+            <p>or</p>
+            <div className="login__form-createaccount-link">
+            <Link to="/register">create a new account</Link>
+            </div>
+        </div>
+        
     </form>
 </section>
   )

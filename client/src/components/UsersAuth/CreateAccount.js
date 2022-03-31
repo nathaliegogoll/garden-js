@@ -95,7 +95,7 @@ const CreateAccount = () => {
         <div className="register__form-login">
             <p>already have an account? </p>
             <div className="register__form-login-link">
-             <Link Link to="/login">Login</Link>
+             <Link Link to="/login">log in</Link>
              </div>
         </div>
     </form>
