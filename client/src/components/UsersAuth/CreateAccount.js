@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { createAccount } from '../../redux/slices/authSlice';
 import { addUuid, postUser } from '../../redux/slices/userSlice';
 import Title from './Title';
+import bunny from '../../resources/bunny.png';
 
 import { v4 as uuidv4 } from 'uuid'
 
@@ -42,7 +43,7 @@ const CreateAccount = () => {
     <section>
     <Title />
     <form className='register__form' onSubmit={handleSubmit}>
-        <h3 className='register__form-title'>New Account</h3>
+        <h3 className='register__form-title'>New Account<img className="register__form-bunny"src={bunny} alt="bunny icon"/></h3>
         <div className='form-group'>
             <label htmlFor='name'>name of your bunny</label>
             <input 
