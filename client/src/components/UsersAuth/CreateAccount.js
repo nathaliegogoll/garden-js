@@ -31,11 +31,9 @@ const CreateAccount = () => {
             }, 5000)
             return setError('Passwords do not match')
         }
-        console.log(user)
-        console.log(user.uuid)
-        dispatch(addUuid(user.uuid))
+        
         dispatch(createAccount(user))
-        dispatch(postUser(user.uuid))
+        dispatch(postUser({uuid: user.uuid, username: user.username}))
         navigate('/');
     }
 

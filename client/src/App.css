@@ -80,7 +80,7 @@
   width: 2rem;
 }
 
-.progression__container .level__container {
+.level__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -91,12 +91,17 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 0.5rem;
 }
 
-.progression__container .level__container * {
+.level__level {
   border: 1px solid black;
-  padding: 0.2rem 1rem;
+  padding: 0.3rem 1rem;
+}
+
+.level__xpbar {
+  width: 200px;
+  border: 1px solid black;
+  border-radius: 50px;
 }
 
 .questionnaire {
@@ -143,12 +148,7 @@
     background-position-x: -998px;
   }
 }
-.garden__reward {
-  display: none;
-}
-.garden--reward-tester {
-  display: block;
-}
+
 .garden--level0 {
   position: absolute;
   top: 260px;
@@ -158,8 +158,6 @@
   -webkit-animation: rabbitmovesX 1.5s steps(4) infinite, rabbitmovesY 9s steps(6) infinite;
           animation: rabbitmovesX 1.5s steps(4) infinite, rabbitmovesY 9s steps(6) infinite;
 }
-
-
 
 @-webkit-keyframes rabbitmovesX {
   from {

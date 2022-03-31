@@ -1,11 +1,12 @@
 import React, { useState} from 'react'
 import { Link , useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux';
-import { login } from '../../redux/slices/authSlice'
+import { login } from '../../redux/slices/authSlice';
 
 const Login = () => {
     const [user, setUser] = useState({ email: '', password: ''})
-    const [error, setError] = useState('')
+    const userData = useSelector((state) => state.userAuth);
+    console.log(userData);
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
@@ -16,8 +17,8 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        dispatch(login(user))
-        navigate('/') // test route
+        dispatch(login(user));
+        navigate('/') 
     }
 
   return (
