@@ -19,7 +19,15 @@
   margin: 3rem;
 }
 
-.register__form {
+.title__description {
+  margin: 0 auto;
+  max-width: 90%;
+  text-align: center;
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+}
+
+.register__form, .login__form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,7 +39,7 @@
   margin: 0 auto;
 }
 
-.register__form * {
+.register__form *, .login__form * {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -44,6 +52,24 @@
 .register__form-title {
   text-align: center;
   margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.register__form-title img {
+  max-height: 2.5rem;
+  margin-top: -0.5rem;
 }
 
 .form-group label {
@@ -77,9 +103,9 @@
   outline: 2px solid #009f28;
 }
 
-.register__form-login {
+.register__form-login, .login__form-createaccount {
   margin-top: 0.5rem;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   padding-left: 0.2rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -90,20 +116,28 @@
           flex-direction: row;
 }
 
-.register__form-login p {
+.register__form-login p, .login__form-createaccount p {
   padding-right: 0.5rem;
 }
 
-.register__form-login-link * {
+.register__form-login-link *, .login__form-createaccount-link * {
   color: black;
 }
 
-.register__form-login-link *:hover {
+.register__form-login-link *:hover, .login__form-createaccount-link *:hover {
   color: #009f28;
 }
 
-.register__form-login-link *:focus {
+.register__form-login-link *:focus, .login__form-createaccount-link *:focus {
   outline: 2px dashed #009f28;
+}
+
+.password-forgotten * {
+  color: black;
+  font-size: 0.8rem;
+  padding-left: 0.2rem;
+  margin-top: -0.9rem;
+  margin-bottom: 1rem;
 }
 
 .garden__container {
