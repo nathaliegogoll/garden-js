@@ -359,6 +359,8 @@
 .dev__mode {
   border: 1px solid black;
   padding: 0.5rem;
+  background-color: black;
+  color: white;
 }
 
 .dev__mode button {

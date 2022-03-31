@@ -25,10 +25,12 @@
 .dev__mode {
   border: $border-black;
   padding: 0.5rem;
+  background-color: black;
+  color: white;
   button {
     padding: 0.2rem;
     margin-right: 0.5rem;
     border: $border-black;
   }
-  //display: none;
+  // display: none;
 }
