@@ -171,13 +171,11 @@
   padding-bottom: 1rem;
 }
 
-.carrot__container {
-  margin-left: -0.8rem;
-}
-
-.carrot__container * {
-  margin-top: -1rem;
-  margin-bottom: -0.8rem;
+@media screen and (min-width: 600px) {
+  .top__container {
+    max-width: 50%;
+    margin-left: 25%;
+  }
 }
 
 .logout {
@@ -223,21 +221,7 @@
   margin: 1rem auto;
 }
 
-.progression__container .top__container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
 .progression__container .carrot__container {
-  padding: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -252,6 +236,11 @@
       -ms-flex-align: center;
           align-items: center;
   width: 90%;
+}
+
+.progression__container .carrot__container * {
+  margin-top: -1rem;
+  margin-bottom: -0.8rem;
 }
 
 .progression__container .carrot__container .carrot {
@@ -270,6 +259,13 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+@media screen and (min-width: 600px) {
+  .level__container {
+    max-width: 50%;
+    margin-left: 25%;
+  }
 }
 
 .level__level {
@@ -320,6 +316,37 @@
   font-size: 1rem;
 }
 
+.questionnaire .questionnaire__button:hover {
+  background-color: #eefffa;
+  cursor: pointer;
+}
+
+.questionnaire .questionnaire__btn-close {
+  border: 1px solid black;
+  border-radius: 50px;
+  padding: 0.5rem;
+  width: 2rem;
+  text-align: center;
+  margin: 1rem auto;
+  background-color: white;
+}
+
+.questionnaire .questionnaire__btn-close:hover {
+  background-color: #ff9b9b;
+  cursor: pointer;
+}
+
+.questionnaire .questionnaire__btn-back {
+  background-color: white;
+  padding: 0.5rem;
+  border: 1px solid black;
+}
+
+.questionnaire .questionnaire__btn-back:hover {
+  background-color: #eefffa;
+  cursor: pointer;
+}
+
 .solvekatas__btn {
   text-align: center;
   padding: 0.5rem;
@@ -342,6 +369,18 @@
 .solvekatas__btn img {
   max-height: 1.2rem;
   margin-left: 0.5rem;
+}
+
+.solvekatas__btn:hover {
+  cursor: pointer;
+  background-color: #beffbe;
+}
+
+@media screen and (min-width: 600px) {
+  .solvekatas__btn {
+    max-width: 50%;
+    margin-left: 25%;
+  }
 }
 
 .container__buttons {
@@ -367,6 +406,13 @@
   padding: 0.2rem;
   margin-right: 0.5rem;
   border: 1px solid black;
+}
+
+@media screen and (min-width: 600px) {
+  .dev__mode {
+    max-width: 50%;
+    margin-left: 25%;
+  }
 }
 
 @-webkit-keyframes classicvegetableanimation {

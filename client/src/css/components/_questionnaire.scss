@@ -18,5 +18,32 @@
     background-color: white;
     border: $border-black;
     font-size: 1rem;
+    &:hover {
+      background-color: rgb(238, 255, 250);
+      cursor: pointer;
+    }
+  }
+  .questionnaire__btn-close {
+    border: $border-black;
+    border-radius: 50px;
+    padding: 0.5rem;
+    width: 2rem;
+    text-align: center;
+    margin: 1rem auto;
+    background-color: white;
+    &:hover {
+      background-color: rgb(255, 155, 155);
+      cursor: pointer;
+    }
+  }
+  .questionnaire__btn-back {
+    background-color: white;
+    padding: 0.5rem;
+    border: $border-black;
+    &:hover {
+      background-color: rgb(238, 255, 250);
+      cursor: pointer;
+    }
+
   }
 }
