@@ -35,7 +35,7 @@ export const user = createSlice( {
           addUuid: (state, action) => {
               state.uuid = action.payload;
           }, 
-          addXp: (state, action) => {
+          addXp: (state) => {
               state.user.xp += 1;
           }
       }, 

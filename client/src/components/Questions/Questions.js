@@ -1,10 +1,14 @@
 import React, { useEffect} from 'react'
 import { answerQuestion, fetchQuestions, endGame } from '../../redux/slices/questionSlice';
 import { useSelector, useDispatch } from 'react-redux';
+import { modifyUser } from '../../redux/slices/userSlice';
 
 const Questions = () => {
     const storeQuestions = useSelector((state) => state.questions.questions);
     const { loading } = useSelector((state) => state.questions);
+    const { user } = useSelector((state) => state.user)
+
+    console.log(user);
 
     const dispatch = useDispatch();
     
@@ -26,6 +30,7 @@ const Questions = () => {
     }
 
     const handleGoBack = () => {
+        dispatch(modifyUser(user))
         dispatch(endGame())
     }
 
