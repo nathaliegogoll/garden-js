@@ -11,7 +11,6 @@ const Carrots = () => {
         {[...Array(carrots)].map((e, index) => {
             return (
                 <div key={index}>
-                    
                     <img className="carrot" src={carrotPng} alt="carrot"/>
                 </div>
             )

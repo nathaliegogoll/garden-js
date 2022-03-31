@@ -51,7 +51,7 @@ const Questions = () => {
         ):(
             <>
                 <button onClick={handleGoBack}>x</button>
-                { storeQuestions.length !== 0 ? (
+                { user.carrotNumber !== 0 ? (
                     <>
                         <h2 className="questionnaire__question">Question: {storeQuestions[0].translations[0].question}</h2>
                         <pre>

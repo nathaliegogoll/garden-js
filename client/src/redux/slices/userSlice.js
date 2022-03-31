@@ -39,11 +39,11 @@ export const user = createSlice( {
               state.user.xp += 1;
           },
           handleCorrectAnswer: (state) => {
-              state.user.carrot -= 1; 
+              state.user.carrotNumber -= 1; 
               state.user.xp += 1;
           },
           handleWrongAnswer: (state)  => {
-              state.user.carrot -= 1;
+              state.user.carrotNumber -= 1;
           },
           addLevel: (state, action)  => {
             state.user.level = action.payload;
