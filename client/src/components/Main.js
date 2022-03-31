@@ -50,11 +50,6 @@ const  Main = () => {
         <>
         <Progression />
         <Questions />
-        <div className = "container__buttons">
-        <button onClick={increaseXp}> INCREASE XP!</button>
-        <button onClick={resetCarrotsNumber}> RESET CARROT! </button>
-        </div>
-
         </>
       )
       }

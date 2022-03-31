@@ -6,6 +6,11 @@
     margin-bottom: 2rem;
 }
 
+.title__img {
+    max-width: 80%;
+    margin: -10% 10% -15% 10%;
+}
+
 .register__form, .login__form {
     display: flex;
     flex-direction: column;

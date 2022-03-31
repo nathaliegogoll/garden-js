@@ -27,6 +27,11 @@
   margin-bottom: 2rem;
 }
 
+.title__img {
+  max-width: 80%;
+  margin: -10% 10% -15% 10%;
+}
+
 .register__form, .login__form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -295,14 +300,24 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 1rem;
   max-width: 600px;
 }
 
-.questionnaire * {
+.questionnaire .questionnaire__codesnippet {
+  margin: 0 0.5rem;
+}
+
+.questionnaire .questionnaire__question,
+.questionnaire .questionnaire__button {
   text-align: center;
-  margin: 1rem;
   padding: 0.5rem;
+  margin: 0.5rem 1rem;
+}
+
+.questionnaire .questionnaire__button {
+  background-color: white;
+  border: 1px solid black;
+  font-size: 1rem;
 }
 
 .solvekatas__btn {

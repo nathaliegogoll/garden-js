@@ -1,8 +1,11 @@
 import React from 'react'
+import banner from '../../resources/banner.gif';
 
 const Title = () => {
   return (
-    <h1 className="title">Garden JS (image)</h1>
+    <>
+    <img className="title__img" src={banner} alt="Garden JS" />
+    </>
   )
 }
 

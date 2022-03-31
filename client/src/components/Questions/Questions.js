@@ -1,4 +1,4 @@
-import React, { useEffect} from 'react'
+import React, { useEffect, useState } from 'react'
 import { answerQuestion, fetchQuestions, endGame } from '../../redux/slices/questionSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { modifyUser, handleCorrectAnswer, handleWrongAnswer, addLevel } from '../../redux/slices/userSlice';
@@ -13,12 +13,15 @@ const Questions = () => {
     const { user } = useSelector((state) => state.user)
 
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        // setTimeout(() => {
+        Prism.highlightAll();
+        // }, 500)
+    }, [storeQuestions])
     
     useEffect(() => {
-        Prism.highlightAll();
         dispatch(fetchQuestions("https://gardenproject-server.herokuapp.com/api/questions"))
-        setTimeout(() => {
-        }, 2000)
     }, [dispatch])
 
     const handleAnswer = (answer) => {
@@ -56,9 +59,11 @@ const Questions = () => {
                 { user.carrotNumber !== 0 ? (
                     <>
                         <h2 className="questionnaire__question">Question: {storeQuestions[0].translations[0].question}</h2>
+                        <div className="questionnaire__codesnippet">
                         <pre>
-                        <code className="questionnaire__code language-javascript">{storeQuestions[0].code}</code>
+                        <code className="language-javascript">{storeQuestions[0].code}</code>
                         </pre>
+                        </div>
                         {
                         storeQuestions[0].translations[0].options.map(answer => {
                         return <button className="questionnaire__button" key={answer.label} onClick={() => {handleAnswer(answer)}}>{answer.label}. {answer.option.replaceAll('`','')}</button>
