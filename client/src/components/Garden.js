@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { addUuid, fetchUser, modifyUser, addXp } from '../redux/slices/userSlice';
+import { lvlDisplay } from './helpers';
 
 // import sprite0happy from '../resources/level_000/happybunny.png';
 import sprite0 from '../resources/level_000/bunny.png';
@@ -16,21 +17,15 @@ import sprite7 from '../resources/level_007/watermelon.png';
 const Garden = () => {
     const { carrots } = useSelector((state) => state.questions);
     const { user, loading } = useSelector((state) => state.user);
-    console.log(user);
-    console.log(loading);
     //code that will be in slices
     const dispatch = useDispatch(); 
 
     useEffect(() => {
         const uuid = localStorage.getItem('uuid');
-        console.log(uuid);
         dispatch(fetchUser(JSON.parse(uuid)))        
     }, [dispatch])
 
-    const lvlDisplay = ( xp, lvl=0 ) => {
-        let leftOverXp = ( xp > 3) ? xp -= 5 : xp -= 3;
-        return ( leftOverXp < 0) ? lvl : lvlDisplay (leftOverXp, (lvl + 1));
-    }
+
 
     const currentLevel = (xp) => {
         const nb = [0];
@@ -38,7 +33,6 @@ const Garden = () => {
             if (i===0) continue;
             nb.push(i);
         }
-        console.log(lvlDisplay(xp))
         return nb
     }
 
@@ -51,7 +45,7 @@ const Garden = () => {
             <section className='garden__container'>
                 <p className="garden__username" >{user.username}</p>
                 {
-                    currentLevel(50).map(nb => {
+                    currentLevel(user.xp).map(nb => {
                         const sprite = sprites[nb]
                         if (typeof sprite === "object") {
                             if (user.carrotNumber === 5) {

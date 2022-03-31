@@ -1,7 +1,8 @@
 import React, { useEffect} from 'react'
 import { answerQuestion, fetchQuestions, endGame } from '../../redux/slices/questionSlice';
 import { useSelector, useDispatch } from 'react-redux';
-import { modifyUser } from '../../redux/slices/userSlice';
+import { modifyUser, handleCorrectAnswer, handleWrongAnswer, addLevel } from '../../redux/slices/userSlice';
+import { lvlDisplay } from '../helpers';
 import Prism from "prismjs";
 import "prismjs/themes/prism-tomorrow.css";
 
@@ -10,8 +11,6 @@ const Questions = () => {
     const storeQuestions = useSelector((state) => state.questions.questions);
     const { loading } = useSelector((state) => state.questions);
     const { user } = useSelector((state) => state.user)
-
-    console.log(user);
 
     const dispatch = useDispatch();
     
@@ -24,11 +23,16 @@ const Questions = () => {
 
     const handleAnswer = (answer) => {
         const correctAnswer = storeQuestions[0].translations[0].answer;
-        if (answer.label === correctAnswer) console.log("good answer");
-        //move to the next question
+        if (answer.label === correctAnswer) {
+            dispatch(handleCorrectAnswer());
+        } else {
+            dispatch(handleWrongAnswer());
+        }
+
         setTimeout(() => {
             dispatch(answerQuestion());
-        }, 1000)
+            dispatch(addLevel(lvlDisplay(user.xp)-1))
+        }, 500)
         //give feedback to the user: correct or wrong answer? should we give an explaination?
     }
 

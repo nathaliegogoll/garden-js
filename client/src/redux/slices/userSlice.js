@@ -37,7 +37,17 @@ export const user = createSlice( {
           }, 
           addXp: (state) => {
               state.user.xp += 1;
-          }
+          },
+          handleCorrectAnswer: (state) => {
+              state.user.carrot -= 1; 
+              state.user.xp += 1;
+          },
+          handleWrongAnswer: (state)  => {
+              state.user.carrot -= 1;
+          },
+          addLevel: (state, action)  => {
+            state.user.level = action.payload;
+        }
       }, 
       extraReducers: (builder) => {
         builder.addCase(postUser.fulfilled, (state, action) => {
@@ -67,5 +77,5 @@ export const user = createSlice( {
       }
   }); 
   
-  export const { addUuid, addXp } = user.actions;
+  export const { addUuid, addXp, handleCorrectAnswer, handleWrongAnswer, addLevel } = user.actions;
   export default user.reducer;

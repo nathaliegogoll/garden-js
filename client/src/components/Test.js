@@ -15,8 +15,19 @@ const Test = () => {
         const leftOverXp = xp - (3 + lvl);
         return ( leftOverXp < 0) ? lvl : lvlDisplay (leftOverXp, (lvl + 1));
     }
-    const lvlDisplay = ( xp, lvl=0 ) => {
-        let leftOverXp = ( xp > 3) ? xp -= 5 : xp -= 3;
+    // const lvlDisplay = ( xp, lvl=0 ) => {
+    //     let leftOverXp = ( xp > 3) ? xp -= 5 : xp -= 3;
+    //     return ( leftOverXp < 0) ? lvl : lvlDisplay (leftOverXp, (lvl + 1));
+    // }
+
+    const lvlDisplay = ( xp, lvl=1 ) => {
+        let leftOverXp = xp -= 3;
+        /*if(xp === 3){
+            console.log("here")
+            console.log(xp);
+            console.log(lvl);
+            return ( leftOverXp < 0) ? lvl : lvlDisplay (leftOverXp, (lvl + 1));
+        }*/
         return ( leftOverXp < 0) ? lvl : lvlDisplay (leftOverXp, (lvl + 1));
     }
        return (

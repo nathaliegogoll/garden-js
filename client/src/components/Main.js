@@ -1,10 +1,13 @@
 import { Questions, Progression, SolveKatas, Garden } from './index';
 import { useSelector, useDispatch } from 'react-redux';
-import { addXp } from '../redux/slices/userSlice';
+import { addXp, addLevel } from '../redux/slices/userSlice';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { lvlDisplay } from './helpers';
 
 const  Main = () => {
+
+  const { user } = useSelector((state) => state.user)
 
   const navigate = useNavigate();
 
@@ -20,6 +23,7 @@ const  Main = () => {
 
   const increaseXp = () => {
     dispatch(addXp());
+    dispatch(addLevel(lvlDisplay(user.xp)-1))
 };
 
   return (

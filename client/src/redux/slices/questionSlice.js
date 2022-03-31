@@ -17,7 +17,6 @@ export const questions = createSlice( {
       reducers: {
         answerQuestion: (state) => { 
             state.questions.shift() 
-            state.carrots -= 1;
         },
         startGame: (state) => {
           state.gamestarted = true;
