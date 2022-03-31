@@ -42,7 +42,6 @@ const Garden = () => {
         return nb
     }
 
-    // ------------------------------ //
     const sprites = [{"happy": sprite0, "sad": sprite0}, sprite1, sprite2, sprite3, sprite4, sprite5, sprite6, sprite7];
     if (loading) {
         return <p>Loading...</p>
