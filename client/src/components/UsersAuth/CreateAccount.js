@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { createAccount } from '../../redux/slices/authSlice';
 import { addUuid, postUser } from '../../redux/slices/userSlice';
+import Title from './Title';
 
 import { v4 as uuidv4 } from 'uuid'
 
@@ -39,58 +40,64 @@ const CreateAccount = () => {
 
   return (
     <section>
+    <Title />
     <form className='register__form' onSubmit={handleSubmit}>
-        <h3 className='register__form-title'>Create New Account</h3>
+        <h3 className='register__form-title'>New Account</h3>
         <div className='form-group'>
-            <label htmlFor='name'>Name of your bunny</label>
+            <label htmlFor='name'>name of your bunny</label>
             <input 
             type='text'
             name='username'
             id='name'
-            placeholder='Enter your username'
+            placeholder='enter your username'
             value={user.username}
             onChange={handleChange}
             required
             />
         </div>
         <div className='form-group'>
-            <label htmlFor='email'>Email</label>
+            <label htmlFor='email'>email</label>
             <input 
             type='email'
             name='email'
             id='email'
-            placeholder='Enter your email'
+            placeholder='enter your email'
             value={user.email}
             onChange={handleChange}
             required
             />
         </div>
         <div className='form-group'>
-            <label htmlFor='password'>Password</label>
+            <label htmlFor='password'>password</label>
             <input 
             type='password'
             name='password'
             id='password'
-            placeholder='Enter your password'
+            placeholder='enter your password'
             value={user.password}
             onChange={handleChange}
             required
             />
         </div>
         <div className='form-group'>
-            <label htmlFor='confirmpassword'> Confirm Password</label>
+            <label htmlFor='confirmpassword'> confirm password</label>
             <input 
             type='password'
             name='confirmPassword'
             id='confirmpassword'
-            placeholder='Enter your password'
+            placeholder='enter your password'
             value={user.confirmPassword}
             onChange={handleChange}
             required
             />
         </div>
-        <button type='submit' className='form__submit-btn'>Sign Up</button>
-        <span>Already have an Account <Link to="/login">Login</Link></span>
+        <button type='submit' className='form__submit-btn'>sign up</button>
+        <div className="register__form-login">
+            <p>already have an account? </p>
+            <div className="register__form-login-link">
+             <Link Link to="/login">Login</Link>
+             </div>
+        </div>
     </form>
 </section>
   )

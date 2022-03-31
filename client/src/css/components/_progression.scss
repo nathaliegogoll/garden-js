@@ -30,13 +30,13 @@
 }
 
 .level__level {
-  border: 1px solid black;
+  border: $border-black;
   padding: 0.3rem 1rem;
 }
 
 .level__xpbar {
   width: 200px;
-  border: 1px solid black;
+  border: $border-black;
   border-radius: 50px;
 }
 

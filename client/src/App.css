@@ -14,6 +14,98 @@
   font-family: "JuliaMono-Regular", monospace;
 }
 
+.title {
+  text-align: center;
+  margin: 3rem;
+}
+
+.register__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.register__form * {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.register__form-title {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  padding-left: 0.2rem;
+}
+
+.form-group input {
+  margin-top: 0.2rem;
+  margin-bottom: 1rem;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.9rem;
+  border: 1px solid black;
+}
+
+.form-group input:focus {
+  background-color: #effff8;
+  outline: 1px solid #009f28;
+}
+
+.form__submit-btn {
+  font-size: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5rem;
+  background-color: #e8ffe8;
+  border: 1px solid black;
+}
+
+.form__submit-btn:focus {
+  outline: 2px solid #009f28;
+}
+
+.register__form-login {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  padding-left: 0.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.register__form-login p {
+  padding-right: 0.5rem;
+}
+
+.register__form-login-link * {
+  color: black;
+}
+
+.register__form-login-link *:hover {
+  color: #009f28;
+}
+
+.register__form-login-link *:focus {
+  outline: 2px dashed #009f28;
+}
+
 .garden__container {
   margin: 0 auto;
   width: 345px;

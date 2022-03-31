@@ -8,7 +8,7 @@ const ProgressBar = (props) => {
       height: 20,
       width: '100px',
       backgroundColor: "white",
-      border: "1px solid black",
+      border: "$border-black",
       borderRadius: 50,
       margin: 50,
     }
