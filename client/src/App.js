@@ -1,9 +1,9 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
+import React, { useEffect } from 'react';
 import { CreateAccount, Login, Main} from './components/index';
-
 function App() {
+  
   return (
     <Router>
     <div className="App">

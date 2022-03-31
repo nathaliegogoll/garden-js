@@ -1,9 +1,18 @@
 import { Questions, Progression, SolveKatas, Garden } from './index';
 import { useSelector, useDispatch } from 'react-redux';
 import { addXp } from '../redux/slices/userSlice';
-import Test from './Test';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const  Main = () => {
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if(!localStorage.getItem('AuthToken')){
+        navigate('/login');
+    }
+  },[]);
 
   const { gamestarted } = useSelector((state) => state.questions);
 

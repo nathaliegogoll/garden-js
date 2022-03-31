@@ -26,7 +26,7 @@ const Login = () => {
         dispatch(login(user));
         setTimeout(() => {
             navigate('/') 
-        }, 200);
+        }, 1500);
     }
 
   return (
