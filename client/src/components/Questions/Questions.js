@@ -2,6 +2,9 @@ import React, { useEffect} from 'react'
 import { answerQuestion, fetchQuestions, endGame } from '../../redux/slices/questionSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { modifyUser } from '../../redux/slices/userSlice';
+import Prism from "prismjs";
+import "prismjs/themes/prism-tomorrow.css";
+
 
 const Questions = () => {
     const storeQuestions = useSelector((state) => state.questions.questions);
@@ -13,6 +16,7 @@ const Questions = () => {
     const dispatch = useDispatch();
     
     useEffect(() => {
+        Prism.highlightAll();
         dispatch(fetchQuestions("https://gardenproject-server.herokuapp.com/api/questions"))
         setTimeout(() => {
 
@@ -48,7 +52,7 @@ const Questions = () => {
                     <>
                         <h2 className="questionnaire__question">Question: {storeQuestions[0].translations[0].question}</h2>
                         <pre>
-                        <code className="questionnaire__code">{storeQuestions[0].code}</code>
+                        <code className="questionnaire__code language-javascript">{storeQuestions[0].code}</code>
                         </pre>
                         {
                         storeQuestions[0].translations[0].options.map(answer => {
