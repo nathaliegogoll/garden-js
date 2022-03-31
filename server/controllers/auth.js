@@ -9,8 +9,8 @@ const register = async (req, res, next) => {
     const user = await User.create({ username, email, password, uuid})
 
     const token = user.getSignedToken()
-
-    res.status(201).json({ success: true, token })   
+    
+    res.status(201).json({ success: true, token, uuid })   
   } catch (error) {
     next(error)
   }

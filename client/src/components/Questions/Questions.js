@@ -47,7 +47,9 @@ const Questions = () => {
                 { storeQuestions.length !== 0 ? (
                     <>
                         <h2 className="questionnaire__question">Question: {storeQuestions[0].translations[0].question}</h2>
+                        <pre>
                         <code className="questionnaire__code">{storeQuestions[0].code}</code>
+                        </pre>
                         {
                         storeQuestions[0].translations[0].options.map(answer => {
                         return <button className="questionnaire__button" key={answer.label} onClick={() => {handleAnswer(answer)}}>{answer.label}. {answer.option.replaceAll('`','')}</button>

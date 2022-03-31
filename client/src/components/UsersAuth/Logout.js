@@ -10,7 +10,6 @@ const Logout = () => {
 const handleLogout = () => {
     dispatch(logout())
     navigate('/login')
-    console.log('logout')
 }
   return (
     <section className='logout'>

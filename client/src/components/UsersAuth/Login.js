@@ -7,7 +7,6 @@ import Title from './Title';
 const Login = () => {
     const [user, setUser] = useState({ email: '', password: ''})
     const userData = useSelector((state) => state.userAuth);
-    console.log(userData);
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
@@ -25,7 +24,9 @@ const Login = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         dispatch(login(user));
-        navigate('/') 
+        setTimeout(() => {
+            navigate('/') 
+        }, 200);
     }
 
   return (

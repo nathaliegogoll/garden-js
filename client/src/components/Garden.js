@@ -23,6 +23,7 @@ const Garden = () => {
 
     useEffect(() => {
         const uuid = localStorage.getItem('uuid');
+        console.log(uuid);
         dispatch(fetchUser(JSON.parse(uuid)))        
     }, [dispatch])
 

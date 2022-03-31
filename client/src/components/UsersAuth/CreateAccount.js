@@ -14,6 +14,12 @@ const CreateAccount = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate();
 
+    useEffect(() => {
+        if (localStorage.getItem('AuthToken')) {
+            navigate('/')
+        }
+    },[navigate])
+
     const handleChange = (e) => {
         const { name, value} = e.target
         setUser({...user, [name]: value})
@@ -36,7 +42,9 @@ const CreateAccount = () => {
         
         dispatch(createAccount(user))
         dispatch(postUser({uuid: user.uuid, username: user.username}))
-        navigate('/');
+        setTimeout(() => {
+            navigate('/');
+        }, 200)
     }
 
   return (

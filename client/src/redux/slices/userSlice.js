@@ -4,8 +4,8 @@ import * as API from '../../api/index'
 export const postUser = createAsyncThunk( 
     'postUser', 
     async (id, thunkAPI) => { 
-        const data = await API.createLevel(id); 
-        return data.data;
+        const { data } = await API.createLevel(id); 
+        return data.level;
     } 
   ) 
 

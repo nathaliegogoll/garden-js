@@ -13,7 +13,7 @@ const createLevel = async (req, res, next) => {
             lastConnected: Date.now(),
             uuid: req.params.id
         });
-        res.json({level});
+        res.json(level);
     } catch (error) {
         console.log(error.message);
     }
