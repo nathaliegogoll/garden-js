@@ -13,7 +13,7 @@ const XP = () => {
     const fillerStyles = {
       height: '100%',
       width: `${percentageCompleted}%`,
-      backgroundColor: "rgb(98, 255, 67)",
+      backgroundColor: "#bdffb0",
       transition: 'width 1s ease-in-out',
       borderRadius: 'inherit',
     }

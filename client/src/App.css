@@ -163,7 +163,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  padding-bottom: 0.5rem;
+  padding-bottom: 1rem;
 }
 
 .carrot__container {
@@ -308,6 +308,47 @@
 .solvekatas__btn {
   text-align: center;
   padding: 0.5rem;
+  border: 1px solid black;
+  background-color: white;
+  font-size: 1.2rem;
+  background-color: #e8ffe8;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.solvekatas__btn img {
+  max-height: 1.2rem;
+  margin-left: 0.5rem;
+}
+
+.container__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 90%;
+  margin: 1rem auto;
+}
+
+.dev__mode {
+  border: 1px solid black;
+  padding: 0.5rem;
+}
+
+.dev__mode button {
+  padding: 0.2rem;
+  margin-right: 0.5rem;
   border: 1px solid black;
 }
 

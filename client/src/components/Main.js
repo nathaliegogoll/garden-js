@@ -36,16 +36,25 @@ const  Main = () => {
         <>
         <Progression />
         <Garden />
-        <button onClick={increaseXp}> INCREASE XP!</button>
-        <button onClick={resetCarrotsNumber}> RESET CARROT! </button>
-        <SolveKatas />  
+        <div className = "container__buttons">
+        <SolveKatas />
+        <div className="dev__mode">
+          <p>super secret dev mode buttons</p>
+          <button onClick={increaseXp}> INCREASE XP!</button>
+          <button onClick={resetCarrotsNumber}> RESET CARROT! </button>
+        </div>
+        </div>
+
         </>
       ) : (
         <>
         <Progression />
+        <Questions />
+        <div className = "container__buttons">
         <button onClick={increaseXp}> INCREASE XP!</button>
         <button onClick={resetCarrotsNumber}> RESET CARROT! </button>
-        <Questions />
+        </div>
+
         </>
       )
       }

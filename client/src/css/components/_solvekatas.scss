@@ -2,5 +2,33 @@
     text-align: center;
     padding: 0.5rem;
     border: $border-black;
+    background-color: white;
+    font-size: 1.2rem;
+    background-color: $button-color;
+    margin-bottom: 1rem;
+    img {
+      max-height: 1.2rem;
+      margin-left: 0.5rem;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container__buttons {
+  display: flex;
+  flex-direction: column;
+  max-width: 90%;
+  margin: 1rem auto;
+}
+
+.dev__mode {
+  border: $border-black;
+  padding: 0.5rem;
+  button {
+    padding: 0.2rem;
+    margin-right: 0.5rem;
+    border: $border-black;
   }
-    
+  //display: none;
+}

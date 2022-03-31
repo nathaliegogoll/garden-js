@@ -1,6 +1,7 @@
 import React, { useEffect} from 'react';
 import { useDispatch } from 'react-redux';
 import { startGame } from '../redux/slices/questionSlice';
+import carrotIcon from '../resources/carrot.png'
 
 const SolveKatas = () => {
 
@@ -12,7 +13,7 @@ const SolveKatas = () => {
 
     return (
     <>
-        <button className="solvekatas__btn" onClick={handleClick}>Solve Katas</button>
+        <button className="solvekatas__btn" onClick={handleClick}>Solve Katas (1 <img src={carrotIcon} alt="carrot" />)</button>
     </>)
 }
 
