@@ -1,4 +1,4 @@
-import React, { useState} from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link , useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux';
 import { login } from '../../redux/slices/authSlice';
@@ -10,6 +10,12 @@ const Login = () => {
     console.log(userData);
     const navigate = useNavigate()
     const dispatch = useDispatch()
+
+    useEffect(() => {
+        if (localStorage.getItem('AuthToken')) {
+            navigate('/')
+        }
+    },[navigate])
 
     const handleChange = (e) => {
         const { name, value} = e.target

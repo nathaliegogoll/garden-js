@@ -51,6 +51,9 @@ export const user = createSlice( {
             state.user = action.payload;
             state.loading = false;
         })
+        builder.addCase(fetchUser.pending, (state) => {
+            state.loading = true;
+        })
         builder.addCase(fetchUser.rejected, (state) => {
             state.error = true;
         });

@@ -17,6 +17,7 @@ const Garden = () => {
     const { carrots } = useSelector((state) => state.questions);
     const { user, loading } = useSelector((state) => state.user);
     console.log(user);
+    console.log(loading);
     //code that will be in slices
     const dispatch = useDispatch(); 
 
@@ -46,7 +47,7 @@ const Garden = () => {
     const sprites = [{"happy": sprite0, "sad": sprite0}, sprite1, sprite2, sprite3, sprite4, sprite5, sprite6, sprite7];
     if (loading) {
         return <p>Loading...</p>
-    }
+    } else {
     return (
         <>
             <section className='garden__container'>
@@ -75,6 +76,7 @@ const Garden = () => {
             </section>
         </>
     )
+    }
 }
 
 export default Garden;
