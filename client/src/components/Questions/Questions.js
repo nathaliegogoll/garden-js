@@ -15,9 +15,7 @@ const Questions = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        // setTimeout(() => {
         Prism.highlightAll();
-        // }, 500)
     }, [storeQuestions])
     
     useEffect(() => {
