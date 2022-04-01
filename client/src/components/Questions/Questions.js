@@ -53,7 +53,6 @@ const Questions = () => {
             </>
         ):(
             <>
-                <button onClick={handleGoBack}>x</button>
                 { user.carrotNumber !== 0 ? (
                     <>
                         <h2 className="questionnaire__question">Question: {storeQuestions[0].translations[0].question}</h2>
@@ -67,11 +66,13 @@ const Questions = () => {
                         return <button className="questionnaire__button" key={answer.label} onClick={() => {handleAnswer(answer)}}>{answer.label}. {answer.option.replaceAll('`','')}</button>
                         })
                         }
+                        <button className="questionnaire__btn-close" onClick={handleGoBack}>X</button>
+
                     </>
                 ) : (
                     <>
                     <p>No more questions for today!</p>
-                    <button onClick={handleGoBack}>Go back</button>
+                    <button className="questionnaire__btn-back" onClick={handleGoBack}>Go back</button>
                     </>
                 )
                 }
