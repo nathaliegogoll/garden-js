@@ -17,7 +17,6 @@ import sprite7 from '../resources/level_007/watermelon.png';
 const Garden = () => {
     const { carrots } = useSelector((state) => state.questions);
     const { user, loading } = useSelector((state) => state.user);
-    //code that will be in slices
     const dispatch = useDispatch(); 
 
     useEffect(() => {

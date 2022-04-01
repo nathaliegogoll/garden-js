@@ -46,7 +46,7 @@ export const createAccount = createAsyncThunk(
 const initialState = { authData: [], error: false }
 
 export const authSlice = createSlice( { 
-    name:'userAuth', 
+    name: 'userAuth', 
     initialState,
     reducers: {
         logout: (state) => {

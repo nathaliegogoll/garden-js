@@ -44,7 +44,7 @@ const CreateAccount = () => {
         dispatch(postUser({uuid: user.uuid, username: user.username}))
         setTimeout(() => {
             navigate('/');
-        }, 1000)
+        }, 1500)
     }
 
   return (

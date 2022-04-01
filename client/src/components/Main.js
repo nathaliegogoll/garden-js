@@ -8,6 +8,7 @@ import { lvlDisplay } from './helpers';
 const  Main = () => {
 
   const { user } = useSelector((state) => state.user)
+  const { authData } = useSelector((state) => state.userAuth)
 
   const navigate = useNavigate();
 
@@ -16,6 +17,12 @@ const  Main = () => {
         navigate('/login');
     }
   },[]);
+
+ /*  useEffect(() => {
+    if (localStorage.getItem('uuid')) {
+      navigate('/');  
+    }
+  }, [authData]) */
 
   const { gamestarted } = useSelector((state) => state.questions);
 

@@ -25,7 +25,7 @@ const Login = () => {
         e.preventDefault()
         dispatch(login(user));
         setTimeout(() => {
-            navigate('/') 
+        navigate('/') 
         }, 1500);
     }
 
