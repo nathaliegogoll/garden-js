@@ -18,7 +18,7 @@ const  Main = () => {
     }
   },[]);
 
- /* useEffect(() => {
+ /*  useEffect(() => {
     if (localStorage.getItem('uuid')) {
       navigate('/');  
     }
