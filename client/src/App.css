@@ -617,12 +617,98 @@
           animation: treemove 3s steps(5) forwards;
 }
 
-@keyframes treemove {
+.garden--level10 {
+  margin-top: -256px;
+  margin-left: 30px;
+  width: 16px;
+  height: 16px;
+  -webkit-animation: pigeonmove 2s steps(3) infinite;
+          animation: pigeonmove 2s steps(3) infinite;
+}
+
+@-webkit-keyframes pigeonmove {
   from {
     background-position-x: 0px;
   }
   to {
-    background-position-x: -250px;
+    background-position-x: -48px;
   }
+}
+
+@keyframes pigeonmove {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: -48px;
+  }
+}
+
+.garden--level11 {
+  margin-top: 25px;
+  margin-left: 100px;
+  width: 16px;
+  height: 16px;
+  -webkit-animation: seagullmove 2s steps(3) infinite;
+          animation: seagullmove 2s steps(3) infinite;
+}
+
+@-webkit-keyframes seagullmove {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: -48px;
+  }
+}
+
+@keyframes seagullmove {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: -48px;
+  }
+}
+
+.garden--level12 {
+  margin-top: 220px;
+  margin-left: 30px;
+  width: 16px;
+  height: 16px;
+  -webkit-animation: mousemove 2s steps(3) infinite;
+          animation: mousemove 2s steps(3) infinite;
+}
+
+@-webkit-keyframes mousemove {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: -48px;
+  }
+}
+
+@keyframes mousemove {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: -48px;
+  }
+}
+
+.garden--level13 {
+  margin-top: -100px;
+  margin-left: 30px;
+  width: 300px;
+  height: 50px;
+}
+
+.garden--level14 {
+  margin-top: -110px;
+  margin-left: 190px;
+  width: 96px;
+  height: 112px;
 }
 /*# sourceMappingURL=App.css.map */

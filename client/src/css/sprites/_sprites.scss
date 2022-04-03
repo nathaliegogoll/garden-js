@@ -133,7 +133,67 @@
   animation: treemove 3s steps(5) forwards;
 }
 
-@keyframes treemove {
+
+//pigeon
+.garden--level10  {
+  margin-top: -256px;
+  margin-left: 30px;
+  width: 16px;
+  height: 16px; 
+  animation: pigeonmove 2s steps(3) infinite;
+}
+
+@keyframes pigeonmove {
   from {background-position-x: 0px;}
-  to {background-position-x: -250px;}
+  to {background-position-x: -48px;}
+}
+
+//seagull
+.garden--level11  {
+  margin-top: 25px;
+  margin-left: 100px;
+  width: 16px;
+  height: 16px; 
+  animation: seagullmove 2s steps(3) infinite;
+}
+
+@keyframes seagullmove {
+  from {background-position-x: 0px;}
+  to {background-position-x: -48px;}
+}
+
+//mouse
+.garden--level12  {
+  margin-top: 220px;
+  margin-left: 30px;
+  width: 16px;
+  height: 16px; 
+  animation: mousemove 2s steps(3) infinite;
+}
+
+@keyframes mousemove {
+  from {background-position-x: 0px;}
+  to {background-position-x: -48px;}
+}
+
+//plants
+.garden--level13  {
+  margin-top: -100px;
+  margin-left: 30px;
+  width: 300px;
+  height: 50px; 
+  // animation: flowersmove 2s steps(3) infinite;
+}
+
+// @keyframes flowersmove {
+//   from {background-position-x: 0px;}
+//   to {background-position-x: -48px;}
+// }
+
+//house
+.garden--level14  {
+  margin-top: -110px;
+  margin-left: 190px;
+  width: 96px;
+  height: 112px; 
 }
