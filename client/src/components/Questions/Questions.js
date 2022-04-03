@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { answerQuestion, fetchQuestions, endGame } from '../../redux/slices/questionSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { modifyUser, handleCorrectAnswer, handleWrongAnswer, addLevel } from '../../redux/slices/userSlice';

@@ -110,3 +110,30 @@
   to {background-position-x: -946px;}
 }
 
+//oak
+.garden--level8  {
+  margin-top: -92px;
+  margin-left: 292px;
+  width: 50px;
+  height: 96px; 
+  animation: treemove 3s steps(5) forwards;
+}
+
+@keyframes treemove {
+  from {background-position-x: 0px;}
+  to {background-position-x: -250px;}
+}
+
+//birch
+.garden--level9  {
+  margin-top: -96px;
+  margin-left: 260px;
+  width: 50px;
+  height: 96px; 
+  animation: treemove 3s steps(5) forwards;
+}
+
+@keyframes treemove {
+  from {background-position-x: 0px;}
+  to {background-position-x: -250px;}
+}

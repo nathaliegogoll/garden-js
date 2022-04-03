@@ -204,6 +204,7 @@
 
 .logout .logout-btn:hover {
   background-color: #ff9b9b;
+  cursor: pointer;
 }
 
 .progression__container {
@@ -577,6 +578,51 @@
   }
   to {
     background-position-x: -946px;
+  }
+}
+
+.garden--level8 {
+  margin-top: -92px;
+  margin-left: 292px;
+  width: 50px;
+  height: 96px;
+  -webkit-animation: treemove 3s steps(5) forwards;
+          animation: treemove 3s steps(5) forwards;
+}
+
+@-webkit-keyframes treemove {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: -250px;
+  }
+}
+
+@keyframes treemove {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: -250px;
+  }
+}
+
+.garden--level9 {
+  margin-top: -96px;
+  margin-left: 260px;
+  width: 50px;
+  height: 96px;
+  -webkit-animation: treemove 3s steps(5) forwards;
+          animation: treemove 3s steps(5) forwards;
+}
+
+@keyframes treemove {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: -250px;
   }
 }
 /*# sourceMappingURL=App.css.map */
