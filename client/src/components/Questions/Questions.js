@@ -5,6 +5,7 @@ import { modifyUser, handleCorrectAnswer, handleWrongAnswer, addLevel } from '..
 import { lvlDisplay } from '../helpers';
 import Prism from "prismjs";
 import "prismjs/themes/prism-tomorrow.css";
+import closeIcon from '../../resources/close_icon.png';
 
 
 const Questions = () => {
@@ -66,13 +67,13 @@ const Questions = () => {
                         return <button className="questionnaire__button" key={answer.label} onClick={() => {handleAnswer(answer)}}>{answer.label}. {answer.option.replaceAll('`','')}</button>
                         })
                         }
-                        <button className="questionnaire__btn-close" onClick={handleGoBack}>X</button>
+                        <button className="questionnaire__btn-close" onClick={handleGoBack}><img className="btn--close" src={closeIcon} alt="go back button" /></button>
 
                     </>
                 ) : (
                     <>
                     <p>No more questions for today!</p>
-                    <button className="questionnaire__btn-back" onClick={handleGoBack}>Go back</button>
+                    <button className="questionnaire__btn-back" onClick={handleGoBack}><img className="btn--close" src={closeIcon} alt="go back button" /></button>
                     </>
                 )
                 }
