@@ -1,0 +1,26 @@
+.resetgame {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2rem;
+    border: $border-black;
+    padding: 1rem;
+    .resetgame__title {
+        padding-top: 0.5rem;
+        padding-bottom: 1rem;
+    }
+    .resetgame__button {
+        background-color: white;
+        border: none;
+        padding-top: 1rem;
+        img {
+            border-radius: 100%;
+            max-width: 2rem;
+            max-height: 2rem;
+            &:hover {
+                cursor: pointer;
+                background-color: rgb(255, 174, 174);
+              }
+        }
+    }
+}
