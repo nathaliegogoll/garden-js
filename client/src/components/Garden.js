@@ -27,10 +27,10 @@ const Garden = () => {
 
     useEffect(() => {
         const uuid = localStorage.getItem('uuid');
-        dispatch(fetchUser(JSON.parse(uuid)))        
+        if (uuid) {
+            dispatch(fetchUser(JSON.parse(uuid)))        
+        }
     }, [dispatch])
-
-
 
     const currentLevel = (xp) => {
         const nb = [0];
@@ -68,8 +68,7 @@ const Garden = () => {
                     })
                 }
             <div>
-       </div>
-              
+       </div>   
             </section>
         </>
     )

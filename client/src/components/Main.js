@@ -12,11 +12,11 @@ const  Main = () => {
   const [isReset, setIsReset] = useState(false);
   const navigate = useNavigate();
 
-  useEffect(() => {
+   useEffect(() => {
     if(!localStorage.getItem('AuthToken')){
-        navigate('/login');
-    }
-  },[]);
+         navigate('/login');
+    } 
+   },[]);
 
   useEffect(() => {
   if (user.lastConnected !== undefined) {
