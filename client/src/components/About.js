@@ -27,7 +27,7 @@ const About = () => {
             <article className="developers__person">
                 <img src="" alt="" />
                 <h3 className="person--name">Martin Pettersen</h3>
-                <p><a href="">GitHub</a> | <a>LinkedIn</a></p>
+                <p><a href="https://github.com/MartinPettersen">GitHub</a> | <a href="https://www.linkedin.com/in/martinpettersen89/?locale=en_US">LinkedIn</a></p>
             </article>
         </div>
         <footer className='about__footer'>

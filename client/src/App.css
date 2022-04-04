@@ -271,7 +271,7 @@
 
 .level__level {
   border: 1px solid black;
-  padding: 0.3rem 1rem;
+  padding: 0.2rem 0.5rem;
 }
 
 .level__xpbar {
@@ -809,9 +809,29 @@
 }
 
 .garden--level14 {
-  margin-top: -110px;
-  margin-left: 190px;
-  width: 96px;
-  height: 112px;
+  margin-top: -175px;
+  margin-left: 120px;
+  width: 200px;
+  height: 200px;
+  -webkit-animation: housemove 2s steps(3) infinite;
+          animation: housemove 2s steps(3) infinite;
+}
+
+@-webkit-keyframes housemove {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: -600px;
+  }
+}
+
+@keyframes housemove {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: -600px;
+  }
 }
 /*# sourceMappingURL=App.css.map */
