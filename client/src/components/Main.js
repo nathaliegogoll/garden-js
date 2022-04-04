@@ -2,7 +2,7 @@ import { Questions, Progression, SolveKatas, Garden } from './index';
 import { useSelector, useDispatch } from 'react-redux';
 import { addXp, addLevel, resetCarrots } from '../redux/slices/userSlice';
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { lvlDisplay } from './helpers';
 
 const  Main = () => {
@@ -18,11 +18,19 @@ const  Main = () => {
     }
   },[]);
 
- /*  useEffect(() => {
-    if (localStorage.getItem('uuid')) {
-      navigate('/');  
+  useEffect(() => {
+  if (user.lastConnected !== undefined) {
+    if (user.carrotNumber < 5) {
+      const lastCon = user.lastConnected.toString().slice(0, 10); 
+      console.log(lastCon)
+      const today = new Date()
+      const todayFormatted = today.toISOString().slice(0, 10);
+      if (lastCon !== todayFormatted) {
+       dispatch(resetCarrots())
+      }
     }
-  }, [authData]) */
+  }
+  }, [user]) 
 
   const { gamestarted } = useSelector((state) => state.questions);
 
@@ -51,7 +59,9 @@ const  Main = () => {
           <button onClick={resetCarrotsNumber}> RESET CARROT! </button>
         </div>
         </div>
-
+        <nav className='navigation'>
+          <Link to='/about'>About us</Link>
+        </nav>
         </>
       ) : (
         <>
