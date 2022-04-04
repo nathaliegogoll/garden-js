@@ -486,6 +486,44 @@
   margin-bottom: 1rem;
 }
 
+.resetgame {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 2rem;
+  border: 1px solid black;
+  padding: 1rem;
+}
+
+.resetgame .resetgame__title {
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.resetgame .resetgame__button {
+  background-color: white;
+  border: none;
+  padding-top: 1rem;
+}
+
+.resetgame .resetgame__button img {
+  border-radius: 100%;
+  max-width: 2rem;
+  max-height: 2rem;
+}
+
+.resetgame .resetgame__button img:hover {
+  cursor: pointer;
+  background-color: #ffaeae;
+}
+
 @-webkit-keyframes classicvegetableanimation {
   from {
     background-position-x: -10px;

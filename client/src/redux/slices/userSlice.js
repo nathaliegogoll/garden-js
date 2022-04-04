@@ -36,6 +36,10 @@ export const user = createSlice( {
           }, 
           addXp: (state) => {
               state.user.xp += 1;
+          }, 
+          resetGame: (state) => {
+              state.user.xp = 0;
+              state.user.level = 0;
           },
           handleCorrectAnswer: (state) => {
               state.user.carrotNumber -= 1; 
@@ -82,5 +86,5 @@ export const user = createSlice( {
       }
   }); 
   
-  export const { addUuid, addXp, handleCorrectAnswer, handleWrongAnswer, addLevel, resetCarrots, displayPopup } = user.actions;
+  export const { addUuid, addXp, resetGame, handleCorrectAnswer, handleWrongAnswer, addLevel, resetCarrots, displayPopup } = user.actions;
   export default user.reducer;
