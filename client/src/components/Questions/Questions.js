@@ -1,22 +1,24 @@
 import React, { useEffect, useState } from 'react'
 import { answerQuestion, fetchQuestions, endGame } from '../../redux/slices/questionSlice';
 import { useSelector, useDispatch } from 'react-redux';
-import { modifyUser, handleCorrectAnswer, handleWrongAnswer, addLevel } from '../../redux/slices/userSlice';
+import { modifyUser, handleCorrectAnswer, handleWrongAnswer, addLevel, displayPopup } from '../../redux/slices/userSlice';
 import { lvlDisplay } from '../helpers';
 import Prism from "prismjs";
 import "prismjs/themes/prism-tomorrow.css";
-
+import closeIcon from '../../resources/close_icon.png';
+import LevelUp from './LevelUp';
 
 const Questions = () => {
     const storeQuestions = useSelector((state) => state.questions.questions);
     const { loading } = useSelector((state) => state.questions);
-    const { user } = useSelector((state) => state.user)
+    const { user, levelup } = useSelector((state) => state.user)
+    const [levelUp, setLevelUp] = useState(false)
 
     const dispatch = useDispatch();
 
     useEffect(() => {
         Prism.highlightAll();
-    }, [storeQuestions])
+    }, [storeQuestions, levelUp])
     
     useEffect(() => {
         dispatch(fetchQuestions("https://gardenproject-server.herokuapp.com/api/questions"))
@@ -24,17 +26,21 @@ const Questions = () => {
 
     const handleAnswer = (answer) => {
         const correctAnswer = storeQuestions[0].translations[0].answer;
+
+        if (user.xp > 0 && user.xp % 3 === 2 && answer.label === correctAnswer) {
+            setLevelUp(true)
+            dispatch(displayPopup(levelUp))
+        }
         if (answer.label === correctAnswer) {
             dispatch(handleCorrectAnswer());
         } else {
             dispatch(handleWrongAnswer());
         }
 
-        setTimeout(() => {
+        setTimeout(() => {     
             dispatch(answerQuestion());
             dispatch(addLevel(lvlDisplay(user.xp)-1))
         }, 500)
-        //give feedback to the user: correct or wrong answer? should we give an explaination?
     }
 
     const handleGoBack = () => {
@@ -47,6 +53,12 @@ const Questions = () => {
     
     return (
         <section className="questionnaire">
+        { levelUp ? (
+            <>
+                <LevelUp setter={setLevelUp} getter={levelUp}/>
+            </>
+        ) : (
+        <>
         { loading ? (
             <>
                 <p>loading questions...</p>
@@ -66,19 +78,21 @@ const Questions = () => {
                         return <button className="questionnaire__button" key={answer.label} onClick={() => {handleAnswer(answer)}}>{answer.label}. {answer.option.replaceAll('`','')}</button>
                         })
                         }
-                        <button className="questionnaire__btn-close" onClick={handleGoBack}>X</button>
+                        <button className="questionnaire__btn-close" onClick={handleGoBack}><img className="btn--close" src={closeIcon} alt="go back button" /></button>
 
                     </>
                 ) : (
                     <>
                     <p>No more questions for today!</p>
-                    <button className="questionnaire__btn-back" onClick={handleGoBack}>Go back</button>
+                    <button className="questionnaire__btn-back" onClick={handleGoBack}><img className="btn--close" src={closeIcon} alt="go back button" /></button>
                     </>
                 )
                 }
             </>
         )}
-        </section>
+        </>
+        )}
+    </section>
     )
 }
 

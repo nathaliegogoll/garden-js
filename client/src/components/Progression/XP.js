@@ -1,15 +1,17 @@
 import { useSelector } from "react-redux";
 
 const XP = () => {
-    const { user } = useSelector((state) => state.user);
+    const { user, levelup } = useSelector((state) => state.user);
     const completed = user.xp;
-    // const xpCap = (completed > 3) ?  5 : 3;
-    //const remains = (completed - ((completed > 5) ?  3 : 0)) % ((completed > 5) ?  5 : 3);
-    const xpCap = (completed > 3) ?  3 : 3;
-    const remains = (completed - ((completed > 3) ?  3 : 0)) % ((completed > 3) ?  3 : 3);
-    const fullBar = (remains === 0 && completed !== 0) ? xpCap : remains ;
-    const percentageCompleted =  (fullBar * 100) / xpCap;
-
+  
+    // const xpCap = (completed > 3) ?  3 : 3;
+    
+    const remains = (completed - ((completed > 3) ?  3 : 0)) % 3;
+    let fullBar = (remains === 0 && completed !== 0) ? 3 : remains ;
+    if (user.xp > 0 && user.xp % 3 === 0 && levelup === true) {
+      fullBar = 0;      
+    }
+    const percentageCompleted = (fullBar * 100) / 3;
     const fillerStyles = {
       height: '100%',
       width: `${percentageCompleted}%`,
@@ -24,7 +26,7 @@ const XP = () => {
    
         <div style={fillerStyles}>
         </div>
-        <p className="xpbar-label">{`${fullBar} / ${xpCap} XP`}</p>
+        <p className="xpbar-label">{`${fullBar} / 3 XP`}</p>
       </div>
       </>
     );

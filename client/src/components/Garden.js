@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { addUuid, fetchUser, modifyUser, addXp } from '../redux/slices/userSlice';
+import { fetchUser } from '../redux/slices/userSlice';
 import { lvlDisplay } from './helpers';
 
 // import sprite0happy from '../resources/level_000/happybunny.png';
@@ -13,9 +13,15 @@ import sprite4 from '../resources/level_004/corn.png';
 import sprite5 from '../resources/level_005/cabbage.png';
 import sprite6 from '../resources/level_006/tomat.png';
 import sprite7 from '../resources/level_007/watermelon.png';
+import sprite8 from '../resources/level_008/oaktree.png';
+import sprite9 from '../resources/level_009/birchtree.png';
+import sprite10 from '../resources/level_010/pigeon.png';
+import sprite11 from '../resources/level_011/seagull.png';
+import sprite12 from '../resources/level_012/mouse.png';
+import sprite13 from '../resources/level_013/plants.png';
+import sprite14 from '../resources/level_014/house.png';
 
 const Garden = () => {
-    const { carrots } = useSelector((state) => state.questions);
     const { user, loading } = useSelector((state) => state.user);
     const dispatch = useDispatch(); 
 
@@ -35,7 +41,7 @@ const Garden = () => {
         return nb
     }
 
-    const sprites = [{"happy": sprite0, "sad": sprite0}, sprite1, sprite2, sprite3, sprite4, sprite5, sprite6, sprite7];
+    const sprites = [{"happy": sprite0, "sad": sprite0}, sprite1, sprite2, sprite3, sprite4, sprite5, sprite6, sprite7, sprite8, sprite9,sprite10, sprite11, sprite12, sprite13, sprite14];
     if (loading) {
         return <p>Loading...</p>
     } else {
