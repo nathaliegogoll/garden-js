@@ -421,6 +421,11 @@
   }
 }
 
+.navigation {
+  text-align: center;
+  margin: 1rem auto;
+}
+
 @-webkit-keyframes classicvegetableanimation {
   from {
     background-position-x: -10px;

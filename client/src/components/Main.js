@@ -2,7 +2,7 @@ import { Questions, Progression, SolveKatas, Garden } from './index';
 import { useSelector, useDispatch } from 'react-redux';
 import { addXp, addLevel, resetCarrots } from '../redux/slices/userSlice';
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { lvlDisplay } from './helpers';
 
 const  Main = () => {
@@ -51,7 +51,9 @@ const  Main = () => {
           <button onClick={resetCarrotsNumber}> RESET CARROT! </button>
         </div>
         </div>
-
+        <nav className='navigation'>
+          <Link to='/about'>About us</Link>
+        </nav>
         </>
       ) : (
         <>
