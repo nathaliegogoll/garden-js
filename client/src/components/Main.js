@@ -18,11 +18,11 @@ const  Main = () => {
     }
   },[]);
 
- /*  useEffect(() => {
-    if (localStorage.getItem('uuid')) {
-      navigate('/');  
-    }
-  }, [authData]) */
+  // useEffect(() => {
+  //   if (localStorage.getItem('uuid')) {
+  //     navigate('/');  
+  //   }
+  // }, [authData]) 
 
   const { gamestarted } = useSelector((state) => state.questions);
 
