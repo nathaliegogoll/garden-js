@@ -1,6 +1,13 @@
 .navigation {
     text-align: center; 
     margin: 1rem auto;
+
+}
+
+.about {
+    @include tablet_min_width {
+        margin: 0 20%;
+    }
 }
 
 .about__developers {
@@ -14,11 +21,26 @@
 .about__title {
     text-align: center;
     margin: 1rem auto;
+    font-size: 2rem;
 }
 
 .about__description {
     text-align: center;
     margin: 0 2rem 3rem 2rem;
+}
+
+.about__footer {
+    text-align: center;
+    margin: 2rem;
+    button {
+        padding: 0.5rem 2rem;
+        * {
+            color: black;
+            &:hover {
+                color: green;
+            }
+        }
+    }
 }
 
 .developers__title {
@@ -31,6 +53,9 @@
     align-items: center;
     img {
         max-width: 35%;
+        @include tablet_min_width {
+            max-width: 20%;
+        }
     }
     .person--name {
         font-size: 1rem;
@@ -38,5 +63,12 @@
     }
     .person--links {
         margin-bottom: 1rem;
+        font-size: 0.9rem;
+        a {
+            color: black;
+            &:hover{
+                color: green;
+            }
+        }
     }
 }

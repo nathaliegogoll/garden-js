@@ -5,6 +5,15 @@
           box-sizing: border-box;
 }
 
+button {
+  border: 1px solid black;
+  background-color: white;
+}
+
+.btn--close {
+  max-width: inherit;
+}
+
 @font-face {
   font-family: JuliaMono-Regular;
   src: url("https://cdn.jsdelivr.net/gh/cormullion/juliamono/webfonts/JuliaMono-Regular.woff2");
@@ -249,6 +258,13 @@
   width: 2rem;
 }
 
+.progression__container .carrot__container .carrot__empty {
+  color: #cfcfcf;
+  font-size: 0.8rem;
+  font-style: italic;
+  margin-left: 2rem;
+}
+
 .level__container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -349,10 +365,6 @@
   cursor: pointer;
 }
 
-.btn--close {
-  max-width: inherit;
-}
-
 .solvekatas__btn {
   text-align: center;
   padding: 0.5rem;
@@ -426,6 +438,12 @@
   margin: 1rem auto;
 }
 
+@media screen and (min-width: 600px) {
+  .about {
+    margin: 0 20%;
+  }
+}
+
 .about__developers {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -446,11 +464,29 @@
 .about__title {
   text-align: center;
   margin: 1rem auto;
+  font-size: 2rem;
 }
 
 .about__description {
   text-align: center;
   margin: 0 2rem 3rem 2rem;
+}
+
+.about__footer {
+  text-align: center;
+  margin: 2rem;
+}
+
+.about__footer button {
+  padding: 0.5rem 2rem;
+}
+
+.about__footer button * {
+  color: black;
+}
+
+.about__footer button *:hover {
+  color: green;
 }
 
 .developers__title {
@@ -477,6 +513,12 @@
   max-width: 35%;
 }
 
+@media screen and (min-width: 600px) {
+  .developers__person img {
+    max-width: 20%;
+  }
+}
+
 .developers__person .person--name {
   font-size: 1rem;
   margin-top: 0.5rem;
@@ -484,6 +526,15 @@
 
 .developers__person .person--links {
   margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.developers__person .person--links a {
+  color: black;
+}
+
+.developers__person .person--links a:hover {
+  color: green;
 }
 
 .resetgame {
@@ -522,6 +573,46 @@
 .resetgame .resetgame__button img:hover {
   cursor: pointer;
   background-color: #ffaeae;
+}
+
+.levelup {
+  border: 1px solid black;
+  margin: 0 2rem;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.levelup__title {
+  margin-bottom: 1rem;
+}
+
+.levelup__img {
+  max-width: 30%;
+  margin: 1rem 35%;
+}
+
+.levelup__close {
+  border: none;
+  background-color: white;
+  border-radius: 100%;
+  max-width: 2rem;
+  max-height: 2rem;
+  margin: 1rem auto;
+}
+
+.levelup__close:hover {
+  cursor: pointer;
+  background-color: #eefffa;
 }
 
 @-webkit-keyframes classicvegetableanimation {
@@ -591,7 +682,7 @@
 .garden--level1 {
   margin-top: 25px;
   width: 100%;
-  height: 84.5%;
+  height: 85%;
 }
 
 .garden--level2 {

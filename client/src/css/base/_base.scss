@@ -5,3 +5,11 @@
     
 }
 
+button {
+    border: $border-black;
+    background-color: white;
+}
+
+.btn--close {
+    max-width: inherit;
+}

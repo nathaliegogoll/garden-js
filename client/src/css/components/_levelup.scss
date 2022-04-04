@@ -1,0 +1,31 @@
+.levelup {
+    border: $border-black;
+    margin: 0 2rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.levelup__title {
+    margin-bottom: 1rem;
+}
+
+.levelup__img {
+    max-width: 30%;
+    margin: 1rem 35%;
+}
+
+.levelup__close {
+    border: none;
+    background-color: white;
+    border-radius: 100%;
+    max-width: 2rem;
+    max-height: 2rem;
+    margin: 1rem auto;
+    &:hover {
+      cursor: pointer;
+      background-color: rgb(238, 255, 250);
+    }
+}
