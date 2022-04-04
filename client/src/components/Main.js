@@ -18,11 +18,19 @@ const  Main = () => {
     }
   },[]);
 
-  // useEffect(() => {
-  //   if (localStorage.getItem('uuid')) {
-  //     navigate('/');  
-  //   }
-  // }, [authData]) 
+  useEffect(() => {
+  if (user.lastConnected !== undefined) {
+    if (user.carrotNumber < 5) {
+      const lastCon = user.lastConnected.toString().slice(0, 10); 
+      console.log(lastCon)
+      const today = new Date()
+      const todayFormatted = today.toISOString().slice(0, 10);
+      if (lastCon !== todayFormatted) {
+       dispatch(resetCarrots())
+      }
+    }
+  }
+  }, [user]) 
 
   const { gamestarted } = useSelector((state) => state.questions);
 
