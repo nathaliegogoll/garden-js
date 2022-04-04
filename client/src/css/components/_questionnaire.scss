@@ -24,26 +24,31 @@
     }
   }
   .questionnaire__btn-close {
-    border: $border-black;
-    border-radius: 50px;
-    padding: 0.5rem;
-    width: 2rem;
-    text-align: center;
-    margin: 1rem auto;
+    border: none;
     background-color: white;
+    border-radius: 100%;
+    max-width: 2rem;
+    max-height: 2rem;
+    margin: 1rem auto;
     &:hover {
-      background-color: rgb(255, 155, 155);
       cursor: pointer;
+      background-color: rgb(255, 174, 174);
+
     }
   }
   .questionnaire__btn-back {
+    border: none;
     background-color: white;
-    padding: 0.5rem;
-    border: $border-black;
+    border-radius: 100%;
+    max-width: 2rem;
+    max-height: 2rem;
     &:hover {
       background-color: rgb(238, 255, 250);
       cursor: pointer;
     }
-
   }
+
+}
+.btn--close {
+  max-width: inherit;
 }

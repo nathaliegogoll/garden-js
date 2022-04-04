@@ -1,0 +1,42 @@
+.navigation {
+    text-align: center; 
+    margin: 1rem auto;
+}
+
+.about__developers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.about__title {
+    text-align: center;
+    margin: 1rem auto;
+}
+
+.about__description {
+    text-align: center;
+    margin: 0 2rem 3rem 2rem;
+}
+
+.developers__title {
+    margin-bottom: 1rem;
+}
+.developers__person {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img {
+        max-width: 35%;
+    }
+    .person--name {
+        font-size: 1rem;
+        margin-top: 0.5rem;
+    }
+    .person--links {
+        margin-bottom: 1rem;
+    }
+}

@@ -204,6 +204,7 @@
 
 .logout .logout-btn:hover {
   background-color: #ff9b9b;
+  cursor: pointer;
 }
 
 .progression__container {
@@ -322,29 +323,34 @@
 }
 
 .questionnaire .questionnaire__btn-close {
-  border: 1px solid black;
-  border-radius: 50px;
-  padding: 0.5rem;
-  width: 2rem;
-  text-align: center;
-  margin: 1rem auto;
+  border: none;
   background-color: white;
+  border-radius: 100%;
+  max-width: 2rem;
+  max-height: 2rem;
+  margin: 1rem auto;
 }
 
 .questionnaire .questionnaire__btn-close:hover {
-  background-color: #ff9b9b;
   cursor: pointer;
+  background-color: #ffaeae;
 }
 
 .questionnaire .questionnaire__btn-back {
+  border: none;
   background-color: white;
-  padding: 0.5rem;
-  border: 1px solid black;
+  border-radius: 100%;
+  max-width: 2rem;
+  max-height: 2rem;
 }
 
 .questionnaire .questionnaire__btn-back:hover {
   background-color: #eefffa;
   cursor: pointer;
+}
+
+.btn--close {
+  max-width: inherit;
 }
 
 .solvekatas__btn {
@@ -413,6 +419,109 @@
     max-width: 50%;
     margin-left: 25%;
   }
+}
+
+.navigation {
+  text-align: center;
+  margin: 1rem auto;
+}
+
+.about__developers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.about__title {
+  text-align: center;
+  margin: 1rem auto;
+}
+
+.about__description {
+  text-align: center;
+  margin: 0 2rem 3rem 2rem;
+}
+
+.developers__title {
+  margin-bottom: 1rem;
+}
+
+.developers__person {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.developers__person img {
+  max-width: 35%;
+}
+
+.developers__person .person--name {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.developers__person .person--links {
+  margin-bottom: 1rem;
+}
+
+.resetgame {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 2rem;
+  border: 1px solid black;
+  padding: 1rem;
+}
+
+.resetgame .resetgame__title {
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.resetgame .resetgame__button {
+  background-color: white;
+  border: none;
+  padding-top: 1rem;
+}
+
+.resetgame .resetgame__button img {
+  border-radius: 100%;
+  max-width: 2rem;
+  max-height: 2rem;
+}
+
+.resetgame .resetgame__button img:hover {
+  cursor: pointer;
+  background-color: #ffaeae;
 }
 
 @-webkit-keyframes classicvegetableanimation {
@@ -573,5 +682,136 @@
   to {
     background-position-x: -946px;
   }
+}
+
+.garden--level8 {
+  margin-top: -92px;
+  margin-left: 292px;
+  width: 50px;
+  height: 96px;
+  -webkit-animation: treemove 3s steps(5) forwards;
+          animation: treemove 3s steps(5) forwards;
+}
+
+@-webkit-keyframes treemove {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: -250px;
+  }
+}
+
+@keyframes treemove {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: -250px;
+  }
+}
+
+.garden--level9 {
+  margin-top: -96px;
+  margin-left: 260px;
+  width: 50px;
+  height: 96px;
+  -webkit-animation: treemove 3s steps(5) forwards;
+          animation: treemove 3s steps(5) forwards;
+}
+
+.garden--level10 {
+  margin-top: -256px;
+  margin-left: 30px;
+  width: 16px;
+  height: 16px;
+  -webkit-animation: pigeonmove 2s steps(3) infinite;
+          animation: pigeonmove 2s steps(3) infinite;
+}
+
+@-webkit-keyframes pigeonmove {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: -48px;
+  }
+}
+
+@keyframes pigeonmove {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: -48px;
+  }
+}
+
+.garden--level11 {
+  margin-top: 25px;
+  margin-left: 100px;
+  width: 16px;
+  height: 16px;
+  -webkit-animation: seagullmove 2s steps(3) infinite;
+          animation: seagullmove 2s steps(3) infinite;
+}
+
+@-webkit-keyframes seagullmove {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: -48px;
+  }
+}
+
+@keyframes seagullmove {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: -48px;
+  }
+}
+
+.garden--level12 {
+  margin-top: 220px;
+  margin-left: 30px;
+  width: 16px;
+  height: 16px;
+  -webkit-animation: mousemove 2s steps(3) infinite;
+          animation: mousemove 2s steps(3) infinite;
+}
+
+@-webkit-keyframes mousemove {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: -48px;
+  }
+}
+
+@keyframes mousemove {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: -48px;
+  }
+}
+
+.garden--level13 {
+  margin-top: -100px;
+  margin-left: 30px;
+  width: 300px;
+  height: 50px;
+}
+
+.garden--level14 {
+  margin-top: -110px;
+  margin-left: 190px;
+  width: 96px;
+  height: 112px;
 }
 /*# sourceMappingURL=App.css.map */

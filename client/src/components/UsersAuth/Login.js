@@ -14,7 +14,7 @@ const Login = () => {
         if (localStorage.getItem('AuthToken')) {
             navigate('/')
         }
-    },[navigate])
+    },[])
 
     const handleChange = (e) => {
         const { name, value} = e.target
@@ -26,7 +26,7 @@ const Login = () => {
         dispatch(login(user));
         setTimeout(() => {
         navigate('/') 
-        }, 1500);
+        }, 500);
     }
 
   return (
