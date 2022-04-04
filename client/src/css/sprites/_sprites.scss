@@ -194,6 +194,12 @@
 .garden--level14  {
   margin-top: -110px;
   margin-left: 190px;
-  width: 96px;
-  height: 112px; 
+  width: 200px;
+  height: 200px;
+  animation: housemove 2s steps(3) infinite;
+}
+
+@keyframes housemove {
+  from {background-position-x: 0px;}
+  to {background-position-x: -600px;}
 }

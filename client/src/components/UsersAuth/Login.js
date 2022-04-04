@@ -21,12 +21,12 @@ const Login = () => {
         setUser({...user, [name]: value})
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        dispatch(login(user));
-        setTimeout(() => {
-        navigate('/') 
-        }, 500);
+        await dispatch(login(user));
+        // setTimeout(() => {
+        await navigate('/') 
+        // }, 500);
     }
 
   return (
