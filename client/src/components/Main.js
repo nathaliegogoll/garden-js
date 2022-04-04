@@ -22,15 +22,19 @@ const  Main = () => {
   if (user.lastConnected !== undefined) {
     if (user.carrotNumber < 5) {
       const lastCon = user.lastConnected.toString().slice(0, 10); 
-      console.log(lastCon)
       const today = new Date()
       const todayFormatted = today.toISOString().slice(0, 10);
       if (lastCon !== todayFormatted) {
        dispatch(resetCarrots())
       }
     }
-  }
-  }, [user]) 
+    const date = new Date(user.lastConnected);
+    const today = new Date();
+    const diff = today.getTime() - date.getTime();
+    if( (diff / (8.64 * 10 ** +7)) > 7){
+      console.log('Rabbit is KILL');
+    }
+  }}, [user]) 
 
   const { gamestarted } = useSelector((state) => state.questions);
 
