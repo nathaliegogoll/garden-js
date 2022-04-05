@@ -13,6 +13,7 @@ const Questions = () => {
     const { loading } = useSelector((state) => state.questions);
     const { user } = useSelector((state) => state.user)
     const [levelUp, setLevelUp] = useState(false)
+    const [toggleClass, setToggleClass] = useState([])
 
     const dispatch = useDispatch();
 
@@ -24,8 +25,13 @@ const Questions = () => {
            dispatch(fetchQuestions())
     }, [dispatch])
 
-    const handleAnswer = (answer) => {
+    const handleAnswer = (answer, index) => {
         const correctAnswer = storeQuestions[0].translations[0].answer;
+        const newArr = [toggleClass];
+        newArr[index] = true;
+        setToggleClass(newArr);
+
+        setTimeout(() => {    
 
         if (user.xp > 0 && user.xp % 3 === 2 && answer.label === correctAnswer) {
             setLevelUp(true)
@@ -37,10 +43,10 @@ const Questions = () => {
             dispatch(handleWrongAnswer());
         }
 
-        setTimeout(() => {     
             dispatch(answerQuestion());
             dispatch(addLevel(lvlDisplay(user.xp)-1))
-        }, 500)
+            setToggleClass([]);
+        }, 700)
     }
 
     const handleGoBack = async () => {
@@ -51,7 +57,6 @@ const Questions = () => {
             console.log(error)
         }
     }
-
     
     return (
         <section className="questionnaire">
@@ -78,8 +83,16 @@ const Questions = () => {
                         </div>
                         )}
                         {
-                        storeQuestions[0].translations[0].options.map(answer => {
-                        return <button className="questionnaire__button" key={answer.label} onClick={() => {handleAnswer(answer)}}>{answer.label}. {answer.option.replaceAll('`','')}</button>
+                        storeQuestions[0].translations[0].options.map((answer, index) => {
+                            return (
+                                <>
+                                    {(answer.label === storeQuestions[0].translations[0].answer) ? 
+                                    (<button className={(toggleClass[index] === true) ? 'questionnaire__button--clicked': 'questionnaire__button'}  id="correct" tabIndex="0" key={answer.label} onClick={() => {handleAnswer(answer, index)}}>{answer.label}. {answer.option.replaceAll('`','')}</button>)
+                                    : 
+                                    (<button className={(toggleClass[index] === true) ? 'questionnaire__button--clicked': 'questionnaire__button'} id="incorrect" tabIndex="0" key={answer.label} onClick={() => {handleAnswer(answer, index)}}>{answer.label}. {answer.option.replaceAll('`','')}</button>)
+                                    }
+                                </>
+                            )
                         })
                         }
                         <button className="questionnaire__btn-close" onClick={handleGoBack}><img className="btn--close" src={closeIcon} alt="go back button" /></button>
