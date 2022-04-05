@@ -1,8 +1,8 @@
 import React, { useState, useEffect} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { createAccount } from '../../redux/slices/authSlice';
-import { addUuid, postUser } from '../../redux/slices/userSlice';
+import { postUser } from '../../redux/slices/userSlice';
 import Title from './Title';
 import bunny from '../../resources/bunny.png';
 
@@ -30,8 +30,9 @@ const CreateAccount = () => {
         setUser({...user, uuid: newId });
     }, []);
     
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
+        
         if (user.password !== user.confirmPassword) {
             setUser({ password: '', confirmPassword: ''})
             setTimeout(() => {
@@ -39,12 +40,14 @@ const CreateAccount = () => {
             }, 5000)
             return setError('Passwords do not match')
         }
-        
-        dispatch(createAccount(user))
-        dispatch(postUser({uuid: user.uuid, username: user.username}))
-        setTimeout(() => {
-            navigate('/');
-        }, 1500)
+
+        try {
+           await  dispatch(createAccount(user)).unwrap()
+           await dispatch(postUser({uuid: user.uuid, username: user.username})).unwrap()
+            navigate('/')
+        } catch (error) {
+            console.log(error)
+        }
     }
 
   return (

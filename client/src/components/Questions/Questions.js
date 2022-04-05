@@ -11,7 +11,7 @@ import LevelUp from './LevelUp';
 const Questions = () => {
     const storeQuestions = useSelector((state) => state.questions.questions);
     const { loading } = useSelector((state) => state.questions);
-    const { user, levelup } = useSelector((state) => state.user)
+    const { user } = useSelector((state) => state.user)
     const [levelUp, setLevelUp] = useState(false)
 
     const dispatch = useDispatch();
@@ -21,7 +21,7 @@ const Questions = () => {
     }, [storeQuestions, levelUp])
     
     useEffect(() => {
-        dispatch(fetchQuestions("https://gardenproject-server.herokuapp.com/api/questions"))
+           dispatch(fetchQuestions())
     }, [dispatch])
 
     const handleAnswer = (answer) => {
@@ -43,11 +43,13 @@ const Questions = () => {
         }, 500)
     }
 
-    const handleGoBack = () => {
-        dispatch(modifyUser(user))
-        setTimeout(() => {
+    const handleGoBack = async () => {
+        try {
+            await dispatch(modifyUser(user)).unwrap()
             dispatch(endGame())
-        }, 1000);
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     

@@ -3,7 +3,6 @@ import { startGame } from '../redux/slices/questionSlice';
 import carrotIcon from '../resources/carrot.png'
 
 const SolveKatas = () => {
-
     const dispatch = useDispatch();
 
     const handleClick = () => {

@@ -6,17 +6,18 @@ import { useNavigate, Link } from 'react-router-dom';
 import { lvlDisplay } from './helpers';
 
 const  Main = () => {
-
   const { user } = useSelector((state) => state.user)
-  const { authData } = useSelector((state) => state.userAuth)
+  const { gamestarted } = useSelector((state) => state.questions);
+
   const [isReset, setIsReset] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
    useEffect(() => {
     if(!localStorage.getItem('AuthToken')){
          navigate('/login');
     } 
-   },[]);
+   },[navigate]);
 
   useEffect(() => {
   if (user.lastConnected !== undefined) {
@@ -36,11 +37,7 @@ const  Main = () => {
       dispatch(modifyUser(user))
       setIsReset(true);
     }
-  }}, [user]) 
-
-  const { gamestarted } = useSelector((state) => state.questions);
-
-  const dispatch = useDispatch();
+  }}, []) 
 
   const increaseXp = () => {
     dispatch(addXp());

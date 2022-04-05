@@ -1,11 +1,12 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import * as API from '../../api/index'
 
 export const fetchQuestions = createAsyncThunk( 
     'fetchQuestions', 
-    async (value, thunkAPI) => { 
-        const data = await fetch(`${value}`); 
-        const questions = await data.json();
-        return questions;
+    async (thunkAPI) => { 
+        const { data } = await API.fetchQuestions(); 
+        // const questions = await data.json();
+        return data;
     } 
   ) 
 

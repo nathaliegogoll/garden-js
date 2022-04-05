@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { Link , useNavigate } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { login } from '../../redux/slices/authSlice';
 import Title from './Title';
 
 const Login = () => {
     const [user, setUser] = useState({ email: '', password: ''})
-    const userData = useSelector((state) => state.userAuth);
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
@@ -14,7 +13,7 @@ const Login = () => {
         if (localStorage.getItem('AuthToken')) {
             navigate('/')
         }
-    },[])
+    },[navigate])
 
     const handleChange = (e) => {
         const { name, value} = e.target
@@ -23,10 +22,12 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        await dispatch(login(user));
-        // setTimeout(() => {
-        await navigate('/') 
-        // }, 500);
+        try {
+           await dispatch(login(user)).unwrap();
+           navigate('/') 
+        } catch (error) {
+            console.log(error)
+        }
     }
 
   return (
@@ -68,7 +69,6 @@ const Login = () => {
             <Link to="/register">create a new account</Link>
             </div>
         </div>
-        
     </form>
 </section>
   )

@@ -20,8 +20,8 @@ export const fetchUser = createAsyncThunk(
 export const modifyUser = createAsyncThunk( 
     'modifyUser', 
     async (updatedUser, thunkAPI) => { 
-        const data = await API.modifyLevel(updatedUser); 
-        return data.data;
+        const { data } = await API.modifyLevel(updatedUser); 
+        return data;
     } 
   ) 
 

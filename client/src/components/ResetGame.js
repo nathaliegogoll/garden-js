@@ -1,8 +1,11 @@
 import closeButton from '../resources/close_icon.png'
+
 const ResetGame = ({setter, getter}) => {
-    const handleClose = () => {
+    
+  const handleClose = () => {
         setter(false);
-    }
+  }
+
   return (
     <section className="resetgame">
         <h1 className="resetgame__title">Game Over!</h1>
