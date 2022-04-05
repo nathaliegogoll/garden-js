@@ -120,6 +120,12 @@ button {
   margin-top: -0.5rem;
 }
 
+.register__error-msg {
+  text-align: center;
+  color: red;
+  margin-top: 1rem;
+}
+
 .form-group label {
   padding-left: 0.2rem;
 }
@@ -341,19 +347,20 @@ button {
 }
 
 .questionnaire .questionnaire__question,
-.questionnaire .questionnaire__button {
+.questionnaire .questionnaire__button, .questionnaire .questionnaire__button--clicked {
   text-align: center;
   padding: 0.5rem;
   margin: 0.5rem 1rem;
 }
 
-.questionnaire .questionnaire__button {
+.questionnaire .questionnaire__button, .questionnaire .questionnaire__button--clicked {
   background-color: white;
   border: 1px solid black;
   font-size: 1rem;
+  background-color: white;
 }
 
-.questionnaire .questionnaire__button:hover {
+.questionnaire .questionnaire__button:hover, .questionnaire .questionnaire__button--clicked:hover {
   background-color: #eefffa;
   cursor: pointer;
 }
@@ -383,6 +390,180 @@ button {
 .questionnaire .questionnaire__btn-back:hover {
   background-color: #eefffa;
   cursor: pointer;
+}
+
+#correct.questionnaire__button--clicked {
+  -webkit-animation: nod 0.7s;
+          animation: nod 0.7s;
+}
+
+#incorrect.questionnaire__button--clicked {
+  -webkit-animation: shake 0.7s;
+          animation: shake 0.7s;
+}
+
+@-webkit-keyframes nod {
+  0% {
+    -webkit-transform: translate(0, 1px);
+            transform: translate(0, 1px);
+  }
+  30% {
+    -webkit-transform: translate(0, -2px);
+            transform: translate(0, -2px);
+    background-color: #9bffa0;
+  }
+  60% {
+    -webkit-transform: translate(0, 2px);
+            transform: translate(0, 2px);
+    background-color: #9bffa0;
+  }
+  90% {
+    -webkit-transform: translate(0, -2px);
+            transform: translate(0, -2px);
+    background-color: #9bffa0;
+  }
+  100% {
+    -webkit-transform: translate(0, 2px);
+            transform: translate(0, 2px);
+  }
+}
+
+@keyframes nod {
+  0% {
+    -webkit-transform: translate(0, 1px);
+            transform: translate(0, 1px);
+  }
+  30% {
+    -webkit-transform: translate(0, -2px);
+            transform: translate(0, -2px);
+    background-color: #9bffa0;
+  }
+  60% {
+    -webkit-transform: translate(0, 2px);
+            transform: translate(0, 2px);
+    background-color: #9bffa0;
+  }
+  90% {
+    -webkit-transform: translate(0, -2px);
+            transform: translate(0, -2px);
+    background-color: #9bffa0;
+  }
+  100% {
+    -webkit-transform: translate(0, 2px);
+            transform: translate(0, 2px);
+  }
+}
+
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: translate(1px, 1px) rotate(0deg);
+            transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    -webkit-transform: translate(-1px, -2px) rotate(-1deg);
+            transform: translate(-1px, -2px) rotate(-1deg);
+    background-color: #ff9b9b;
+  }
+  20% {
+    -webkit-transform: translate(-3px, 0px) rotate(1deg);
+            transform: translate(-3px, 0px) rotate(1deg);
+    background-color: #ff9b9b;
+  }
+  30% {
+    -webkit-transform: translate(3px, 2px) rotate(0deg);
+            transform: translate(3px, 2px) rotate(0deg);
+    background-color: #ff9b9b;
+  }
+  40% {
+    -webkit-transform: translate(1px, -1px) rotate(1deg);
+            transform: translate(1px, -1px) rotate(1deg);
+    background-color: #ff9b9b;
+  }
+  50% {
+    -webkit-transform: translate(-1px, 2px) rotate(-1deg);
+            transform: translate(-1px, 2px) rotate(-1deg);
+    background-color: #ff9b9b;
+  }
+  60% {
+    -webkit-transform: translate(-3px, 1px) rotate(0deg);
+            transform: translate(-3px, 1px) rotate(0deg);
+    background-color: #ff9b9b;
+  }
+  70% {
+    -webkit-transform: translate(3px, 1px) rotate(-1deg);
+            transform: translate(3px, 1px) rotate(-1deg);
+    background-color: #ff9b9b;
+  }
+  80% {
+    -webkit-transform: translate(-1px, -1px) rotate(1deg);
+            transform: translate(-1px, -1px) rotate(1deg);
+    background-color: #ff9b9b;
+  }
+  90% {
+    -webkit-transform: translate(1px, 2px) rotate(0deg);
+            transform: translate(1px, 2px) rotate(0deg);
+    background-color: #ff9b9b;
+  }
+  100% {
+    -webkit-transform: translate(1px, -2px) rotate(-1deg);
+            transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+@keyframes shake {
+  0% {
+    -webkit-transform: translate(1px, 1px) rotate(0deg);
+            transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    -webkit-transform: translate(-1px, -2px) rotate(-1deg);
+            transform: translate(-1px, -2px) rotate(-1deg);
+    background-color: #ff9b9b;
+  }
+  20% {
+    -webkit-transform: translate(-3px, 0px) rotate(1deg);
+            transform: translate(-3px, 0px) rotate(1deg);
+    background-color: #ff9b9b;
+  }
+  30% {
+    -webkit-transform: translate(3px, 2px) rotate(0deg);
+            transform: translate(3px, 2px) rotate(0deg);
+    background-color: #ff9b9b;
+  }
+  40% {
+    -webkit-transform: translate(1px, -1px) rotate(1deg);
+            transform: translate(1px, -1px) rotate(1deg);
+    background-color: #ff9b9b;
+  }
+  50% {
+    -webkit-transform: translate(-1px, 2px) rotate(-1deg);
+            transform: translate(-1px, 2px) rotate(-1deg);
+    background-color: #ff9b9b;
+  }
+  60% {
+    -webkit-transform: translate(-3px, 1px) rotate(0deg);
+            transform: translate(-3px, 1px) rotate(0deg);
+    background-color: #ff9b9b;
+  }
+  70% {
+    -webkit-transform: translate(3px, 1px) rotate(-1deg);
+            transform: translate(3px, 1px) rotate(-1deg);
+    background-color: #ff9b9b;
+  }
+  80% {
+    -webkit-transform: translate(-1px, -1px) rotate(1deg);
+            transform: translate(-1px, -1px) rotate(1deg);
+    background-color: #ff9b9b;
+  }
+  90% {
+    -webkit-transform: translate(1px, 2px) rotate(0deg);
+            transform: translate(1px, 2px) rotate(0deg);
+    background-color: #ff9b9b;
+  }
+  100% {
+    -webkit-transform: translate(1px, -2px) rotate(-1deg);
+            transform: translate(1px, -2px) rotate(-1deg);
+  }
 }
 
 .nomorequestions__container {
@@ -716,7 +897,7 @@ button {
 .garden--level0 {
   position: absolute;
   top: 260px;
-  left: 120px;
+  left: 180px;
   width: 55px;
   height: 74px;
   -webkit-animation: rabbitmovesX 1.5s steps(4) infinite, rabbitmovesY 9s steps(6) infinite;
@@ -767,7 +948,7 @@ button {
 
 .garden--level2 {
   margin-top: -115px;
-  margin-left: 105px;
+  margin-left: 138px;
   width: 32px;
   height: 50px;
   -webkit-animation: classicvegetableanimation 3s steps(19) forwards;
@@ -776,7 +957,7 @@ button {
 
 .garden--level3 {
   margin-top: -50px;
-  margin-left: 80px;
+  margin-left: 160px;
   width: 32px;
   height: 50px;
   -webkit-animation: carrotmoves 3s steps(15) forwards;
@@ -803,7 +984,7 @@ button {
 
 .garden--level4 {
   margin-top: -50px;
-  margin-left: 60px;
+  margin-left: 250px;
   width: 32px;
   height: 50px;
   -webkit-animation: classicvegetableanimation 3s steps(19) forwards;
@@ -812,7 +993,7 @@ button {
 
 .garden--level5 {
   margin-top: -50px;
-  margin-left: 40px;
+  margin-left: 310px;
   width: 32px;
   height: 50px;
   -webkit-animation: classicvegetableanimation 3s steps(19) forwards;
@@ -821,7 +1002,7 @@ button {
 
 .garden--level6 {
   margin-top: -50px;
-  margin-left: 20px;
+  margin-left: 230px;
   width: 32px;
   height: 50px;
   -webkit-animation: classicvegetableanimation 3s steps(19) forwards;
@@ -857,7 +1038,7 @@ button {
 
 .garden--level8 {
   margin-top: -160px;
-  margin-left: 220px;
+  margin-left: 200px;
   width: 200px;
   height: 200px;
   -webkit-animation: treemove 2s steps(2) forwards;
@@ -884,7 +1065,7 @@ button {
 
 .garden--level9 {
   margin-top: -200px;
-  margin-left: 100px;
+  margin-left: -50px;
   width: 200px;
   height: 200px;
   -webkit-animation: treemove 2s steps(2) forwards;
@@ -973,16 +1154,54 @@ button {
 }
 
 .garden--level13 {
-  margin-top: -80px;
-  margin-left: 190px;
-  width: 150px;
-  height: 40px;
+  margin-top: -180px;
+  margin-left: 35px;
+  width: 45px;
+  height: 45px;
+  -webkit-animation: squirrelmoveX 1s steps(5) infinite, squirrelmoveY 1s steps(1) infinite;
+          animation: squirrelmoveX 1s steps(5) infinite, squirrelmoveY 1s steps(1) infinite;
+}
+
+@-webkit-keyframes squirrelmoveX {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: -225px;
+  }
+}
+
+@keyframes squirrelmoveX {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: -225px;
+  }
+}
+
+@-webkit-keyframes squirrelmoveY {
+  from {
+    background-position-y: 0px;
+  }
+  to {
+    background-position-Y: -45px;
+  }
+}
+
+@keyframes squirrelmoveY {
+  from {
+    background-position-y: 0px;
+  }
+  to {
+    background-position-Y: -45px;
+  }
 }
 
 .garden--level14 {
-  margin-top: -175px;
-  margin-left: 120px;
-  width: 300px;
-  height: 300px;
+  margin-top: -55px;
+  margin-left: -0px;
+  width: 200px;
+  height: 200px;
 }
 /*# sourceMappingURL=App.css.map */
