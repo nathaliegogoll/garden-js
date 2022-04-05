@@ -14,6 +14,23 @@ button {
   max-width: inherit;
 }
 
+.navigation {
+  text-align: center;
+  margin: 2rem;
+}
+
+.navigation button {
+  padding: 0.5rem 2rem;
+}
+
+.navigation button * {
+  color: black;
+}
+
+.navigation button *:hover {
+  color: green;
+}
+
 @font-face {
   font-family: JuliaMono-Regular;
   src: url("https://cdn.jsdelivr.net/gh/cormullion/juliamono/webfonts/JuliaMono-Regular.woff2");
@@ -610,6 +627,19 @@ button {
 .levelup__close:hover {
   cursor: pointer;
   background-color: #eefffa;
+}
+
+.forgotPassword {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.forgotPassword__msg {
+  margin: 2rem 0.5rem;
+}
+
+.forgotPassword__navigate-btn {
+  padding: 1rem;
 }
 
 @-webkit-keyframes classicvegetableanimation {

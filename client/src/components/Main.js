@@ -20,7 +20,6 @@ const  Main = () => {
    },[navigate]);
 
    const checkLastConnected = async () => {
-    
       if (user.carrotNumber < 5) {
         const lastCon = user.lastConnected.toString().slice(0, 10); 
         const today = new Date()
