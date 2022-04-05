@@ -14,23 +14,6 @@ button {
   max-width: inherit;
 }
 
-.navigation {
-  text-align: center;
-  margin: 2rem;
-}
-
-.navigation button {
-  padding: 0.5rem 2rem;
-}
-
-.navigation button * {
-  color: black;
-}
-
-.navigation button *:hover {
-  color: green;
-}
-
 @font-face {
   font-family: JuliaMono-Regular;
   src: url("https://cdn.jsdelivr.net/gh/cormullion/juliamono/webfonts/JuliaMono-Regular.woff2");
@@ -101,6 +84,12 @@ button {
 .register__form-title img {
   max-height: 2.5rem;
   margin-top: -0.5rem;
+}
+
+.register__error-msg {
+  text-align: center;
+  color: red;
+  margin-top: 1rem;
 }
 
 .form-group label {
