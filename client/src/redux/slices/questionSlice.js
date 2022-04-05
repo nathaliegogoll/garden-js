@@ -18,6 +18,9 @@ export const questions = createSlice( {
         answerQuestion: (state) => { 
             state.questions.shift() 
         },
+        clearQuestions: (state) => {
+          state.questions = [];
+        },
         startGame: (state) => {
           state.gamestarted = true;
         },
@@ -36,5 +39,5 @@ export const questions = createSlice( {
       }
   }); 
   
-  export const { answerQuestion, getQuestion, startGame, endGame } = questions.actions;
+  export const { answerQuestion, getQuestion, startGame, endGame, clearQuestions } = questions.actions;
   export default questions.reducer;
