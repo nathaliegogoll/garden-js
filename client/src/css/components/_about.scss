@@ -1,7 +1,15 @@
 .navigation {
     text-align: center; 
-    margin: 1rem auto;
-
+    margin: 2rem auto;
+    * {
+        padding: 0.5rem 2rem;
+        border: $border-black;
+        color: black;
+        &:hover {
+            color: green;
+            border-color: green;
+        }
+    }
 }
 
 .about {
@@ -39,6 +47,7 @@
             &:hover {
                 color: green;
             }
+          
         }
     }
 }
@@ -66,6 +75,10 @@
             color: black;
             &:hover{
                 color: green;
+                border-color: green;
+            }
+            &:focus {
+                outline: 2px dashed green;
             }
         }
     }
