@@ -14,8 +14,49 @@ button {
     max-width: inherit;
 }
 
-.App {
-    @include tablet_min_width {
-        margin: 0 5%;
+.main__container {
+    @include m_width {
+        max-width: 450px;
+        min-height: 700px;
+        border: 1px solid black;
+        padding: 1rem rem;
+        margin: 3rem auto;
+        animation: framemove 3s forwards;
     }
+    
 }
+
+@keyframes framemove {
+    0% {
+        box-shadow: -0px -0px 0px 0px black;
+      }
+      100% {
+        box-shadow: -7px -7px 0px 0px rgb(9, 58, 0);
+      }
+    
+}
+
+
+
+
+
+// .container {
+//     display: grid; 
+//     grid-auto-columns: 1fr; 
+//     grid-template-columns: 1fr 0.6fr 1.4fr; 
+//     grid-template-rows: 0.4fr 0.5fr 1.4fr 2.1fr 0.6fr; 
+//     gap: 0px 0px; 
+//     grid-template-areas: 
+//       "carrots . lapinou"
+//       "level xp lapinou"
+//       "solve-katas solve-katas lapinou"
+//       "dev-buttons dev-buttons lapinou"
+//       "about logout lapinou"; 
+//   }
+//   .level { grid-area: level; }
+//   .xp { grid-area: xp; }
+//   .lapinou { grid-area: lapinou; }
+//   .solve-katas { grid-area: solve-katas; }
+//   .dev-buttons { grid-area: dev-buttons; }
+//   .about { grid-area: about; }
+//   .logout { grid-area: logout; }

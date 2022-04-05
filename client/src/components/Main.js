@@ -54,6 +54,7 @@ const  Main = () => {
 
   return (
     <div className="Main">
+      <div className="main__container">
       {isReset ? (
         <ResetGame setter={setIsReset} getter={isReset}/>
       ): (<>
@@ -83,7 +84,7 @@ const  Main = () => {
       </>
       )
       }
-      
+      </div>
       </div>
   );
 }

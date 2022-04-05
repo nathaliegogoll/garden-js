@@ -17,10 +17,6 @@
       cursor: pointer;
       background-color: $button-color-hover;
     }
-    @include tablet_min_width {
-      max-width: 50%;
-      margin-left: 25%;
-    }
 }
 
 .container__buttons {
@@ -39,10 +35,6 @@
     padding: 0.2rem;
     margin-right: 0.5rem;
     border: $border-black;
-  }
-  @include tablet_min_width {
-    max-width: 50%;
-    margin-left: 25%;
   }
   // display: none;
 }
