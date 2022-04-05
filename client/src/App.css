@@ -14,40 +14,6 @@ button {
   max-width: inherit;
 }
 
-@media screen and (min-width: 500px) {
-  .main__container {
-    max-width: 450px;
-    min-height: 700px;
-    border: 1px solid black;
-    padding: 1rem rem;
-    margin: 3rem auto;
-    -webkit-animation: framemove 3s forwards;
-            animation: framemove 3s forwards;
-  }
-}
-
-@-webkit-keyframes framemove {
-  0% {
-    -webkit-box-shadow: -0px -0px 0px 0px black;
-            box-shadow: -0px -0px 0px 0px black;
-  }
-  100% {
-    -webkit-box-shadow: -7px -7px 0px 0px #093a00;
-            box-shadow: -7px -7px 0px 0px #093a00;
-  }
-}
-
-@keyframes framemove {
-  0% {
-    -webkit-box-shadow: -0px -0px 0px 0px black;
-            box-shadow: -0px -0px 0px 0px black;
-  }
-  100% {
-    -webkit-box-shadow: -7px -7px 0px 0px #093a00;
-            box-shadow: -7px -7px 0px 0px #093a00;
-  }
-}
-
 @font-face {
   font-family: JuliaMono-Regular;
   src: url("https://cdn.jsdelivr.net/gh/cormullion/juliamono/webfonts/JuliaMono-Regular.woff2");
@@ -118,6 +84,12 @@ button {
 .register__form-title img {
   max-height: 2.5rem;
   margin-top: -0.5rem;
+}
+
+.register__error-msg {
+  text-align: center;
+  color: red;
+  margin-top: 1rem;
 }
 
 .form-group label {
