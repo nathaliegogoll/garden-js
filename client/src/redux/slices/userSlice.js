@@ -25,7 +25,7 @@ export const modifyUser = createAsyncThunk(
     } 
   ) 
 
-const initialState = { user: { id: '', carrotNumber: 0, level: 0, xp: 0, perks: []}, error: false, loading: true , uuid: '', levelup: true};
+const initialState = { user: { id: '', carrotNumber: 0, lastConnected: '', level: 0, xp: 0, perks: []}, error: false, loading: true , uuid: '', levelup: true};
 
 export const user = createSlice( { 
       name:'user', 
@@ -51,7 +51,7 @@ export const user = createSlice( {
           addLevel: (state, action)  => {
             state.user.level = action.payload;
         },
-          resetCarrots: (state, action) => {
+          resetCarrots: (state) => {
             state.user.carrotNumber = 5
         },
         displayPopup: (state, action) => {

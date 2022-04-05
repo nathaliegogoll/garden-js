@@ -6,12 +6,12 @@ import carrotEmpty from "../../resources/carrot_nomore.png";
 
 const Carrots = () => {
     const carrots = useSelector((state) => state.user.user.carrotNumber);
-    const carrotsArray = [...Array(carrots)];
+   // const carrotsArray = ;
     return (
     <>
         <section className="carrot__container">
-        {carrotsArray.length !== 0 ? (
-            carrotsArray.map((e, index) => {
+        {[...Array(carrots)].length !== 0 ? (
+            [...Array(carrots)].map((e, index) => {
                 return ( 
                     <div key={index}>
                         <img className="carrot" src={carrotPng} alt="carrot"/>
