@@ -20,7 +20,6 @@ const  Main = () => {
    },[navigate]);
 
    const checkLastConnected = async () => {
-    
       if (user.carrotNumber < 5) {
         const lastCon = user.lastConnected.toString().slice(0, 10); 
         const today = new Date()
@@ -54,6 +53,7 @@ const  Main = () => {
 
   return (
     <div className="Main">
+      <div className="main__container">
       {isReset ? (
         <ResetGame setter={setIsReset} getter={isReset}/>
       ): (<>
@@ -83,7 +83,7 @@ const  Main = () => {
       </>
       )
       }
-      
+      </div>
       </div>
   );
 }

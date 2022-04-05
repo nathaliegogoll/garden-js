@@ -1,11 +1,17 @@
 @mixin tablet_min_width {
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: 680px) {
       @content;
     }
 }
 
 @mixin desktop_min_width {
-    @media screen and (min-width: 800px) {
+    @media screen and (min-width: 1000px) {
       @content;
     }
+}
+
+@mixin m_width {
+  @media screen and (min-width: 500px) {
+    @content;
+  }
 }

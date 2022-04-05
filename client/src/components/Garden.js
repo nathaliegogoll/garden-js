@@ -18,7 +18,7 @@ import sprite9 from '../resources/level_009/birchtree.png';
 import sprite10 from '../resources/level_010/pigeon.png';
 import sprite11 from '../resources/level_011/seagull.png';
 import sprite12 from '../resources/level_012/mouse.png';
-import sprite13 from '../resources/level_013/plants.png';
+import sprite13 from '../resources/level_013/squirrels.png';
 import sprite14 from '../resources/level_014/house.png';
 
 const Garden = () => {
