@@ -14,6 +14,12 @@ button {
   max-width: inherit;
 }
 
+@media screen and (min-width: 600px) {
+  .App {
+    margin: 0 5%;
+  }
+}
+
 @font-face {
   font-family: JuliaMono-Regular;
   src: url("https://cdn.jsdelivr.net/gh/cormullion/juliamono/webfonts/JuliaMono-Regular.woff2");
@@ -455,6 +461,12 @@ button {
   }
 }
 
+@media screen and (min-width: 800px) {
+  .about {
+    margin: 5% 30%;
+  }
+}
+
 .about__developers {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -478,9 +490,22 @@ button {
   font-size: 2rem;
 }
 
+@media screen and (min-width: 800px) {
+  .about__title {
+    font-size: 2.5rem;
+  }
+}
+
 .about__description {
   text-align: center;
   margin: 0 2rem 3rem 2rem;
+}
+
+@media screen and (min-width: 800px) {
+  .about__description {
+    font-size: 1.5rem;
+    margin: 2rem -10% 5rem -10%;
+  }
 }
 
 .about__footer {
@@ -498,6 +523,12 @@ button {
 
 .about__footer button *:hover {
   color: green;
+}
+
+@media screen and (min-width: 800px) {
+  .developers__title {
+    font-size: 2rem;
+  }
 }
 
 .developers__person {

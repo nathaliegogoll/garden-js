@@ -13,3 +13,9 @@ button {
 .btn--close {
     max-width: inherit;
 }
+
+.App {
+    @include tablet_min_width {
+        margin: 0 5%;
+    }
+}
