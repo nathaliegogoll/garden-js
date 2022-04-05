@@ -347,19 +347,37 @@ button {
 }
 
 .questionnaire .questionnaire__question,
-.questionnaire .questionnaire__button {
+.questionnaire .questionnaire__button, .questionnaire .questionnaire__button--clicked {
   text-align: center;
   padding: 0.5rem;
   margin: 0.5rem 1rem;
 }
 
-.questionnaire .questionnaire__button {
+.questionnaire .questionnaire__div {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.questionnaire .questionnaire__div .questionnaire__button, .questionnaire .questionnaire__div .questionnaire__button--clicked {
+  text-align: center;
+  min-width: 90%;
+  padding: 0.5rem;
+  margin: 0.5rem 1rem;
   background-color: white;
   border: 1px solid black;
   font-size: 1rem;
+  background-color: white;
 }
 
-.questionnaire .questionnaire__button:hover {
+.questionnaire .questionnaire__div .questionnaire__button:hover, .questionnaire .questionnaire__div .questionnaire__button--clicked:hover {
   background-color: #eefffa;
   cursor: pointer;
 }
@@ -389,6 +407,180 @@ button {
 .questionnaire .questionnaire__btn-back:hover {
   background-color: #eefffa;
   cursor: pointer;
+}
+
+#correct.questionnaire__button--clicked {
+  -webkit-animation: nod 0.7s;
+          animation: nod 0.7s;
+}
+
+#incorrect.questionnaire__button--clicked {
+  -webkit-animation: shake 0.7s;
+          animation: shake 0.7s;
+}
+
+@-webkit-keyframes nod {
+  0% {
+    -webkit-transform: translate(0, 1px);
+            transform: translate(0, 1px);
+  }
+  30% {
+    -webkit-transform: translate(0, -2px);
+            transform: translate(0, -2px);
+    background-color: #9bffa0;
+  }
+  60% {
+    -webkit-transform: translate(0, 2px);
+            transform: translate(0, 2px);
+    background-color: #9bffa0;
+  }
+  90% {
+    -webkit-transform: translate(0, -2px);
+            transform: translate(0, -2px);
+    background-color: #9bffa0;
+  }
+  100% {
+    -webkit-transform: translate(0, 2px);
+            transform: translate(0, 2px);
+  }
+}
+
+@keyframes nod {
+  0% {
+    -webkit-transform: translate(0, 1px);
+            transform: translate(0, 1px);
+  }
+  30% {
+    -webkit-transform: translate(0, -2px);
+            transform: translate(0, -2px);
+    background-color: #9bffa0;
+  }
+  60% {
+    -webkit-transform: translate(0, 2px);
+            transform: translate(0, 2px);
+    background-color: #9bffa0;
+  }
+  90% {
+    -webkit-transform: translate(0, -2px);
+            transform: translate(0, -2px);
+    background-color: #9bffa0;
+  }
+  100% {
+    -webkit-transform: translate(0, 2px);
+            transform: translate(0, 2px);
+  }
+}
+
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: translate(1px, 1px) rotate(0deg);
+            transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    -webkit-transform: translate(-1px, -2px) rotate(-1deg);
+            transform: translate(-1px, -2px) rotate(-1deg);
+    background-color: #ff9b9b;
+  }
+  20% {
+    -webkit-transform: translate(-3px, 0px) rotate(1deg);
+            transform: translate(-3px, 0px) rotate(1deg);
+    background-color: #ff9b9b;
+  }
+  30% {
+    -webkit-transform: translate(3px, 2px) rotate(0deg);
+            transform: translate(3px, 2px) rotate(0deg);
+    background-color: #ff9b9b;
+  }
+  40% {
+    -webkit-transform: translate(1px, -1px) rotate(1deg);
+            transform: translate(1px, -1px) rotate(1deg);
+    background-color: #ff9b9b;
+  }
+  50% {
+    -webkit-transform: translate(-1px, 2px) rotate(-1deg);
+            transform: translate(-1px, 2px) rotate(-1deg);
+    background-color: #ff9b9b;
+  }
+  60% {
+    -webkit-transform: translate(-3px, 1px) rotate(0deg);
+            transform: translate(-3px, 1px) rotate(0deg);
+    background-color: #ff9b9b;
+  }
+  70% {
+    -webkit-transform: translate(3px, 1px) rotate(-1deg);
+            transform: translate(3px, 1px) rotate(-1deg);
+    background-color: #ff9b9b;
+  }
+  80% {
+    -webkit-transform: translate(-1px, -1px) rotate(1deg);
+            transform: translate(-1px, -1px) rotate(1deg);
+    background-color: #ff9b9b;
+  }
+  90% {
+    -webkit-transform: translate(1px, 2px) rotate(0deg);
+            transform: translate(1px, 2px) rotate(0deg);
+    background-color: #ff9b9b;
+  }
+  100% {
+    -webkit-transform: translate(1px, -2px) rotate(-1deg);
+            transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+@keyframes shake {
+  0% {
+    -webkit-transform: translate(1px, 1px) rotate(0deg);
+            transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    -webkit-transform: translate(-1px, -2px) rotate(-1deg);
+            transform: translate(-1px, -2px) rotate(-1deg);
+    background-color: #ff9b9b;
+  }
+  20% {
+    -webkit-transform: translate(-3px, 0px) rotate(1deg);
+            transform: translate(-3px, 0px) rotate(1deg);
+    background-color: #ff9b9b;
+  }
+  30% {
+    -webkit-transform: translate(3px, 2px) rotate(0deg);
+            transform: translate(3px, 2px) rotate(0deg);
+    background-color: #ff9b9b;
+  }
+  40% {
+    -webkit-transform: translate(1px, -1px) rotate(1deg);
+            transform: translate(1px, -1px) rotate(1deg);
+    background-color: #ff9b9b;
+  }
+  50% {
+    -webkit-transform: translate(-1px, 2px) rotate(-1deg);
+            transform: translate(-1px, 2px) rotate(-1deg);
+    background-color: #ff9b9b;
+  }
+  60% {
+    -webkit-transform: translate(-3px, 1px) rotate(0deg);
+            transform: translate(-3px, 1px) rotate(0deg);
+    background-color: #ff9b9b;
+  }
+  70% {
+    -webkit-transform: translate(3px, 1px) rotate(-1deg);
+            transform: translate(3px, 1px) rotate(-1deg);
+    background-color: #ff9b9b;
+  }
+  80% {
+    -webkit-transform: translate(-1px, -1px) rotate(1deg);
+            transform: translate(-1px, -1px) rotate(1deg);
+    background-color: #ff9b9b;
+  }
+  90% {
+    -webkit-transform: translate(1px, 2px) rotate(0deg);
+            transform: translate(1px, 2px) rotate(0deg);
+    background-color: #ff9b9b;
+  }
+  100% {
+    -webkit-transform: translate(1px, -2px) rotate(-1deg);
+            transform: translate(1px, -2px) rotate(-1deg);
+  }
 }
 
 .nomorequestions__container {
@@ -492,7 +684,7 @@ button {
 
 @media screen and (min-width: 1000px) {
   .about {
-    margin: 5% 30%;
+    margin: 5% 20%;
   }
 }
 

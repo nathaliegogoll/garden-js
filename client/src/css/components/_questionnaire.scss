@@ -9,45 +9,130 @@
     margin: 0 0.5rem;
   }
   .questionnaire__question,
-  .questionnaire__button {
+  .questionnaire__button, .questionnaire__button--clicked {
     text-align: center;
     padding: 0.5rem;
     margin: 0.5rem 1rem;
   }
-  .questionnaire__button {
-    background-color: white;
-    border: $border-black;
-    font-size: 1rem;
-    &:hover {
-      background-color: rgb(238, 255, 250);
-      cursor: pointer;
-    }
-  }
-  .questionnaire__btn-close {
-    border: none;
-    background-color: white;
-    border-radius: 100%;
-    max-width: 2rem;
-    max-height: 2rem;
-    margin: 1rem auto;
-    &:hover {
-      cursor: pointer;
-      background-color: rgb(255, 174, 174);
+  .questionnaire__div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .questionnaire__button, .questionnaire__button--clicked {
+      text-align: center;
+      min-width: 90%;
+      padding: 0.5rem;
+      margin: 0.5rem 1rem;
+      background-color: white;
+      border: $border-black;
+      font-size: 1rem;
+      background-color: white;
+      &:hover {
+        background-color: rgb(238, 255, 250);
+        cursor: pointer;
+      }
+    }}
 
-    }
-  }
-  .questionnaire__btn-back {
-    border: none;
-    background-color: white;
-    border-radius: 100%;
-    max-width: 2rem;
-    max-height: 2rem;
-    &:hover {
-      background-color: rgb(238, 255, 250);
-      cursor: pointer;
-    }
-  }
+    .questionnaire__btn-close {
+      border: none;
+      background-color: white;
+      border-radius: 100%;
+      max-width: 2rem;
+      max-height: 2rem;
+      margin: 1rem auto;
+      &:hover {
+        cursor: pointer;
+        background-color: rgb(255, 174, 174);
 
+      }
+    }
+    .questionnaire__btn-back {
+      border: none;
+      background-color: white;
+      border-radius: 100%;
+      max-width: 2rem;
+      max-height: 2rem;
+      &:hover {
+        background-color: rgb(238, 255, 250);
+        cursor: pointer;
+      }
+    }
+  
+
+}
+
+#correct.questionnaire__button--clicked{
+  animation: nod 0.7s;
+}
+#incorrect.questionnaire__button--clicked{
+  animation: shake 0.7s;
+}
+
+@keyframes nod {
+  0% {
+    transform: translate(0, 1px);
+}
+30% {
+    transform: translate(0, -2px);
+    background-color: rgb(155, 255, 160);
+}
+60% {
+    transform: translate(0, 2px);
+    background-color: rgb(155, 255, 160);
+}
+90% {
+    transform: translate(0, -2px);
+    background-color: rgb(155, 255, 160);
+}
+100% {
+    transform: translate(0, 2px);
+}
+}
+
+@keyframes shake {
+  0% {
+      transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+      transform: translate(-1px, -2px) rotate(-1deg);
+      background-color: rgb(255, 155, 155);
+  }
+  20% {
+      transform: translate(-3px, 0px) rotate(1deg);
+      background-color: rgb(255, 155, 155);
+  }
+  30% {
+      transform: translate(3px, 2px) rotate(0deg);
+      background-color: rgb(255, 155, 155);
+  }
+  40% {
+      transform: translate(1px, -1px) rotate(1deg);
+      background-color: rgb(255, 155, 155);
+  }
+  50% {
+      transform: translate(-1px, 2px) rotate(-1deg);
+      background-color: rgb(255, 155, 155);
+  }
+  60% {
+      transform: translate(-3px, 1px) rotate(0deg);
+      background-color: rgb(255, 155, 155);
+  }
+  70% {
+      transform: translate(3px, 1px) rotate(-1deg);
+      background-color: rgb(255, 155, 155);
+  }
+  80% {
+      transform: translate(-1px, -1px) rotate(1deg);
+      background-color: rgb(255, 155, 155);
+  }
+  90% {
+      transform: translate(1px, 2px) rotate(0deg);
+      background-color: rgb(255, 155, 155);
+  }
+  100% {
+      transform: translate(1px, -2px) rotate(-1deg);
+  }
 }
 
 .nomorequestions__container {
