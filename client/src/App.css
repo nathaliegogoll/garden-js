@@ -353,14 +353,31 @@ button {
   margin: 0.5rem 1rem;
 }
 
-.questionnaire .questionnaire__button, .questionnaire .questionnaire__button--clicked {
+.questionnaire .questionnaire__div {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.questionnaire .questionnaire__div .questionnaire__button, .questionnaire .questionnaire__div .questionnaire__button--clicked {
+  text-align: center;
+  min-width: 90%;
+  padding: 0.5rem;
+  margin: 0.5rem 1rem;
   background-color: white;
   border: 1px solid black;
   font-size: 1rem;
   background-color: white;
 }
 
-.questionnaire .questionnaire__button:hover, .questionnaire .questionnaire__button--clicked:hover {
+.questionnaire .questionnaire__div .questionnaire__button:hover, .questionnaire .questionnaire__div .questionnaire__button--clicked:hover {
   background-color: #eefffa;
   cursor: pointer;
 }
@@ -667,7 +684,7 @@ button {
 
 @media screen and (min-width: 1000px) {
   .about {
-    margin: 5% 30%;
+    margin: 5% 20%;
   }
 }
 

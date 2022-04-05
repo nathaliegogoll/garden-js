@@ -85,13 +85,13 @@ const Questions = () => {
                         {
                         storeQuestions[0].translations[0].options.map((answer, index) => {
                             return (
-                                <>
+                                <section className='questionnaire__div' key={answer.label}>
                                     {(answer.label === storeQuestions[0].translations[0].answer) ? 
-                                    (<button className={(toggleClass[index] === true) ? 'questionnaire__button--clicked': 'questionnaire__button'}  id="correct" tabIndex="0" key={answer.label} onClick={() => {handleAnswer(answer, index)}}>{answer.label}. {answer.option.replaceAll('`','')}</button>)
+                                    (<button className={(toggleClass[index] === true) ? 'questionnaire__button--clicked': 'questionnaire__button'}  id="correct" tabIndex="0" onClick={() => {handleAnswer(answer, index)}}>{answer.label}. {answer.option.replaceAll('`','')}</button>)
                                     : 
-                                    (<button className={(toggleClass[index] === true) ? 'questionnaire__button--clicked': 'questionnaire__button'} id="incorrect" tabIndex="0" key={answer.label} onClick={() => {handleAnswer(answer, index)}}>{answer.label}. {answer.option.replaceAll('`','')}</button>)
+                                    (<button className={(toggleClass[index] === true) ? 'questionnaire__button--clicked': 'questionnaire__button'} id="incorrect" tabIndex="0" onClick={() => {handleAnswer(answer, index)}}>{answer.label}. {answer.option.replaceAll('`','')}</button>)
                                     }
-                                </>
+                                </section>
                             )
                         })
                         }
