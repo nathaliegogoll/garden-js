@@ -7,12 +7,14 @@ import Prism from "prismjs";
 import "prismjs/themes/prism-tomorrow.css";
 import closeIcon from '../../resources/close_icon.png';
 import LevelUp from './LevelUp';
+import MaxLevel from './MaxLevel';
 
 const Questions = () => {
     const storeQuestions = useSelector((state) => state.questions.questions);
     const { loading } = useSelector((state) => state.questions);
     const { user } = useSelector((state) => state.user)
     const [levelUp, setLevelUp] = useState(false)
+
 
     const dispatch = useDispatch();
 
@@ -61,6 +63,12 @@ const Questions = () => {
             </>
         ) : (
         <>
+        { (user.level === 30) ? (
+            <>
+                <MaxLevel />
+            </>
+        ) : (
+        <>
         { loading ? (
             <>
                 <p>loading questions...</p>
@@ -93,6 +101,8 @@ const Questions = () => {
                 )
                 }
             </>
+        )}
+        </>
         )}
         </>
         )}
