@@ -7,6 +7,7 @@ import Prism from "prismjs";
 import "prismjs/themes/prism-tomorrow.css";
 import closeIcon from '../../resources/close_icon.png';
 import LevelUp from './LevelUp';
+import MaxLevel from './MaxLevel';
 
 const Questions = () => {
     const storeQuestions = useSelector((state) => state.questions.questions);
@@ -14,6 +15,7 @@ const Questions = () => {
     const { user } = useSelector((state) => state.user)
     const [levelUp, setLevelUp] = useState(false)
     const [toggleClass, setToggleClass] = useState([])
+
 
     const dispatch = useDispatch();
 
@@ -38,7 +40,7 @@ const Questions = () => {
             dispatch(displayPopup(levelUp))
         }
         if (answer.label === correctAnswer) {
-            dispatch(handleCorrectAnswer());
+            dispatch(handleCorrectAnswer(storeQuestions[0].id));
         } else {
             dispatch(handleWrongAnswer());
         }
@@ -63,6 +65,12 @@ const Questions = () => {
         { levelUp ? (
             <>
                 <LevelUp setter={setLevelUp} getter={levelUp}/>
+            </>
+        ) : (
+        <>
+        { (user.level === 15) ? (
+            <>
+                <MaxLevel />
             </>
         ) : (
         <>
@@ -106,6 +114,8 @@ const Questions = () => {
                 )
                 }
             </>
+        )}
+        </>
         )}
         </>
         )}

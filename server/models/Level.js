@@ -8,7 +8,8 @@ const LevelSchema = new mongoose.Schema({
     xp: Number,
     carrotNumber: Number,
     perks: [],
-    lastConnected: Date
+    lastConnected: Date,
+    completedKatas: []
 });
   
   
