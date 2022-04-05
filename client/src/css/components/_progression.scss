@@ -2,10 +2,6 @@
   display: flex;
   flex-direction: row;
   padding-bottom: 1rem;
-  @include tablet_min_width {
-    max-width: 50%;
-    margin-left: 25%;
-  }
 }
 
 
@@ -62,10 +58,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  @include tablet_min_width {
-    max-width: 50%;
-    margin-left: 25%;
-  }
 }
 
 .level__level {

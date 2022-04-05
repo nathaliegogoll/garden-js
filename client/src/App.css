@@ -14,6 +14,40 @@ button {
   max-width: inherit;
 }
 
+@media screen and (min-width: 500px) {
+  .main__container {
+    max-width: 450px;
+    min-height: 700px;
+    border: 1px solid black;
+    padding: 1rem rem;
+    margin: 3rem auto;
+    -webkit-animation: framemove 3s forwards;
+            animation: framemove 3s forwards;
+  }
+}
+
+@-webkit-keyframes framemove {
+  0% {
+    -webkit-box-shadow: -0px -0px 0px 0px black;
+            box-shadow: -0px -0px 0px 0px black;
+  }
+  100% {
+    -webkit-box-shadow: -7px -7px 0px 0px #093a00;
+            box-shadow: -7px -7px 0px 0px #093a00;
+  }
+}
+
+@keyframes framemove {
+  0% {
+    -webkit-box-shadow: -0px -0px 0px 0px black;
+            box-shadow: -0px -0px 0px 0px black;
+  }
+  100% {
+    -webkit-box-shadow: -7px -7px 0px 0px #093a00;
+            box-shadow: -7px -7px 0px 0px #093a00;
+  }
+}
+
 @font-face {
   font-family: JuliaMono-Regular;
   src: url("https://cdn.jsdelivr.net/gh/cormullion/juliamono/webfonts/JuliaMono-Regular.woff2");
@@ -180,13 +214,6 @@ button {
   padding-bottom: 1rem;
 }
 
-@media screen and (min-width: 600px) {
-  .top__container {
-    max-width: 50%;
-    margin-left: 25%;
-  }
-}
-
 .logout {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -278,13 +305,6 @@ button {
           justify-content: space-between;
 }
 
-@media screen and (min-width: 600px) {
-  .level__container {
-    max-width: 50%;
-    margin-left: 25%;
-  }
-}
-
 .level__level {
   border: 1px solid black;
   padding: 0.2rem 0.5rem;
@@ -365,6 +385,29 @@ button {
   cursor: pointer;
 }
 
+.nomorequestions__container {
+  border: 1px solid black;
+  padding: 1rem;
+  margin: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nomorequestions__container p {
+  margin-bottom: 2rem;
+}
+
 .solvekatas__btn {
   text-align: center;
   padding: 0.5rem;
@@ -394,13 +437,6 @@ button {
   background-color: #beffbe;
 }
 
-@media screen and (min-width: 600px) {
-  .solvekatas__btn {
-    max-width: 50%;
-    margin-left: 25%;
-  }
-}
-
 .container__buttons {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -426,13 +462,6 @@ button {
   border: 1px solid black;
 }
 
-@media screen and (min-width: 600px) {
-  .dev__mode {
-    max-width: 50%;
-    margin-left: 25%;
-  }
-}
-
 .navigation {
   text-align: center;
   margin: 2rem auto;
@@ -449,9 +478,15 @@ button {
   border-color: green;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 680px) {
   .about {
     margin: 0 20%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .about {
+    margin: 5% 30%;
   }
 }
 
@@ -478,9 +513,22 @@ button {
   font-size: 2rem;
 }
 
+@media screen and (min-width: 1000px) {
+  .about__title {
+    font-size: 2.5rem;
+  }
+}
+
 .about__description {
   text-align: center;
   margin: 0 2rem 3rem 2rem;
+}
+
+@media screen and (min-width: 1000px) {
+  .about__description {
+    font-size: 1.5rem;
+    margin: 2rem -10% 5rem -10%;
+  }
 }
 
 .about__footer {
@@ -498,6 +546,12 @@ button {
 
 .about__footer button *:hover {
   color: green;
+}
+
+@media screen and (min-width: 1000px) {
+  .developers__title {
+    font-size: 2rem;
+  }
 }
 
 .developers__person {
@@ -521,7 +575,7 @@ button {
   max-width: 35%;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 680px) {
   .developers__person img {
     max-width: 20%;
   }
@@ -626,6 +680,19 @@ button {
 .levelup__close:hover {
   cursor: pointer;
   background-color: #eefffa;
+}
+
+.forgotPassword {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.forgotPassword__msg {
+  margin: 2rem 0.5rem;
+}
+
+.forgotPassword__navigate-btn {
+  padding: 1rem;
 }
 
 @-webkit-keyframes classicvegetableanimation {

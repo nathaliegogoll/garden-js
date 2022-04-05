@@ -86,10 +86,10 @@ const Questions = () => {
 
                     </>
                 ) : (
-                    <>
-                    <p>No more questions for today!</p>
+                    <div className="nomorequestions__container">
+                    <p>No more questions for today! Come back tomorrow to get new carrots and more katas to solve!</p>
                     <button className="questionnaire__btn-back" onClick={handleGoBack}><img className="btn--close" src={closeIcon} alt="go back button" /></button>
-                    </>
+                    </div>
                 )
                 }
             </>
