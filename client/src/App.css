@@ -5,6 +5,49 @@
           box-sizing: border-box;
 }
 
+button {
+  border: 1px solid black;
+  background-color: white;
+}
+
+.btn--close {
+  max-width: inherit;
+}
+
+@media screen and (min-width: 500px) {
+  .main__container {
+    max-width: 450px;
+    min-height: 700px;
+    border: 1px solid black;
+    padding: 1rem rem;
+    margin: 3rem auto;
+    -webkit-animation: framemove 3s forwards;
+            animation: framemove 3s forwards;
+  }
+}
+
+@-webkit-keyframes framemove {
+  0% {
+    -webkit-box-shadow: -0px -0px 0px 0px black;
+            box-shadow: -0px -0px 0px 0px black;
+  }
+  100% {
+    -webkit-box-shadow: -7px -7px 0px 0px #093a00;
+            box-shadow: -7px -7px 0px 0px #093a00;
+  }
+}
+
+@keyframes framemove {
+  0% {
+    -webkit-box-shadow: -0px -0px 0px 0px black;
+            box-shadow: -0px -0px 0px 0px black;
+  }
+  100% {
+    -webkit-box-shadow: -7px -7px 0px 0px #093a00;
+            box-shadow: -7px -7px 0px 0px #093a00;
+  }
+}
+
 @font-face {
   font-family: JuliaMono-Regular;
   src: url("https://cdn.jsdelivr.net/gh/cormullion/juliamono/webfonts/JuliaMono-Regular.woff2");
@@ -75,6 +118,12 @@
 .register__form-title img {
   max-height: 2.5rem;
   margin-top: -0.5rem;
+}
+
+.register__error-msg, .login__error-msg {
+  text-align: center;
+  color: red;
+  margin-top: 1rem;
 }
 
 .form-group label {
@@ -171,13 +220,6 @@
   padding-bottom: 1rem;
 }
 
-@media screen and (min-width: 600px) {
-  .top__container {
-    max-width: 50%;
-    margin-left: 25%;
-  }
-}
-
 .logout {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -249,6 +291,13 @@
   width: 2rem;
 }
 
+.progression__container .carrot__container .carrot__empty {
+  color: #cfcfcf;
+  font-size: 0.8rem;
+  font-style: italic;
+  margin-left: 2rem;
+}
+
 .level__container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -262,16 +311,9 @@
           justify-content: space-between;
 }
 
-@media screen and (min-width: 600px) {
-  .level__container {
-    max-width: 50%;
-    margin-left: 25%;
-  }
-}
-
 .level__level {
   border: 1px solid black;
-  padding: 0.3rem 1rem;
+  padding: 0.2rem 0.5rem;
 }
 
 .level__xpbar {
@@ -305,19 +347,37 @@
 }
 
 .questionnaire .questionnaire__question,
-.questionnaire .questionnaire__button {
+.questionnaire .questionnaire__button, .questionnaire .questionnaire__button--clicked {
   text-align: center;
   padding: 0.5rem;
   margin: 0.5rem 1rem;
 }
 
-.questionnaire .questionnaire__button {
+.questionnaire .questionnaire__div {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.questionnaire .questionnaire__div .questionnaire__button, .questionnaire .questionnaire__div .questionnaire__button--clicked {
+  text-align: center;
+  min-width: 90%;
+  padding: 0.5rem;
+  margin: 0.5rem 1rem;
   background-color: white;
   border: 1px solid black;
   font-size: 1rem;
+  background-color: white;
 }
 
-.questionnaire .questionnaire__button:hover {
+.questionnaire .questionnaire__div .questionnaire__button:hover, .questionnaire .questionnaire__div .questionnaire__button--clicked:hover {
   background-color: #eefffa;
   cursor: pointer;
 }
@@ -349,8 +409,201 @@
   cursor: pointer;
 }
 
-.btn--close {
-  max-width: inherit;
+#correct.questionnaire__button--clicked {
+  -webkit-animation: nod 0.7s;
+          animation: nod 0.7s;
+}
+
+#incorrect.questionnaire__button--clicked {
+  -webkit-animation: shake 0.7s;
+          animation: shake 0.7s;
+}
+
+@-webkit-keyframes nod {
+  0% {
+    -webkit-transform: translate(0, 1px);
+            transform: translate(0, 1px);
+  }
+  30% {
+    -webkit-transform: translate(0, -2px);
+            transform: translate(0, -2px);
+    background-color: #9bffa0;
+  }
+  60% {
+    -webkit-transform: translate(0, 2px);
+            transform: translate(0, 2px);
+    background-color: #9bffa0;
+  }
+  90% {
+    -webkit-transform: translate(0, -2px);
+            transform: translate(0, -2px);
+    background-color: #9bffa0;
+  }
+  100% {
+    -webkit-transform: translate(0, 2px);
+            transform: translate(0, 2px);
+  }
+}
+
+@keyframes nod {
+  0% {
+    -webkit-transform: translate(0, 1px);
+            transform: translate(0, 1px);
+  }
+  30% {
+    -webkit-transform: translate(0, -2px);
+            transform: translate(0, -2px);
+    background-color: #9bffa0;
+  }
+  60% {
+    -webkit-transform: translate(0, 2px);
+            transform: translate(0, 2px);
+    background-color: #9bffa0;
+  }
+  90% {
+    -webkit-transform: translate(0, -2px);
+            transform: translate(0, -2px);
+    background-color: #9bffa0;
+  }
+  100% {
+    -webkit-transform: translate(0, 2px);
+            transform: translate(0, 2px);
+  }
+}
+
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: translate(1px, 1px) rotate(0deg);
+            transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    -webkit-transform: translate(-1px, -2px) rotate(-1deg);
+            transform: translate(-1px, -2px) rotate(-1deg);
+    background-color: #ff9b9b;
+  }
+  20% {
+    -webkit-transform: translate(-3px, 0px) rotate(1deg);
+            transform: translate(-3px, 0px) rotate(1deg);
+    background-color: #ff9b9b;
+  }
+  30% {
+    -webkit-transform: translate(3px, 2px) rotate(0deg);
+            transform: translate(3px, 2px) rotate(0deg);
+    background-color: #ff9b9b;
+  }
+  40% {
+    -webkit-transform: translate(1px, -1px) rotate(1deg);
+            transform: translate(1px, -1px) rotate(1deg);
+    background-color: #ff9b9b;
+  }
+  50% {
+    -webkit-transform: translate(-1px, 2px) rotate(-1deg);
+            transform: translate(-1px, 2px) rotate(-1deg);
+    background-color: #ff9b9b;
+  }
+  60% {
+    -webkit-transform: translate(-3px, 1px) rotate(0deg);
+            transform: translate(-3px, 1px) rotate(0deg);
+    background-color: #ff9b9b;
+  }
+  70% {
+    -webkit-transform: translate(3px, 1px) rotate(-1deg);
+            transform: translate(3px, 1px) rotate(-1deg);
+    background-color: #ff9b9b;
+  }
+  80% {
+    -webkit-transform: translate(-1px, -1px) rotate(1deg);
+            transform: translate(-1px, -1px) rotate(1deg);
+    background-color: #ff9b9b;
+  }
+  90% {
+    -webkit-transform: translate(1px, 2px) rotate(0deg);
+            transform: translate(1px, 2px) rotate(0deg);
+    background-color: #ff9b9b;
+  }
+  100% {
+    -webkit-transform: translate(1px, -2px) rotate(-1deg);
+            transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+@keyframes shake {
+  0% {
+    -webkit-transform: translate(1px, 1px) rotate(0deg);
+            transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    -webkit-transform: translate(-1px, -2px) rotate(-1deg);
+            transform: translate(-1px, -2px) rotate(-1deg);
+    background-color: #ff9b9b;
+  }
+  20% {
+    -webkit-transform: translate(-3px, 0px) rotate(1deg);
+            transform: translate(-3px, 0px) rotate(1deg);
+    background-color: #ff9b9b;
+  }
+  30% {
+    -webkit-transform: translate(3px, 2px) rotate(0deg);
+            transform: translate(3px, 2px) rotate(0deg);
+    background-color: #ff9b9b;
+  }
+  40% {
+    -webkit-transform: translate(1px, -1px) rotate(1deg);
+            transform: translate(1px, -1px) rotate(1deg);
+    background-color: #ff9b9b;
+  }
+  50% {
+    -webkit-transform: translate(-1px, 2px) rotate(-1deg);
+            transform: translate(-1px, 2px) rotate(-1deg);
+    background-color: #ff9b9b;
+  }
+  60% {
+    -webkit-transform: translate(-3px, 1px) rotate(0deg);
+            transform: translate(-3px, 1px) rotate(0deg);
+    background-color: #ff9b9b;
+  }
+  70% {
+    -webkit-transform: translate(3px, 1px) rotate(-1deg);
+            transform: translate(3px, 1px) rotate(-1deg);
+    background-color: #ff9b9b;
+  }
+  80% {
+    -webkit-transform: translate(-1px, -1px) rotate(1deg);
+            transform: translate(-1px, -1px) rotate(1deg);
+    background-color: #ff9b9b;
+  }
+  90% {
+    -webkit-transform: translate(1px, 2px) rotate(0deg);
+            transform: translate(1px, 2px) rotate(0deg);
+    background-color: #ff9b9b;
+  }
+  100% {
+    -webkit-transform: translate(1px, -2px) rotate(-1deg);
+            transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+.nomorequestions__container {
+  border: 1px solid black;
+  padding: 1rem;
+  margin: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nomorequestions__container p {
+  margin-bottom: 2rem;
 }
 
 .solvekatas__btn {
@@ -382,13 +635,6 @@
   background-color: #beffbe;
 }
 
-@media screen and (min-width: 600px) {
-  .solvekatas__btn {
-    max-width: 50%;
-    margin-left: 25%;
-  }
-}
-
 .container__buttons {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -414,16 +660,32 @@
   border: 1px solid black;
 }
 
-@media screen and (min-width: 600px) {
-  .dev__mode {
-    max-width: 50%;
-    margin-left: 25%;
+.navigation {
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.navigation * {
+  padding: 0.5rem 2rem;
+  border: 1px solid black;
+  color: black;
+}
+
+.navigation *:hover {
+  color: green;
+  border-color: green;
+}
+
+@media screen and (min-width: 680px) {
+  .about {
+    margin: 0 20%;
   }
 }
 
-.navigation {
-  text-align: center;
-  margin: 1rem auto;
+@media screen and (min-width: 1000px) {
+  .about {
+    margin: 5% 20%;
+  }
 }
 
 .about__developers {
@@ -446,6 +708,13 @@
 .about__title {
   text-align: center;
   margin: 1rem auto;
+  font-size: 2rem;
+}
+
+@media screen and (min-width: 1000px) {
+  .about__title {
+    font-size: 2.5rem;
+  }
 }
 
 .about__description {
@@ -453,8 +722,34 @@
   margin: 0 2rem 3rem 2rem;
 }
 
-.developers__title {
-  margin-bottom: 1rem;
+@media screen and (min-width: 1000px) {
+  .about__description {
+    font-size: 1.5rem;
+    margin: 2rem -10% 5rem -10%;
+  }
+}
+
+.about__footer {
+  text-align: center;
+  margin: 2rem;
+}
+
+.about__footer button {
+  padding: 0.5rem 2rem;
+}
+
+.about__footer button * {
+  color: black;
+}
+
+.about__footer button *:hover {
+  color: green;
+}
+
+@media screen and (min-width: 1000px) {
+  .developers__title {
+    font-size: 2rem;
+  }
 }
 
 .developers__person {
@@ -474,7 +769,14 @@
 }
 
 .developers__person img {
+  margin-top: 1.5rem;
   max-width: 35%;
+}
+
+@media screen and (min-width: 680px) {
+  .developers__person img {
+    max-width: 20%;
+  }
 }
 
 .developers__person .person--name {
@@ -484,6 +786,20 @@
 
 .developers__person .person--links {
   margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.developers__person .person--links a {
+  color: black;
+}
+
+.developers__person .person--links a:hover {
+  color: green;
+  border-color: green;
+}
+
+.developers__person .person--links a:focus {
+  outline: 2px dashed green;
 }
 
 .resetgame {
@@ -524,6 +840,59 @@
   background-color: #ffaeae;
 }
 
+.levelup {
+  border: 1px solid black;
+  margin: 0 2rem;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.levelup__title {
+  margin-bottom: 1rem;
+}
+
+.levelup__img {
+  max-width: 30%;
+  margin: 1rem 35%;
+}
+
+.levelup__close {
+  border: none;
+  background-color: white;
+  border-radius: 100%;
+  max-width: 2rem;
+  max-height: 2rem;
+  margin: 1rem auto;
+}
+
+.levelup__close:hover {
+  cursor: pointer;
+  background-color: #eefffa;
+}
+
+.forgotPassword {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.forgotPassword__msg {
+  margin: 2rem 0.5rem;
+}
+
+.forgotPassword__navigate-btn {
+  padding: 1rem;
+}
+
 @-webkit-keyframes classicvegetableanimation {
   from {
     background-position-x: -10px;
@@ -545,7 +914,7 @@
 .garden--level0 {
   position: absolute;
   top: 260px;
-  left: 150px;
+  left: 180px;
   width: 55px;
   height: 74px;
   -webkit-animation: rabbitmovesX 1.5s steps(4) infinite, rabbitmovesY 9s steps(6) infinite;
@@ -591,12 +960,12 @@
 .garden--level1 {
   margin-top: 25px;
   width: 100%;
-  height: 84.5%;
+  height: 85%;
 }
 
 .garden--level2 {
   margin-top: -115px;
-  margin-left: 125px;
+  margin-left: 138px;
   width: 32px;
   height: 50px;
   -webkit-animation: classicvegetableanimation 3s steps(19) forwards;
@@ -605,7 +974,7 @@
 
 .garden--level3 {
   margin-top: -50px;
-  margin-left: 95px;
+  margin-left: 160px;
   width: 32px;
   height: 50px;
   -webkit-animation: carrotmoves 3s steps(15) forwards;
@@ -632,7 +1001,7 @@
 
 .garden--level4 {
   margin-top: -50px;
-  margin-left: 70px;
+  margin-left: 250px;
   width: 32px;
   height: 50px;
   -webkit-animation: classicvegetableanimation 3s steps(19) forwards;
@@ -641,7 +1010,7 @@
 
 .garden--level5 {
   margin-top: -50px;
-  margin-left: 50px;
+  margin-left: 310px;
   width: 32px;
   height: 50px;
   -webkit-animation: classicvegetableanimation 3s steps(19) forwards;
@@ -650,7 +1019,7 @@
 
 .garden--level6 {
   margin-top: -50px;
-  margin-left: 30px;
+  margin-left: 230px;
   width: 32px;
   height: 50px;
   -webkit-animation: classicvegetableanimation 3s steps(19) forwards;
@@ -659,7 +1028,7 @@
 
 .garden--level7 {
   margin-top: -50px;
-  margin-left: 10px;
+  margin-left: 0px;
   width: 32px;
   height: 50px;
   -webkit-animation: watermelonmoves 3s steps(18) forwards;
@@ -685,12 +1054,12 @@
 }
 
 .garden--level8 {
-  margin-top: -92px;
-  margin-left: 292px;
-  width: 50px;
-  height: 96px;
-  -webkit-animation: treemove 3s steps(5) forwards;
-          animation: treemove 3s steps(5) forwards;
+  margin-top: -160px;
+  margin-left: 200px;
+  width: 200px;
+  height: 200px;
+  -webkit-animation: treemove 2s steps(2) forwards;
+          animation: treemove 2s steps(2) forwards;
 }
 
 @-webkit-keyframes treemove {
@@ -698,7 +1067,7 @@
     background-position-x: 0px;
   }
   to {
-    background-position-x: -250px;
+    background-position-x: -400px;
   }
 }
 
@@ -707,17 +1076,17 @@
     background-position-x: 0px;
   }
   to {
-    background-position-x: -250px;
+    background-position-x: -400px;
   }
 }
 
 .garden--level9 {
-  margin-top: -96px;
-  margin-left: 260px;
-  width: 50px;
-  height: 96px;
-  -webkit-animation: treemove 3s steps(5) forwards;
-          animation: treemove 3s steps(5) forwards;
+  margin-top: -200px;
+  margin-left: -50px;
+  width: 200px;
+  height: 200px;
+  -webkit-animation: treemove 2s steps(2) forwards;
+          animation: treemove 2s steps(2) forwards;
 }
 
 .garden--level10 {
@@ -775,7 +1144,7 @@
 }
 
 .garden--level12 {
-  margin-top: 220px;
+  margin-top: 190px;
   margin-left: 30px;
   width: 16px;
   height: 16px;
@@ -802,16 +1171,54 @@
 }
 
 .garden--level13 {
-  margin-top: -100px;
-  margin-left: 30px;
-  width: 300px;
-  height: 50px;
+  margin-top: -180px;
+  margin-left: 35px;
+  width: 45px;
+  height: 45px;
+  -webkit-animation: squirrelmoveX 1s steps(5) infinite, squirrelmoveY 1s steps(1) infinite;
+          animation: squirrelmoveX 1s steps(5) infinite, squirrelmoveY 1s steps(1) infinite;
+}
+
+@-webkit-keyframes squirrelmoveX {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: -225px;
+  }
+}
+
+@keyframes squirrelmoveX {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: -225px;
+  }
+}
+
+@-webkit-keyframes squirrelmoveY {
+  from {
+    background-position-y: 0px;
+  }
+  to {
+    background-position-Y: -45px;
+  }
+}
+
+@keyframes squirrelmoveY {
+  from {
+    background-position-y: 0px;
+  }
+  to {
+    background-position-Y: -45px;
+  }
 }
 
 .garden--level14 {
-  margin-top: -110px;
-  margin-left: 190px;
-  width: 96px;
-  height: 112px;
+  margin-top: -55px;
+  margin-left: -0px;
+  width: 200px;
+  height: 200px;
 }
 /*# sourceMappingURL=App.css.map */

@@ -1,11 +1,12 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import * as API from '../../api/index'
 
 export const fetchQuestions = createAsyncThunk( 
     'fetchQuestions', 
-    async (value, thunkAPI) => { 
-        const data = await fetch(`${value}`); 
-        const questions = await data.json();
-        return questions;
+    async (thunkAPI) => { 
+        const { data } = await API.fetchQuestions(); 
+        // const questions = await data.json();
+        return data;
     } 
   ) 
 
@@ -17,6 +18,9 @@ export const questions = createSlice( {
       reducers: {
         answerQuestion: (state) => { 
             state.questions.shift() 
+        },
+        clearQuestions: (state) => {
+          state.questions = [];
         },
         startGame: (state) => {
           state.gamestarted = true;
@@ -36,5 +40,5 @@ export const questions = createSlice( {
       }
   }); 
   
-  export const { answerQuestion, getQuestion, startGame, endGame } = questions.actions;
+  export const { answerQuestion, getQuestion, startGame, endGame, clearQuestions } = questions.actions;
   export default questions.reducer;

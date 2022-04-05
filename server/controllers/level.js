@@ -11,6 +11,8 @@ const createLevel = async (req, res, next) => {
             carrotNumber: 5,
             perks : [],
             lastConnected: Date.now(),
+            completedKatas: [],
+
             uuid: req.params.id
         });
         res.json(level);
@@ -30,7 +32,7 @@ const getLevel = async (req, res, next) => {
 
 const updateLevel = async (req, res, next) => {
     const { id } = req.params;
-    const { xp, carrotNumber, perks, uuid, username, level } = req.body;
+    const { xp, carrotNumber, perks, uuid, username, level, completedKatas } = req.body;
     if (!mongoose.Types.ObjectId.isValid(id)) {
         return next(new ErrorResponse("no valid id", 404));
     } 
@@ -43,6 +45,8 @@ const updateLevel = async (req, res, next) => {
         perks,
         lastConnected: Date.now(),
         uuid,
+        completedKatas,
+
     }
     await Level.findByIdAndUpdate(id, updateLevel, { new: true });
     res.json(updateLevel);

@@ -16,8 +16,7 @@ export const createAccount = createAsyncThunk(
         }
 
         } catch (err) {
-            console.log('Error', err.response.data);
-            return thunkAPI.rejectWithValue(err.response.data);
+            return thunkAPI.rejectWithValue(err.response.statusText);
         }
     }
  ) 
@@ -37,8 +36,7 @@ export const createAccount = createAsyncThunk(
         }
 
         } catch (err) {
-            console.log('Error', err.response.data);
-            return thunkAPI.rejectWithValue(err.response.data);
+            return thunkAPI.rejectWithValue(err.response.statusText);
         }
     }
  ) 

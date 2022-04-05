@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import marinaKinalone from '../resources/developers/marinakinalone.png'
+import nathalieGogoll from '../resources/developers/nathaliegogoll.png'
+import martin from '../resources/developers/martin.png'
+import seyfettin from '../resources/developers/Seyfettin.png'
 
 const About = () => {
   return (
@@ -15,19 +18,19 @@ const About = () => {
                 <p className="person--links"><a href="https://github.com/marinakinalone"  target="_blank" rel="noreferrer">GitHub</a> | <a href="https://www.linkedin.com/in/marinakinalone-simonnet/" target="_blank" rel="noreferrer">LinkedIn</a></p>
             </article>
             <article className="developers__person">
-                <img src="" alt="" />
-                <h3 className="person--name">Martin Pettersen</h3>
-                <p><a href="">GitHub</a> | <a>LinkedIn</a></p>
+                <img src={seyfettin} alt="Seyfettin Baskara" />
+                <h3 className="person--name">Seyfettin Baskara</h3>
+                <p className="person--links"><a href="https://github.com/SeyfBaskara" target="_blank" rel="noreferrer">GitHub</a> | <a href="https://www.linkedin.com/in/seyfettinbaskara/" target="_blank" rel="noreferrer">LinkedIn</a></p>
             </article>
             <article className="developers__person">
-                <img src="" alt="" />
+                <img src={nathalieGogoll} alt="Nathalie Jacobsson Gogoll" />
                 <h3 className="person--name">Nathalie Jacobsson Gogoll</h3>
-                <p><a href="">GitHub</a> | <a>LinkedIn</a></p>
+                <p className="person--links"><a href="https://github.com/nathaliegogoll" target="_blank" rel="noreferrer">GitHub</a> | <a href="https://www.linkedin.com/in/nathaliejacobssongogoll/" target="_blank" rel="noreferrer">LinkedIn</a></p>
             </article>
             <article className="developers__person">
-                <img src="" alt="" />
+            <img src={martin} alt="Martin" />
                 <h3 className="person--name">Martin Pettersen</h3>
-                <p><a href="">GitHub</a> | <a>LinkedIn</a></p>
+                <p className="person--links"><a href="https://github.com/MartinPettersen" target="_blank" rel="noreferrer">GitHub</a> | <a href="https://www.linkedin.com/in/martinpettersen89/?locale=en_US" target="_blank" rel="noreferrer">LinkedIn</a></p>
             </article>
         </div>
         <footer className='about__footer'>

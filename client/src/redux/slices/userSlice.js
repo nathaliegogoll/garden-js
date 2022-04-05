@@ -20,12 +20,12 @@ export const fetchUser = createAsyncThunk(
 export const modifyUser = createAsyncThunk( 
     'modifyUser', 
     async (updatedUser, thunkAPI) => { 
-        const data = await API.modifyLevel(updatedUser); 
-        return data.data;
+        const { data } = await API.modifyLevel(updatedUser); 
+        return data;
     } 
   ) 
 
-const initialState = { user: { id: '', carrotNumber: 0, level: 0, xp: 0, perks: []}, error: false, loading: true , uuid: '', levelup: true};
+const initialState = { user: { id: '', carrotNumber: 0, lastConnected: '', completedKatas: [], level: 0, xp: 0, perks: []}, error: false, loading: true , uuid: '', levelup: true};
 
 export const user = createSlice( { 
       name:'user', 
@@ -40,10 +40,16 @@ export const user = createSlice( {
           resetGame: (state) => {
               state.user.xp = 0;
               state.user.level = 0;
+              state.user.completedKatas = [];
           },
-          handleCorrectAnswer: (state) => {
+          handleCorrectAnswer: (state, action) => {
               state.user.carrotNumber -= 1; 
               state.user.xp += 1;
+              console.log(action.payload);
+              console.log(state.user.completedKatas);
+              state.user.completedKatas = [... state.user.completedKatas,action.payload];
+//              state.user.completedKatas = action.payload;
+
           },
           handleWrongAnswer: (state)  => {
               state.user.carrotNumber -= 1;
@@ -51,7 +57,7 @@ export const user = createSlice( {
           addLevel: (state, action)  => {
             state.user.level = action.payload;
         },
-          resetCarrots: (state, action) => {
+          resetCarrots: (state) => {
             state.user.carrotNumber = 5
         },
         displayPopup: (state, action) => {

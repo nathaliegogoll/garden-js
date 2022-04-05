@@ -6,41 +6,41 @@ import { useNavigate, Link } from 'react-router-dom';
 import { lvlDisplay } from './helpers';
 
 const  Main = () => {
-
   const { user } = useSelector((state) => state.user)
-  const { authData } = useSelector((state) => state.userAuth)
+  const { gamestarted } = useSelector((state) => state.questions);
+
   const [isReset, setIsReset] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
    useEffect(() => {
     if(!localStorage.getItem('AuthToken')){
          navigate('/login');
     } 
-   },[]);
+   },[navigate]);
+
+   const checkLastConnected = async () => {
+      if (user.carrotNumber < 5) {
+        const lastCon = user.lastConnected.toString().slice(0, 10); 
+        const today = new Date()
+        const todayFormatted = today.toISOString().slice(0, 10);
+        if (lastCon !== todayFormatted) {
+         dispatch(resetCarrots())
+        }
+      }
+      const date = new Date(user.lastConnected);
+      const today = new Date();
+      const diff = today.getTime() - date.getTime();
+      if( (diff / (8.64 * 10 ** +7)) > 7){
+        dispatch(resetGame());
+        setIsReset(true);
+       await dispatch(modifyUser(user)).unwrap()
+    }
+  }
 
   useEffect(() => {
-  if (user.lastConnected !== undefined) {
-    if (user.carrotNumber < 5) {
-      const lastCon = user.lastConnected.toString().slice(0, 10); 
-      const today = new Date()
-      const todayFormatted = today.toISOString().slice(0, 10);
-      if (lastCon !== todayFormatted) {
-       dispatch(resetCarrots())
-      }
-    }
-    const date = new Date(user.lastConnected);
-    const today = new Date();
-    const diff = today.getTime() - date.getTime();
-    if( (diff / (8.64 * 10 ** +7)) > 7){
-      dispatch(resetGame());
-      dispatch(modifyUser(user))
-      setIsReset(true);
-    }
-  }}, [user]) 
-
-  const { gamestarted } = useSelector((state) => state.questions);
-
-  const dispatch = useDispatch();
+      checkLastConnected()
+  }, [user.lastConnected]) 
 
   const increaseXp = () => {
     dispatch(addXp());
@@ -53,6 +53,7 @@ const  Main = () => {
 
   return (
     <div className="Main">
+      <div className="main__container">
       {isReset ? (
         <ResetGame setter={setIsReset} getter={isReset}/>
       ): (<>
@@ -82,7 +83,7 @@ const  Main = () => {
       </>
       )
       }
-      
+      </div>
       </div>
   );
 }

@@ -1,8 +1,8 @@
 import React, { useState, useEffect} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { createAccount } from '../../redux/slices/authSlice';
-import { addUuid, postUser } from '../../redux/slices/userSlice';
+import { postUser } from '../../redux/slices/userSlice';
 import Title from './Title';
 import bunny from '../../resources/bunny.png';
 
@@ -30,27 +30,33 @@ const CreateAccount = () => {
         setUser({...user, uuid: newId });
     }, []);
     
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
+        
         if (user.password !== user.confirmPassword) {
             setUser({ password: '', confirmPassword: ''})
             setTimeout(() => {
                setError('')
-            }, 5000)
+            }, 3000)
             return setError('Passwords do not match')
         }
-        
-        dispatch(createAccount(user))
-        dispatch(postUser({uuid: user.uuid, username: user.username}))
-        setTimeout(() => {
-            navigate('/');
-        }, 1500)
+
+        try {
+           await  dispatch(createAccount(user)).unwrap()
+           await dispatch(postUser({uuid: user.uuid, username: user.username})).unwrap()
+            navigate('/')
+        } catch (error) {
+            setError(`This E-mail is already have an account!`)
+            setTimeout(() => {
+               setError('')
+            }, 3000)
+        }
     }
 
   return (
     <section>
     <Title />
-    <form className='register__form' onSubmit={handleSubmit}>
+    <form className='register__form' autoComplete="off" onSubmit={handleSubmit}>
         <h3 className='register__form-title'>New Account<img className="register__form-bunny"src={bunny} alt="bunny icon"/></h3>
         <div className='form-group'>
             <label htmlFor='name'>name of your bunny</label>
@@ -107,9 +113,7 @@ const CreateAccount = () => {
              <Link Link to="/login">log in</Link>
              </div>
         </div>
-        <div>
-            <p>{error}</p>
-        </div>
+        {error && <span className='register__error-msg'>{error}</span>}
     </form>
 </section>
   )

@@ -5,3 +5,33 @@
     
 }
 
+button {
+    border: $border-black;
+    background-color: white;
+}
+
+.btn--close {
+    max-width: inherit;
+}
+
+.main__container {
+    @include m_width {
+        max-width: 450px;
+        min-height: 700px;
+        border: 1px solid black;
+        padding: 1rem rem;
+        margin: 3rem auto;
+        animation: framemove 3s forwards;
+    }
+    
+}
+
+@keyframes framemove {
+    0% {
+        box-shadow: -0px -0px 0px 0px black;
+      }
+      100% {
+        box-shadow: -7px -7px 0px 0px rgb(9, 58, 0);
+      }
+    
+}

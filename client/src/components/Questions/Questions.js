@@ -7,12 +7,15 @@ import Prism from "prismjs";
 import "prismjs/themes/prism-tomorrow.css";
 import closeIcon from '../../resources/close_icon.png';
 import LevelUp from './LevelUp';
+import MaxLevel from './MaxLevel';
 
 const Questions = () => {
     const storeQuestions = useSelector((state) => state.questions.questions);
     const { loading } = useSelector((state) => state.questions);
-    const { user, levelup } = useSelector((state) => state.user)
+    const { user } = useSelector((state) => state.user)
     const [levelUp, setLevelUp] = useState(false)
+    const [toggleClass, setToggleClass] = useState([])
+
 
     const dispatch = useDispatch();
 
@@ -21,41 +24,53 @@ const Questions = () => {
     }, [storeQuestions, levelUp])
     
     useEffect(() => {
-        dispatch(fetchQuestions("https://gardenproject-server.herokuapp.com/api/questions"))
+           dispatch(fetchQuestions())
     }, [dispatch])
 
-    const handleAnswer = (answer) => {
+    const handleAnswer = (answer, index) => {
         const correctAnswer = storeQuestions[0].translations[0].answer;
+        const newArr = [toggleClass];
+        newArr[index] = true;
+        setToggleClass(newArr);
+
+        setTimeout(() => {    
 
         if (user.xp > 0 && user.xp % 3 === 2 && answer.label === correctAnswer) {
             setLevelUp(true)
             dispatch(displayPopup(levelUp))
         }
         if (answer.label === correctAnswer) {
-            dispatch(handleCorrectAnswer());
+            dispatch(handleCorrectAnswer(storeQuestions[0].id));
         } else {
             dispatch(handleWrongAnswer());
         }
 
-        setTimeout(() => {     
             dispatch(answerQuestion());
             dispatch(addLevel(lvlDisplay(user.xp)-1))
-        }, 500)
+            setToggleClass([]);
+        }, 700)
     }
 
-    const handleGoBack = () => {
-        dispatch(modifyUser(user))
-        setTimeout(() => {
+    const handleGoBack = async () => {
+        try {
+            await dispatch(modifyUser(user)).unwrap()
             dispatch(endGame())
-        }, 1000);
+        } catch (error) {
+            console.log(error)
+        }
     }
-
     
     return (
         <section className="questionnaire">
         { levelUp ? (
             <>
                 <LevelUp setter={setLevelUp} getter={levelUp}/>
+            </>
+        ) : (
+        <>
+        { (user.level === 15) ? (
+            <>
+                <MaxLevel />
             </>
         ) : (
         <>
@@ -68,27 +83,39 @@ const Questions = () => {
                 { user.carrotNumber !== 0 ? (
                     <>
                         <h2 className="questionnaire__question">Question: {storeQuestions[0].translations[0].question}</h2>
+                        { storeQuestions[0].code && (
                         <div className="questionnaire__codesnippet">
                         <pre>
                         <code className="language-javascript">{storeQuestions[0].code}</code>
                         </pre>
                         </div>
+                        )}
                         {
-                        storeQuestions[0].translations[0].options.map(answer => {
-                        return <button className="questionnaire__button" key={answer.label} onClick={() => {handleAnswer(answer)}}>{answer.label}. {answer.option.replaceAll('`','')}</button>
+                        storeQuestions[0].translations[0].options.map((answer, index) => {
+                            return (
+                                <section className='questionnaire__div' key={answer.label}>
+                                    {(answer.label === storeQuestions[0].translations[0].answer) ? 
+                                    (<button className={(toggleClass[index] === true) ? 'questionnaire__button--clicked': 'questionnaire__button'}  id="correct" tabIndex="0" onClick={() => {handleAnswer(answer, index)}}>{answer.label}. {answer.option.replaceAll('`','')}</button>)
+                                    : 
+                                    (<button className={(toggleClass[index] === true) ? 'questionnaire__button--clicked': 'questionnaire__button'} id="incorrect" tabIndex="0" onClick={() => {handleAnswer(answer, index)}}>{answer.label}. {answer.option.replaceAll('`','')}</button>)
+                                    }
+                                </section>
+                            )
                         })
                         }
                         <button className="questionnaire__btn-close" onClick={handleGoBack}><img className="btn--close" src={closeIcon} alt="go back button" /></button>
 
                     </>
                 ) : (
-                    <>
-                    <p>No more questions for today!</p>
+                    <div className="nomorequestions__container">
+                    <p>No more questions for today! Come back tomorrow to get new carrots and more katas to solve!</p>
                     <button className="questionnaire__btn-back" onClick={handleGoBack}><img className="btn--close" src={closeIcon} alt="go back button" /></button>
-                    </>
+                    </div>
                 )
                 }
             </>
+        )}
+        </>
         )}
         </>
         )}
