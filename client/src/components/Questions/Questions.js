@@ -68,7 +68,7 @@ const Questions = () => {
             </>
         ) : (
         <>
-        { (user.level === 30) ? (
+        { (user.level === 15) ? (
             <>
                 <MaxLevel />
             </>
