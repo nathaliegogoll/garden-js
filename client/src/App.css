@@ -435,7 +435,18 @@ button {
 
 .navigation {
   text-align: center;
-  margin: 1rem auto;
+  margin: 2rem auto;
+}
+
+.navigation * {
+  padding: 0.5rem 2rem;
+  border: 1px solid black;
+  color: black;
+}
+
+.navigation *:hover {
+  color: green;
+  border-color: green;
 }
 
 @media screen and (min-width: 600px) {
@@ -489,10 +500,6 @@ button {
   color: green;
 }
 
-.developers__title {
-  margin-bottom: 1rem;
-}
-
 .developers__person {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -510,6 +517,7 @@ button {
 }
 
 .developers__person img {
+  margin-top: 1.5rem;
   max-width: 35%;
 }
 
@@ -535,6 +543,11 @@ button {
 
 .developers__person .person--links a:hover {
   color: green;
+  border-color: green;
+}
+
+.developers__person .person--links a:focus {
+  outline: 2px dashed green;
 }
 
 .resetgame {

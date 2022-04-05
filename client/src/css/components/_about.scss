@@ -1,7 +1,15 @@
 .navigation {
     text-align: center; 
-    margin: 1rem auto;
-
+    margin: 2rem auto;
+    * {
+        padding: 0.5rem 2rem;
+        border: $border-black;
+        color: black;
+        &:hover {
+            color: green;
+            border-color: green;
+        }
+    }
 }
 
 .about {
@@ -39,19 +47,18 @@
             &:hover {
                 color: green;
             }
+          
         }
     }
 }
 
-.developers__title {
-    margin-bottom: 1rem;
-}
 .developers__person {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     img {
+        margin-top: 1.5rem;
         max-width: 35%;
         @include tablet_min_width {
             max-width: 20%;
@@ -68,6 +75,10 @@
             color: black;
             &:hover{
                 color: green;
+                border-color: green;
+            }
+            &:focus {
+                outline: 2px dashed green;
             }
         }
     }
