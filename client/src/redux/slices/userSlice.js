@@ -40,6 +40,7 @@ export const user = createSlice( {
           resetGame: (state) => {
               state.user.xp = 0;
               state.user.level = 0;
+              state.user.completedKatas = [];
           },
           handleCorrectAnswer: (state, action) => {
               state.user.carrotNumber -= 1; 
