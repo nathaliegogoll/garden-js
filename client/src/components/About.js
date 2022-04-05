@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import marinaKinalone from '../resources/developers/marinakinalone.png'
 import nathalieGogoll from '../resources/developers/nathaliegogoll.png'
+import martin from '../resources/developers/martin.png'
 
 const About = () => {
   return (
@@ -26,7 +27,7 @@ const About = () => {
                 <p className="person--links"><a href="https://github.com/nathaliegogoll" target="_blank" rel="noreferrer">GitHub</a> | <a href="https://www.linkedin.com/in/nathaliejacobssongogoll/" target="_blank" rel="noreferrer">LinkedIn</a></p>
             </article>
             <article className="developers__person">
-                <img src="" alt="" />
+            <img src={martin} alt="Martin" />
                 <h3 className="person--name">Martin Pettersen</h3>
                 <p><a href="https://github.com/MartinPettersen">GitHub</a> | <a href="https://www.linkedin.com/in/martinpettersen89/?locale=en_US">LinkedIn</a></p>
             </article>
