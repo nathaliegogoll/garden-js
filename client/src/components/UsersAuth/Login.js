@@ -34,7 +34,7 @@ const Login = () => {
     <section>
         <Title />
         <p className='title__description'>Adopt a bunny, solve Javascript katas to feed it and grow a beautiful pixel garden</p>
-        <form className='login__form' onSubmit={handleSubmit}>
+        <form className='login__form' autoComplete="off" onSubmit={handleSubmit}>
         <div className='form-group'>
             <label htmlFor='email'>Email</label>
             <input 
