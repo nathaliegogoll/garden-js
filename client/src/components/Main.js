@@ -37,7 +37,7 @@ const  Main = () => {
       dispatch(modifyUser(user))
       setIsReset(true);
     }
-  }}, []) 
+  }}, [user.lastConnected]) 
 
   const increaseXp = () => {
     dispatch(addXp());
