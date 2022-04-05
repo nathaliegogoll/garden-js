@@ -32,7 +32,7 @@ const Questions = () => {
             dispatch(displayPopup(levelUp))
         }
         if (answer.label === correctAnswer) {
-            dispatch(handleCorrectAnswer());
+            dispatch(handleCorrectAnswer(storeQuestions[0].id));
         } else {
             dispatch(handleWrongAnswer());
         }

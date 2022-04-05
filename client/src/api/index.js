@@ -1,8 +1,11 @@
 import axios from 'axios';
 
-const url = 'https://gardenproject-server.herokuapp.com/api/auth';
-const levelUrl = 'https://gardenproject-server.herokuapp.com/api/level';
-const questionUrl = 'https://gardenproject-server.herokuapp.com/api/questions'
+//const url = 'https://gardenproject-server.herokuapp.com/api/auth';
+//const levelUrl = 'https://gardenproject-server.herokuapp.com/api/level';
+//const questionUrl = 'https://gardenproject-server.herokuapp.com/api/questions'
+const url = 'http://localhost:3001/api/auth';
+const levelUrl = 'http://localhost:3001/api/level';
+const questionUrl = 'http://localhost:3001/api/questions'
 
 const config = {
     header: {
