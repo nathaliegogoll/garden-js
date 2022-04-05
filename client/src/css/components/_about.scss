@@ -43,15 +43,13 @@
     }
 }
 
-.developers__title {
-    margin-bottom: 1rem;
-}
 .developers__person {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     img {
+        margin-top: 1.5rem;
         max-width: 35%;
         @include tablet_min_width {
             max-width: 20%;

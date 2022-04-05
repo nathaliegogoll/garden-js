@@ -489,10 +489,6 @@ button {
   color: green;
 }
 
-.developers__title {
-  margin-bottom: 1rem;
-}
-
 .developers__person {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -510,6 +506,7 @@ button {
 }
 
 .developers__person img {
+  margin-top: 1.5rem;
   max-width: 35%;
 }
 
