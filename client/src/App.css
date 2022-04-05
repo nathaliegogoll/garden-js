@@ -716,7 +716,7 @@ button {
 .garden--level0 {
   position: absolute;
   top: 260px;
-  left: 120px;
+  left: 180px;
   width: 55px;
   height: 74px;
   -webkit-animation: rabbitmovesX 1.5s steps(4) infinite, rabbitmovesY 9s steps(6) infinite;
@@ -767,7 +767,7 @@ button {
 
 .garden--level2 {
   margin-top: -115px;
-  margin-left: 105px;
+  margin-left: 138px;
   width: 32px;
   height: 50px;
   -webkit-animation: classicvegetableanimation 3s steps(19) forwards;
@@ -776,7 +776,7 @@ button {
 
 .garden--level3 {
   margin-top: -50px;
-  margin-left: 80px;
+  margin-left: 160px;
   width: 32px;
   height: 50px;
   -webkit-animation: carrotmoves 3s steps(15) forwards;
@@ -803,7 +803,7 @@ button {
 
 .garden--level4 {
   margin-top: -50px;
-  margin-left: 60px;
+  margin-left: 250px;
   width: 32px;
   height: 50px;
   -webkit-animation: classicvegetableanimation 3s steps(19) forwards;
@@ -812,7 +812,7 @@ button {
 
 .garden--level5 {
   margin-top: -50px;
-  margin-left: 40px;
+  margin-left: 310px;
   width: 32px;
   height: 50px;
   -webkit-animation: classicvegetableanimation 3s steps(19) forwards;
@@ -821,7 +821,7 @@ button {
 
 .garden--level6 {
   margin-top: -50px;
-  margin-left: 20px;
+  margin-left: 230px;
   width: 32px;
   height: 50px;
   -webkit-animation: classicvegetableanimation 3s steps(19) forwards;
@@ -857,7 +857,7 @@ button {
 
 .garden--level8 {
   margin-top: -160px;
-  margin-left: 220px;
+  margin-left: 200px;
   width: 200px;
   height: 200px;
   -webkit-animation: treemove 2s steps(2) forwards;
@@ -884,7 +884,7 @@ button {
 
 .garden--level9 {
   margin-top: -200px;
-  margin-left: 100px;
+  margin-left: -50px;
   width: 200px;
   height: 200px;
   -webkit-animation: treemove 2s steps(2) forwards;
@@ -973,16 +973,54 @@ button {
 }
 
 .garden--level13 {
-  margin-top: -80px;
-  margin-left: 190px;
-  width: 150px;
-  height: 40px;
+  margin-top: -180px;
+  margin-left: 35px;
+  width: 45px;
+  height: 45px;
+  -webkit-animation: squirrelmoveX 1s steps(5) infinite, squirrelmoveY 1s steps(1) infinite;
+          animation: squirrelmoveX 1s steps(5) infinite, squirrelmoveY 1s steps(1) infinite;
+}
+
+@-webkit-keyframes squirrelmoveX {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: -225px;
+  }
+}
+
+@keyframes squirrelmoveX {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: -225px;
+  }
+}
+
+@-webkit-keyframes squirrelmoveY {
+  from {
+    background-position-y: 0px;
+  }
+  to {
+    background-position-Y: -45px;
+  }
+}
+
+@keyframes squirrelmoveY {
+  from {
+    background-position-y: 0px;
+  }
+  to {
+    background-position-Y: -45px;
+  }
 }
 
 .garden--level14 {
-  margin-top: -175px;
-  margin-left: 120px;
-  width: 300px;
-  height: 300px;
+  margin-top: -55px;
+  margin-left: -0px;
+  width: 200px;
+  height: 200px;
 }
 /*# sourceMappingURL=App.css.map */
