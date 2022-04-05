@@ -1,9 +1,18 @@
 import closeButton from '../resources/close_icon.png'
+import { useDispatch, useSelector } from 'react-redux';
+import { modifyUser } from '../redux/slices/userSlice';
 
 const ResetGame = ({setter, getter}) => {
+
+  const {user} = useSelector((state) => state.user)
+
+  const dispatch = useDispatch();
     
-  const handleClose = () => {
-        setter(false);
+  const handleClose = async () => {
+    await dispatch(modifyUser(user)).unwrap()
+    setTimeout(() => {
+      setter(false);
+    }, 500)
   }
 
   return (
