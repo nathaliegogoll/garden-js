@@ -6,6 +6,7 @@ import Title from './Title';
 
 const Login = () => {
     const [user, setUser] = useState({ email: '', password: ''})
+    const [error, setError] = useState('')
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
@@ -26,7 +27,10 @@ const Login = () => {
            await dispatch(login(user)).unwrap();
            navigate('/') 
         } catch (error) {
-            console.log(error)
+            setError(`${error}! Please check your credentials`)
+            setTimeout(() => {
+               setError('')
+            }, 3000)
         }
     }
 
@@ -69,6 +73,7 @@ const Login = () => {
             <Link to="/register">create a new account</Link>
             </div>
         </div>
+        { error && <span className='login__error-msg'>{error}</span>}
     </form>
 </section>
   )

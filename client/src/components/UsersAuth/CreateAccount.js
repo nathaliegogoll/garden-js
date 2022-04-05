@@ -46,7 +46,10 @@ const CreateAccount = () => {
            await dispatch(postUser({uuid: user.uuid, username: user.username})).unwrap()
             navigate('/')
         } catch (error) {
-            console.log(error)
+            setError(`This E-mail is already have an account!`)
+            setTimeout(() => {
+               setError('')
+            }, 3000)
         }
     }
 

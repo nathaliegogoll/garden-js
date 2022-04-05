@@ -120,7 +120,7 @@ button {
   margin-top: -0.5rem;
 }
 
-.register__error-msg {
+.register__error-msg, .login__error-msg {
   text-align: center;
   color: red;
   margin-top: 1rem;
