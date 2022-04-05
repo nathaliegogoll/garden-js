@@ -14,41 +14,51 @@
     padding: 0.5rem;
     margin: 0.5rem 1rem;
   }
-  .questionnaire__button, .questionnaire__button--clicked {
-    background-color: white;
-    border: $border-black;
-    font-size: 1rem;
-    background-color: white;
-    &:hover {
-      background-color: rgb(238, 255, 250);
-      cursor: pointer;
-    }
-  }
+  .questionnaire__div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .questionnaire__button, .questionnaire__button--clicked {
+      text-align: center;
+      min-width: 90%;
+      padding: 0.5rem;
+      margin: 0.5rem 1rem;
+      background-color: white;
+      border: $border-black;
+      font-size: 1rem;
+      background-color: white;
+      &:hover {
+        background-color: rgb(238, 255, 250);
+        cursor: pointer;
+      }
+    }}
 
-  .questionnaire__btn-close {
-    border: none;
-    background-color: white;
-    border-radius: 100%;
-    max-width: 2rem;
-    max-height: 2rem;
-    margin: 1rem auto;
-    &:hover {
-      cursor: pointer;
-      background-color: rgb(255, 174, 174);
+    .questionnaire__btn-close {
+      border: none;
+      background-color: white;
+      border-radius: 100%;
+      max-width: 2rem;
+      max-height: 2rem;
+      margin: 1rem auto;
+      &:hover {
+        cursor: pointer;
+        background-color: rgb(255, 174, 174);
 
+      }
     }
-  }
-  .questionnaire__btn-back {
-    border: none;
-    background-color: white;
-    border-radius: 100%;
-    max-width: 2rem;
-    max-height: 2rem;
-    &:hover {
-      background-color: rgb(238, 255, 250);
-      cursor: pointer;
+    .questionnaire__btn-back {
+      border: none;
+      background-color: white;
+      border-radius: 100%;
+      max-width: 2rem;
+      max-height: 2rem;
+      &:hover {
+        background-color: rgb(238, 255, 250);
+        cursor: pointer;
+      }
     }
-  }
+  
 
 }
 
