@@ -16,6 +16,7 @@
         "css/components/_about.scss",
         "css/components/_resetgame.scss",
         "css/components/_levelup.scss",
+        "css/components/_forgotPassword.scss",
         "css/sprites/_sprites.scss"
     ],
     "names": [],

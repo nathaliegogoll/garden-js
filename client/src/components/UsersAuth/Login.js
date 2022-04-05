@@ -60,7 +60,7 @@ const Login = () => {
             />
         </div>
         <div className="password-forgotten">
-        <Link to='/forgot'>forgot your password ?</Link>
+        <Link to='/forgotpassword' >forgot your password ?</Link>
         </div>
         <button type='submit' className='form__submit-btn'>log in</button>
         <div className="login__form-createaccount">

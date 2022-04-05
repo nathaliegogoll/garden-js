@@ -682,6 +682,19 @@ button {
   background-color: #eefffa;
 }
 
+.forgotPassword {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.forgotPassword__msg {
+  margin: 2rem 0.5rem;
+}
+
+.forgotPassword__navigate-btn {
+  padding: 1rem;
+}
+
 @-webkit-keyframes classicvegetableanimation {
   from {
     background-position-x: -10px;
