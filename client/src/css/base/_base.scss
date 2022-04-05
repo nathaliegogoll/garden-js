@@ -13,17 +13,3 @@ button {
 .btn--close {
     max-width: inherit;
 }
-
-.navigation {
-    text-align: center;
-    margin: 2rem;
-    button {
-        padding: 0.5rem 2rem;
-        * {
-            color: black;
-            &:hover {
-                color: green;
-            }
-        }
-    }
-} 
