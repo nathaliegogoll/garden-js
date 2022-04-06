@@ -882,7 +882,10 @@ button {
 
 .forgotPassword {
   text-align: center;
-  margin: 0 auto;
+  margin: 4rem auto;
+  padding: 2rem;
+  width: 40%;
+  border: 1px solid black;
 }
 
 .forgotPassword__msg {
@@ -891,6 +894,7 @@ button {
 
 .forgotPassword__navigate-btn {
   padding: 1rem;
+  text-decoration: underline;
 }
 
 @-webkit-keyframes classicvegetableanimation {
