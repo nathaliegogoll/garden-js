@@ -882,10 +882,23 @@ button {
 
 .forgotPassword {
   text-align: center;
-  margin: 4rem auto;
-  padding: 2rem;
-  width: 40%;
+  margin: 2rem auto;
+  padding: 1rem;
+  width: 80%;
   border: 1px solid black;
+}
+
+@media screen and (min-width: 680px) {
+  .forgotPassword {
+    margin: 4rem auto;
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .forgotPassword {
+    width: 50%;
+  }
 }
 
 .forgotPassword__msg {
