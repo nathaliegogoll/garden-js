@@ -3,9 +3,7 @@ import { useSelector } from "react-redux";
 const XP = () => {
     const { user, levelup } = useSelector((state) => state.user);
     const completed = user.xp;
-  
-    // const xpCap = (completed > 3) ?  3 : 3;
-    
+      
     const remains = (completed - ((completed > 3) ?  3 : 0)) % 3;
     let fullBar = (remains === 0 && completed !== 0) ? 3 : remains ;
     if (user.xp > 0 && user.xp % 3 === 0 && levelup === true) {
