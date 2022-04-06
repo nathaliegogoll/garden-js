@@ -9,6 +9,8 @@ const  Main = () => {
   const { user } = useSelector((state) => state.user)
   const { gamestarted } = useSelector((state) => state.questions);
 
+  console.log(user)
+
   const [isReset, setIsReset] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -34,7 +36,6 @@ const  Main = () => {
       if( (diff / (8.64 * 10 ** +7)) > 7){
         dispatch(resetGame());
         setIsReset(true);
-       await dispatch(modifyUser(user)).unwrap()
     }
   }
 
