@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link , useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 import { login } from '../../redux/slices/authSlice';
+import { fetchQuestions } from '../../redux/slices/questionSlice';
 import Title from './Title';
 
 const Login = () => {
@@ -15,6 +16,10 @@ const Login = () => {
             navigate('/')
         }
     },[navigate])
+
+    useEffect(() => {
+        dispatch(fetchQuestions())
+    }, [dispatch])
 
     const handleChange = (e) => {
         const { name, value} = e.target

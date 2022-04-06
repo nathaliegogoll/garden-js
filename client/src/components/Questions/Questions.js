@@ -23,6 +23,7 @@ const Questions = () => {
         Prism.highlightAll();
     }, [storeQuestions, levelUp])
     
+    // needs to be remove before finnal deployment!!
     useEffect(() => {
            dispatch(fetchQuestions())
     }, [dispatch])
