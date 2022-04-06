@@ -1,14 +1,47 @@
+.login__section, .register__section {
+    @include tablet_min_width {
+        width: 80%;
+        margin: 0 auto;
+    }
+    @include desktop_min_width {
+        width: 40%;
+        margin: 3rem auto;
+    }
+}
+
+.login__section {
+    @include desktop_min_width {
+        margin: 3rem auto;
+    }
+}
+
+.register__section {
+    @include desktop_min_width {
+        margin: 1.5rem auto;
+    }
+}
+
 .title__description {
     margin: 0 auto;
     max-width: 90%;
     text-align: center;
     margin-top: -1rem;
     margin-bottom: 2rem;
+    @include tablet_min_width {
+        font-size: 1.5rem;
+    }
+    @include desktop_min_width {
+        font-size: 1.2rem;
+    }
 }
 
 .title__img {
     max-width: 80%;
     margin: -10% 10% -15% 10%;
+    @include desktop_min_width {
+        width: 60%;
+        margin: -10% 20% -15% 20%;
+    }
 }
 
 .register__form, .login__form {
@@ -16,9 +49,21 @@
     flex-direction: column;
     max-width: 90%;
     margin: 0 auto;
+    @include tablet_min_width {
+        font-size: 1.5rem;
+    }
+    @include desktop_min_width {
+        font-size: 1.2rem;
+    }
     * {
         display: flex;
         flex-direction: column;
+        @include tablet_min_width {
+            font-size: 1.5rem;
+        }
+        @include desktop_min_width {
+            font-size: 1.2rem;
+        }
     }
 }
 
@@ -52,6 +97,13 @@
         padding: 0.2rem 0.5rem;
         font-size: 0.9rem;
         border: $border-black;
+        @include tablet_min_width {
+            font-size: 1.5rem;
+            padding: 0.7rem 0.7rem;
+        }
+        @include desktop_min_width {
+            font-size: 1.2rem;
+        }
         &:focus {
             background-color: rgb(239, 255, 248);
             outline: 1px solid $link-hover;
@@ -65,6 +117,14 @@
     padding: 0.5rem;
     background-color: $button-color;
     border: $border-black;
+    @include tablet_min_width {
+        font-size: 1.5rem;
+        margin: 1rem 0 0.5rem 0;
+        padding: 0.7rem 0.7rem;
+    }
+    @include desktop_min_width {
+        font-size: 1.2rem;
+    }
     &:focus {
        outline: 2px solid $link-hover;
     }
@@ -100,5 +160,12 @@
         padding-left: 0.2rem;
         margin-top: -0.9rem;
         margin-bottom: 1rem;
+        @include tablet_min_width {
+            font-size: 1.2rem;
+            padding-top: 0.4rem;
+        }
+        @include desktop_min_width {
+            font-size: 1.2rem;
+        }
     }
 }
