@@ -1,4 +1,4 @@
-.login__section {
+.login__section, .register__section {
     @include tablet_min_width {
         width: 80%;
         margin: 0 auto;
@@ -6,6 +6,18 @@
     @include desktop_min_width {
         width: 40%;
         margin: 3rem auto;
+    }
+}
+
+.login__section {
+    @include desktop_min_width {
+        margin: 3rem auto;
+    }
+}
+
+.register__section {
+    @include desktop_min_width {
+        margin: 1.5rem auto;
     }
 }
 

@@ -40,7 +40,7 @@ const Login = () => {
         <p className='title__description'>Adopt a bunny, solve Javascript katas to feed it and grow a beautiful pixel garden</p>
         <form className='login__form' autoComplete="off" onSubmit={handleSubmit}>
         <div className='form-group'>
-            <label htmlFor='email'>Email</label>
+            <label htmlFor='email'>email</label>
             <input 
             className='form__input'
             type='email'
@@ -53,7 +53,7 @@ const Login = () => {
             />
         </div>
         <div className='form-group'>
-            <label htmlFor='password'>Password</label>
+            <label htmlFor='password'>password</label>
             <input 
             className='form__input'
             type='password'

@@ -54,7 +54,7 @@ const CreateAccount = () => {
     }
 
   return (
-    <section>
+    <section className='register__section'>
     <Title />
     <form className='register__form' autoComplete="off" onSubmit={handleSubmit}>
         <h3 className='register__form-title'>New Account<img className="register__form-bunny"src={bunny} alt="bunny icon"/></h3>
