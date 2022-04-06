@@ -29,7 +29,6 @@ const Garden = () => {
         const uuid = localStorage.getItem('uuid');
         if (uuid) {
             dispatch(fetchUser(JSON.parse(uuid)))  
-            console.log(uuid);      
         }
     }, [dispatch])
 
