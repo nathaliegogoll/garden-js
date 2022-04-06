@@ -22,12 +22,11 @@ const MaxLevel = () => {
 
    // <button className="maxlevel__close"onClick={handleClose}><img className="btn--close" src={closeIcon} alt='close message'/></button>
   return (
-    <section className="MaxLevel">
-        <h2 className="MaxLevel__title">Congratulations on reaching max lvl</h2>
-        <p className="MaxLevel__description">Our developers are coding their socks of making the next lvls. We hope you will come back when the next update is launched</p>
-        <h3>Thank you for playing our game</h3>
-        <button className="questionnaire__btn-close" onClick={handleGoBack}><img className="btn--close" src={closeIcon} alt="go back button" /></button>
- 
+    <section className="maxlevel">
+        <h2 className="maxlevel__title">Congratulations on reaching the max level!</h2>
+        <p className="maxlevel__description">Our developers are coding their socks off making the next levels. We hope you will come back when the next update is launched.</p>
+        <p className="maxlevel__thankyou">Thank you for playing our game :)</p>
+        <button className="questionnaire__btn-back" onClick={handleGoBack}><img className="btn--close" src={closeIcon} alt="go back button" /></button>
     </section>
   )
 }
