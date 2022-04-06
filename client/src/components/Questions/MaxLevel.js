@@ -3,6 +3,8 @@ import closeIcon from '../../resources/close_icon.png';
 import { useSelector, useDispatch } from 'react-redux'
 import { modifyUser } from '../../redux/slices/userSlice';
 import { endGame } from '../../redux/slices/questionSlice';
+//import useWindowSize from 'react-use/lib/useWindowSize';
+import Confetti from 'react-confetti';
 
 
 const MaxLevel = () => {
@@ -23,6 +25,7 @@ const MaxLevel = () => {
    // <button className="maxlevel__close"onClick={handleClose}><img className="btn--close" src={closeIcon} alt='close message'/></button>
   return (
     <section className="maxlevel">
+      <Confetti numberOfPieces='300'/>
         <h2 className="maxlevel__title">Congratulations on reaching the max level!</h2>
         <p className="maxlevel__description">Our developers are coding their socks off making the next levels. We hope you will come back when the next update is launched.</p>
         <p className="maxlevel__thankyou">Thank you for playing our game :)</p>
