@@ -21,20 +21,20 @@ We're a team of developers working as consultants for School of Applied Technolo
 
 ## Team
 
-[<img src="./src/resources/developers/nathaliegogoll.png" width="200">](https://github.com/nathaliegogoll) |
+[<img src="./client/src/resources/developers/nathaliegogoll.png" width="200">](https://github.com/nathaliegogoll) |
 ---|
 [Nathalie Gogoll](https://github.com/nathaliegogolle) |
 
-[<img src="./src/resources/developers/marinakinalone.png" width="200">](https://github.com/marinakinalone) |
+[<img src="./client/src/resources/developers/marinakinalone.png" width="200">](https://github.com/marinakinalone) |
 ---|
 [Marina Kinalone Simonnet](https://github.com/marinakinalone) |
 
 
-[<img src="./src/resources/developers/Seyfettin.png" width="200">](https://github.com/SeyfBaskara) |
+[<img src="./client/src/resources/developers/Seyfettin.png" width="200">](https://github.com/SeyfBaskara) |
 ---|
 [Seyfettin Baskara](https://github.com/SeyfBaskara) |
 
-[<img src="./src/resources/developers/martin.png" width="200">](https://github.com/MartinPettersen) |
+[<img src="./client/src/resources/developers/martin.png" width="200">](https://github.com/MartinPettersen) |
 ---|
 [Martin Pettersen](https://github.com/MartinPettersen) |
 
