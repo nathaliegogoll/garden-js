@@ -1,42 +1,44 @@
 # Garden JS
-A game to practice JavaScript.
+A game to practice JavaScript : adopt a bunny, solve coding katas to feed it and grow a beautiful pixel garden!
+We're a team of developers working as consultants for School of Applied Technology in Stockholm. Garden JS is our graduation project, developed in 10 days using agile methods.
 ## Built with 
 
 ### - client-side -
 - React
+- React Router
 - Redux
+- Redux ToolKit
 - CSS & SCSS (SASS)
   
 ### - server-side -
-- Node.js
+- Node
 - Express
 - MongoDB & MongoDB Atlas
+- Mongoose
+- JVT, bcrypt package
 ### - APIS -
-- JavaScript questions API
-
-## What's next to do?
-
-to-do
+- [JavaScript questions API](https://github.com/hnbnh/javascript-questions-api)
 
 ## Team
 
-[![Marina Kinalone Simonnet](https://avatars.githubusercontent.com/u/63544936?v=3&s=144)](https://github.com/marinakinalone) |
----|
-[Marina Kinalone Simonnet](https://github.com/marinakinalone) |
-
-[![Nathalie Gogoll](https://avatars.githubusercontent.com/u/63544936?v=3&s=144)](https://github.com/nathaliegogoll) |
+[<img src="./src/resources/developers/nathaliegogoll.png" width="200">](https://github.com/nathaliegogoll) |
 ---|
 [Nathalie Gogoll](https://github.com/nathaliegogolle) |
 
-[![Seyfettin Baskara](https://avatars.githubusercontent.com/u/63544936?v=3&s=144)](https://github.com/SeyfBaskara) |
+[<img src="./src/resources/developers/marinakinalone.png" width="200">](https://github.com/marinakinalone) |
+---|
+[Marina Kinalone Simonnet](https://github.com/marinakinalone) |
+
+
+[<img src="./src/resources/developers/Seyfettin.png" width="200">](https://github.com/SeyfBaskara) |
 ---|
 [Seyfettin Baskara](https://github.com/SeyfBaskara) |
 
-[![Martin Pettersen](https://avatars.githubusercontent.com/u/63544936?v=3&s=144)](https://github.com/marinakinalone) |
+[<img src="./src/resources/developers/martin.png" width="200">](https://github.com/MartinPettersen) |
 ---|
 [Martin Pettersen](https://github.com/MartinPettersen) |
 
-## [License](https://github.com/marinakinalone/le-voyage-a-stockholm/blob/main/LICENSE)
+## License
 
-The Penguins © </salt> 2022
+The Penguins © </ salt> 2022
 
