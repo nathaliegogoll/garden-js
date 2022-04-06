@@ -47,9 +47,7 @@ export const user = createSlice( {
               state.user.xp += 1;
               console.log(action.payload);
               console.log(state.user.completedKatas);
-              state.user.completedKatas = [... state.user.completedKatas,action.payload];
-//              state.user.completedKatas = action.payload;
-
+              state.user.completedKatas = [...state.user.completedKatas,action.payload];
           },
           handleWrongAnswer: (state)  => {
               state.user.carrotNumber -= 1;
