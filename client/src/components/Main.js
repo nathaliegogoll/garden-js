@@ -1,6 +1,6 @@
 import { Questions, Progression, SolveKatas, Garden, ResetGame } from './index';
 import { useSelector, useDispatch } from 'react-redux';
-import { addXp, resetGame, addLevel, resetCarrots, modifyUser } from '../redux/slices/userSlice';
+import { addXp, resetGame, addLevel, resetCarrots} from '../redux/slices/userSlice';
 import { useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { lvlDisplay } from './helpers';
@@ -8,8 +8,6 @@ import { lvlDisplay } from './helpers';
 const  Main = () => {
   const { user } = useSelector((state) => state.user)
   const { gamestarted } = useSelector((state) => state.questions);
-
-  console.log(user)
 
   const [isReset, setIsReset] = useState(false);
   const navigate = useNavigate();
